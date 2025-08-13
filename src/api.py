@@ -1,7 +1,9 @@
 import requests
 import pandas as pd
+import json
+import time
 
-def obter_dados_da_api(url):
+def fetch_data(url):
         try:
             response = requests.get(url)
             if response.status_code == 200:
@@ -14,3 +16,13 @@ def obter_dados_da_api(url):
         except requests.exceptions.RequestException as e:
             print(f"Erro na requisição: {e}")
             return None
+
+def fetch_Json_data(filePath: str):
+    try:
+        with open(filePath, 'r', encoding="utf-8") as file:
+            dataVendas = json.load(file)
+        return pd.DataFrame(dataVendas);
+    except FileNotFoundError:
+        raise RuntimeError("Arquivo JSON não encontrado.")
+    except json.JSONDecodeError:
+        raise RuntimeError("Erro ao decodificar o arquivo JSON.")

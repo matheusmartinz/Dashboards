@@ -1,17 +1,18 @@
 import streamlit as st
 import pandas as pd
 import time
-from api import obter_dados_da_api
+from api import fetch_data
 
 salas = "http://localhost:8080/sala"
 
-def tables():
+def tables(timeout):
+    place_holder = st.empty();
+    
     while True:
-        DF = obter_dados_da_api(salas)
+        DF = fetch_data(salas)
         Valores_Unicos = DF[['numeroSala', 'serieAno', 'capacidadeAlunos', 'alunos']]
-        st.write(Valores_Unicos)
-        time.sleep(10)    
-        st.experimental_rerun() 
+        place_holder.write(Valores_Unicos)
+        time.sleep(timeout)    
             
     # DF_Valores = DF[['ID Loja','Produto','Valor Unitário', 'Valor Final']]
     # DF_Valores = DF_Valores.rename(columns={'ID Loja': 'Região da Loja'})

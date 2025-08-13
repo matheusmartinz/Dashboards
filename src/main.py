@@ -1,6 +1,3 @@
-# Run this app with `python app.py` and
-# visit http://127.0.0.1:8050/ in your web browser.
-
 #Dash = app - Ele cria o app
 import streamlit as st
 #Plotly = px - Ele gera os gráficos
@@ -9,12 +6,17 @@ import plotly.express as px
 import pandas as pd
 import graphics as graphics
 import tables as tables
+import assets.generic_style as css
  
 from streamlit_option_menu import option_menu 
+css.inject_css()
 
-
-with st.sidebar:
-    selected = option_menu(
+def main():
+    if 'tela_atual' not in st.session_state:
+        st.session_state['tela_atual'] = "Dashboards"
+        
+    with st.sidebar:
+        selected = option_menu(
         "Navegação",  
         ["Dashboards", "Relatório"],  
         icons=["bar-chart", "table"],  
@@ -25,12 +27,15 @@ with st.sidebar:
             "nav-link-selected": {"background-color": "#6c757d"},
         }
     )
-    
-if (selected == "Dashboards"):
+        st.session_state['tela_atual'] = selected
+        
+    if (st.session_state.get('tela_atual') == "Dashboards"):
         st.title('Dashboard Produtos e Cidades') 
         graphics.graphics()
     
-elif (selected == "Relatório"): 
+    elif (st.session_state.get('tela_atual') == "Relatório"): 
         st.title('Relatório de Vendas por Região')
-        tables.tables()  
-    
+        tables.tables(10) 
+        
+if __name__ == '__main__':
+    main()
