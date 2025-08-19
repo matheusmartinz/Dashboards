@@ -1,11 +1,11 @@
 import streamlit as st
 import plotly.express as px
 import pandas as pd
-import graphics as graphics
-import tables as tables
+import streamlit_app.graphic as graphic
+import streamlit_app.tables as tables
 import assets.generic_style as css
- 
 from streamlit_option_menu import option_menu 
+
 css.inject_css()
 
 def main():
@@ -28,7 +28,7 @@ def main():
         
     if (st.session_state.get('tela_atual') == "Dashboards"):
         st.markdown('<div class="title-custom">PRODUTOS E CIDADES</div>', unsafe_allow_html=True) 
-        graphics.graphics()
+        graphic.graphic()
     
     elif (st.session_state.get('tela_atual') == "Relatório"): 
         st.title('Relatório de Vendas por Região')

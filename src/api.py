@@ -1,7 +1,6 @@
 import requests
 import pandas as pd
 import json
-import time
 
 def fetch_data(url):
         try:
