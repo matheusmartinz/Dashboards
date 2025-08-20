@@ -1,7 +1,48 @@
-:root {
-    --primary-color: unset;
-    --background-color: unset;
-    --secondary-background-color: unset;
-    --text-color: unset;
-    --font: unset;
+#sidebar {
+    width: 250px;
+    padding: 20px;
+    background-color: #5C7F54;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+#btn-icon-open {
+    background-color: #162419;
+    border-radius: 50px;
+    color: white;
+    border: none;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+#btn-close-sidebar {
+    background-color: #162419;
+    border: none;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    border-radius: 50px;
+    color: white;
+    font-size: 17px;
+    padding: 5px 10px;
+}
+
+#label-sidebar {
+    margin-top: 90%;
+    color: white;
+}
+
+.main-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    background-color: #FEFAE0;
 }

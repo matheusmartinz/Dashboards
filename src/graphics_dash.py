@@ -23,12 +23,16 @@ def updateLayout(graph, tipo):
         if (tipo == 'line'):
             graph.update_layout(xaxis_tickformat = '%d/%m/%Y', 
                 legend= dict(orientation = 'h', x=0, y=1.20, xanchor='left', yanchor='top'),
-                font = dict(family = 'Arial', size = 14.5, color = 'black' ))
+                font = dict(family = 'Arial', size = 14.5, color = 'black'),
+                paper_bgcolor = '#FEFAE0',
+                )
             
         elif (tipo == 'bar'):
             graph.update_layout(xaxis_tickformat = '%d/%m/%Y', barmode = 'stack',
                 legend= dict(orientation = 'h', x=0, y=1.20, xanchor='left', yanchor='top'),
-                font = dict(family = 'Arial', size = 14.5, color = 'black' ))
+                font = dict(family = 'Arial', size = 14.5, color = 'black' ),
+                paper_bgcolor = '#FEFAE0'
+                )
             
         return graph
     
@@ -43,9 +47,10 @@ DF_line = DF.groupby(['Data', 'Região Lojas'], as_index=False)['Valor Unitário
 max_valor_line = DF_line['Valor Unitário'].max()
 
 graph_bar = px.bar(DF_grouped, x='Data', y = 'Valor Final', color = 'Produto', color_discrete_sequence = cores_graficos)
+graph_bar.update_yaxes(range=[0, max_valor * 1.1], autorange = False)
 updateLayout(graph_bar,'bar')
+
+graph_pie = px.pie(DF, names = 'Região Lojas', values = 'Valor Final', color = 'Região Lojas', color_discrete_sequence = cores_graficos)
 
 graph_line = px.line(DF_line, x='Data', y='Valor Unitário', color='Região Lojas', markers=True, color_discrete_sequence= cores_graficos)
 updateLayout(graph_line, 'line')
-
-graph_bar.update_yaxes(range=[0, max_valor * 1.1], autorange = False)
