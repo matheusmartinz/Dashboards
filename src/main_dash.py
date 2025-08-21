@@ -12,19 +12,27 @@ app.sidebar = layout_dash.sidebar
 
 figs = [graphics_dash.graph_bar, graphics_dash.graph_line, graphics_dash.graph_pie]
 
-# @app.callback(
-#     Output('grafico_bar', 'figure'),
-#     Input('meu_timer', 'n_intervals')
-# )
+@app.callback(
+    Output('grafico_bar', 'figure'),
+    Input('store-switch-value', 'data'),
+    Input('meu_timer', 'n_intervals')
+)
+
+def atualizar_grafico(valor_switch, n):
+    if valor_switch == 1:
+        return updateGraphic(n)
+    else:
+        return graphics_dash.graph_bar
 
 def updateGraphic(time):
     index = time % len(figs)
     print(index)
     return figs[index]
 
-@app.callback(
-    Output('sidebar', 'style'),
-    Input('btn-icon-open', 'n_clicks'),
+
+@app.callback( 
+    Output('sidebar', 'style'), # OUTPUT - quem será atualizado - mexido
+    Input('btn-icon-open', 'n_clicks'), # INPUT - o que vai dar o gatilho para mudar o elemento
     Input('btn-close-sidebar', 'n_clicks'),
     State('sidebar', 'style')
 )
@@ -42,8 +50,22 @@ def toggle_sidebar(open_clicks, close_clicks, current_style):
         current_style['transform'] = 'translateX(-100%)'
     return current_style;
 
+
+@app.callback(
+    Output('store-switch-value', 'data'),
+    Input('switch-automatic-graphics', 'value')
+)
+
+def toggle_switch_value(value):
+    return 1 if 1 in value else 0
+
+# @app.calback(
+#     Output('radio-items-input', 'value'),
+#     Input('')
+# )
+
+
 def main():
     print('Teste: aplicação Dash está rodando')
 if __name__ == '__main__':
-    main() 
     app.run(debug=True)
