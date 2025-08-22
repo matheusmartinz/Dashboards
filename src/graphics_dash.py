@@ -87,7 +87,7 @@ data_table = dash_table.DataTable(
     columns=[{"name": i, "id": i} for i in DF_filtered_table.columns],
     data=DF_filtered_table.to_dict('records'),
     style_table={
-        'height': '35vh',  # Define a altura visível
+        'height': '35vh', 
         'overflowY': 'auto',
     },
     style_cell={

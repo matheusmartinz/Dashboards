@@ -29,15 +29,7 @@ sidebar = html.Div(
                 id='switch-automatic-graphics',
                 switch=True
             ),
-             dbc.RadioItems(
-            options=[
-                {"label": "10 segundos", "value": 1},
-                {"label": "20 segundos", "value": 2},
-                {"label": "30 segundos", "value": 3},
-            ],
-            value=0,
-            id="radioitems-input",
-        ),
+            dbc.RadioItems(id="radioitems-input"),
         ], className = 'form', id = 'form-checklist'),
     ]
 )
