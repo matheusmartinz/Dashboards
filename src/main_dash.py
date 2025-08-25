@@ -5,7 +5,9 @@ from dash.dependencies import Input, Output, State # type: ignore
 import graphics_dash
 from dash import callback_context as ctx # type: ignore
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"])
+app = dash.Dash(__name__, 
+    external_stylesheets=[dbc.themes.BOOTSTRAP, "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"],
+    suppress_callback_exceptions=True)
 
 app.layout = layout_dash.layout
 app.sidebar = layout_dash.sidebar
@@ -26,7 +28,6 @@ def atualizar_grafico(valor_switch, n):
 
 def updateGraphic(time):
     index = time % len(figs)
-    print(index)
     return figs[index]
 
 
@@ -59,12 +60,34 @@ def toggle_sidebar(open_clicks, close_clicks, current_style):
 def toggle_switch_value(value):
     return 1 if 1 in value else 0
 
-# @app.calback(
-#     Output('radio-items-input', 'value'),
-#     Input('')
+@app.callback(
+    Output('radio-container', 'children'),
+    Input('switch-automatic-graphics', 'value'),
+    prevent_initial_call = True
+)
+
+def construct_radio(switch_value):
+    if switch_value and 1 in switch_value:
+        return layout_dash.radio
+    return None
+ 
+@app.callback(
+    Output('meu_timer','interval'),
+    Input('radioitems-input', 'value'),
+    prevent_initial_call = True
+)    
+
+def update_interval(selected_value):
+    if selected_value:
+        return selected_value * 1000
+    return 1000
+
+# @app.callback(  criar o callback - button Configuração
+#     Output('')
 # )
 
-
+# def de renderizar o layout_dash.py.dialog
+    
 def main():
     print('Teste: aplicação Dash está rodando')
 if __name__ == '__main__':

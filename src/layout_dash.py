@@ -29,8 +29,22 @@ sidebar = html.Div(
                 id='switch-automatic-graphics',
                 switch=True
             ),
-            dbc.RadioItems(id="radioitems-input"),
+            html.Div(id = 'radio-container'),
         ], className = 'form', id = 'form-checklist'),
+        dbc.DropdownMenu(
+            label = html.I(className = 'fa-solid fa-gear'),
+            direction = 'center',
+            nav = False,
+            in_navbar = False,
+            caret = False,
+            toggle_class_name = 'btn-config',
+            id = 'item-config',
+            children = [
+                dbc.DropdownMenuItem(
+                    html.Span('Configuração', className = 'menu-item-config', n_clicks = 0)
+                )
+            ]
+        )
     ]
 )
 
@@ -75,4 +89,22 @@ layout = html.Div([
     )
 ])
 
+radio = html.Div([
+    dbc.Label('Tempo dos Gráficos'),
+    dbc.RadioItems(
+        options = [
+            {'label': '10 Segundos', 'value': 10},
+            {'label': '20 Segundos', 'value': 20},
+            {'label': '30 Segundos', 'value': 30}
+        ],
+        id = 'radioitems-input',
+        value = 10
+    )
+])
+
+dialog = html.Div([
+    dbc.Modal([
+        dbc.ModalHeader(dbc.ModalTitle('TESTE'))
+    ])
+])
 

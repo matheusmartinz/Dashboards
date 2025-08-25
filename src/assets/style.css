@@ -16,7 +16,6 @@
     border-radius: 50px;
     color: white;
     border: none;
-    font-size: 16px;
     padding: 5px 10px;
 }
 
@@ -28,8 +27,22 @@
     right: 20px;
     border-radius: 50px;
     color: white;
-    font-size: 17px;
     padding: 5px 10px;
+}
+
+.btn-config {
+    background-color: #162419;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    padding: 5px 10px;
+    position: absolute;
+    top: 15px
+}
+
+.menu-item-config {
+    font-size: 14px;
+    font-weight: 600;
 }
 
 #label-sidebar {
@@ -55,4 +68,16 @@
     padding: 0;
     margin: 0;
     background-color: #FEFAE0;
+}
+
+.dropdown-menu {
+    min-width: auto !important;
+    width: auto !important;
+    padding: 0 !important;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.menu-item-config {
+    border-radius: 50px;
 }
