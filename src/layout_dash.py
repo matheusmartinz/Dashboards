@@ -14,6 +14,29 @@ fig_pie = graphics_dash.graph_pie
 fig_area = graphics_dash.graph_area
 fig_table = graphics_dash.graph_table
 
+dialog = html.Div([
+    dbc.Modal([
+        dbc.ModalHeader(dbc.ModalTitle([
+            html.I(className = 'fas fa-chart-pie', style = {'margin-right': '10px'}),
+            'Configuração'
+            ])),
+        dbc.ModalBody(
+            html.Div([
+                html.H6('Gráficos'),
+                dbc.Checklist([
+                    {'label': 'Gráfico de Barra', 'value': 1},
+                    {'label': 'Gráfico de Linha', 'value': 2},
+                    {'label': 'Gráfico de Fúnil', 'value': 3},
+                    {'label': 'Gráfico de Pizza', 'value': 4}
+                ],[1,2] ,id = 'checklist-config-graphics')
+            ])
+        )
+    ],
+        id = 'config-dialog',
+        is_open = False
+    )
+])
+
 sidebar = html.Div(
     id='sidebar',
     children=[
@@ -31,20 +54,11 @@ sidebar = html.Div(
             ),
             html.Div(id = 'radio-container'),
         ], className = 'form', id = 'form-checklist'),
-        dbc.DropdownMenu(
-            label = html.I(className = 'fa-solid fa-gear'),
-            direction = 'center',
-            nav = False,
-            in_navbar = False,
-            caret = False,
-            toggle_class_name = 'btn-config',
-            id = 'item-config',
-            children = [
-                dbc.DropdownMenuItem(
-                    html.Span('Configuração', className = 'menu-item-config', n_clicks = 0)
-                )
-            ]
-        )
+        html.Button(
+            html.I(className='fa-solid fa-gear'),
+            id='btn-config'
+        ),
+        dialog
     ]
 )
 
@@ -102,9 +116,5 @@ radio = html.Div([
     )
 ])
 
-dialog = html.Div([
-    dbc.Modal([
-        dbc.ModalHeader(dbc.ModalTitle('TESTE'))
-    ])
-])
+
 

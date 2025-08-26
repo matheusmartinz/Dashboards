@@ -1,9 +1,9 @@
-import dash # type: ignore
-import dash_bootstrap_components as dbc # type: ignore
+import dash 
+import dash_bootstrap_components as dbc  
 import layout_dash
-from dash.dependencies import Input, Output, State # type: ignore
+from dash.dependencies import Input, Output, State 
 import graphics_dash
-from dash import callback_context as ctx # type: ignore
+from dash import callback_context as ctx 
 
 app = dash.Dash(__name__, 
     external_stylesheets=[dbc.themes.BOOTSTRAP, "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"],
@@ -82,11 +82,16 @@ def update_interval(selected_value):
         return selected_value * 1000
     return 1000
 
-# @app.callback(  criar o callback - button Configuração
-#     Output('')
-# )
+@app.callback( 
+    Output('config-dialog','is_open'),
+    Input('btn-config', 'n_clicks'),
+    prevent_initial_call = True
+)
 
-# def de renderizar o layout_dash.py.dialog
+def open_dialog(click):
+    if click: 
+        return True
+    return False
     
 def main():
     print('Teste: aplicação Dash está rodando')
