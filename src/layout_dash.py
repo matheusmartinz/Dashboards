@@ -5,9 +5,10 @@ import dash_bootstrap_components as dbc # type: ignore
 
 DF = graphics_dash.DF
 DF = DF.rename(columns={'ID Loja' : 'Região Lojas'})
-DF['Data'] = pd.to_datetime(DF['Data'], errors= 'coerce')
+DF['Data'] = pd.to_datetime(DF['Data'],format = '%Y/%m/%d', errors= 'coerce')
 DF = DF.dropna(subset=['Valor Final', 'Data'])
 
+print(DF['Data'].head(10))
 fig_bar = graphics_dash.graph_bar
 fig_line = graphics_dash.graph_line
 fig_pie = graphics_dash.graph_pie
