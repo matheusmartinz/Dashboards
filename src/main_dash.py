@@ -6,5 +6,4 @@ app.layout = layout_dash.layout
 app.sidebar = layout_dash.sidebar
 
 if __name__ == '__main__':
-    print('Teste: aplicação Dash está rodando')
     app.run(debug=True)

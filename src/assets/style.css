@@ -1,5 +1,10 @@
+.menu-item-config {
+    font-size: 14px;
+    font-weight: 600;
+}
+
 #sidebar {
-    width: 195px;
+    width: 225px;
     padding: 20px;
     background-color: #5C7F54;
     position: fixed;
@@ -40,11 +45,6 @@
     top: 15px
 }
 
-.menu-item-config {
-    font-size: 14px;
-    font-weight: 600;
-}
-
 #label-sidebar {
     margin-top: 90%;
     color: white;
@@ -56,8 +56,15 @@
     color: white;
 }
 
-#radioitems-input {
+.radio_timer_sidebar {
+    margin-top: 20px;
+}
+
+#radioitens-input {
     padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .main-container {
@@ -87,4 +94,52 @@
     grid-template-columns: 1fr 1fr;
     gap: 8px;
     padding: 10px;
+}
+
+#button_export {
+    background-color: #162419;
+    border: none;
+    color: white;
+    width: 100%;
+    border-radius: 20px;
+    transition: 0.3s ease;
+    margin-top: 5px;
+    transform: scale(1);
+}
+
+#button_export:hover {
+    border-radius: 20px;
+    transform: scale(1.05);
+}
+
+#icon_button_export {
+    color: white;
+    margin-right: 10px;
+}
+
+#confirm-dialog-download {
+    height: 20vh;
+}
+
+.btn_confirm_dialog {
+    background-color: #5C7F54;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.4 ease;
+}
+
+.btn_confirm_dialog:hover {
+    background-color: #162419;
+}
+
+.modal-content {
+    background-color: #FEFAE0;
+    color: black;
+}
+
+.btn-close {
+    color: white;
+    opacity: 1;
 }

@@ -8,7 +8,6 @@ DF = DF.rename(columns={'ID Loja' : 'Região Lojas'})
 DF['Data'] = pd.to_datetime(DF['Data'],format = '%Y/%m/%d', errors= 'coerce')
 DF = DF.dropna(subset=['Valor Final', 'Data'])
 
-print(DF['Data'].head(10))
 fig_bar = graphics_dash.graph_bar
 fig_line = graphics_dash.graph_line
 fig_pie = graphics_dash.graph_pie
@@ -38,12 +37,38 @@ dialog = html.Div([
     )
 ])
 
+dialog_confirm = html.Div([
+    dbc.Modal([
+        dbc.ModalHeader("Você tem certeza que deseja continuar?"),
+        dbc.ModalFooter([
+            dbc.Button("Cancelar", id="cancel-button", className="btn_confirm_dialog", n_clicks=0),
+            dbc.Button("Continuar", id="accept-button", className = 'btn_confirm_dialog', n_clicks=0),
+        ]),
+    ], id="confirm-dialog-download", is_open=False),
+])
+
+radio = html.Div([
+    dbc.Label('Tempo dos Gráficos'),
+    dbc.RadioItems(
+        options = [
+            {'label': '10s', 'value': 10, "disabled": True},
+            {'label': '20s', 'value': 20, "disabled": True},
+            {'label': '30s', 'value': 30,"disabled": True}
+        ],
+        id = 'radioitens-input',
+    )
+], className = 'radio_timer_sidebar')
+
 sidebar = html.Div(
     id='sidebar',
     children=[
         html.Button(
             html.I(className='fa-solid fa-xmark'),
             id='btn-close-sidebar'
+        ),
+        html.Button(
+            html.I(className='fa-solid fa-gear'),
+            id='btn-config'
         ),
         dbc.Form([
             dbc.Label('Troca Automática', html_for='switch-automatic-graphics'),
@@ -53,13 +78,16 @@ sidebar = html.Div(
                 id='switch-automatic-graphics',
                 switch=True
             ),
+            radio,
             html.Div(id = 'radio-container'),
         ], className = 'form', id = 'form-checklist'),
-        html.Button(
-            html.I(className='fa-solid fa-gear'),
-            id='btn-config'
-        ),
-        dialog
+        html.Button([
+            html.I(className = 'fas fa-folder-open', id = 'icon_button_export'),
+            "Exportar CSV"
+            ],id = 'button_export', n_clicks = 0),
+        dcc.Download(id="download_dataframe_csv"),
+        dialog,
+        dialog_confirm,
     ]
 )
 
@@ -81,7 +109,7 @@ layout = html.Div([
                 figure=fig_bar,
                 style={'height': '45vh', 'width': '100%'}
             ),
-        ], style={'padding': 0, 'margin': 0}),
+        ], style={'padding': 0, 'margin': 0, 'display': 'flex'}),
 
         html.Div([
             dcc.Graph(
@@ -96,26 +124,16 @@ layout = html.Div([
     ], className='main-container'), 
 
     dcc.Store(id = 'store-switch-value', data = 0),
+    dcc.Store(id='store-tempo-definido', data=False),
     
     dcc.Interval(
         id='meu_timer',
-        interval=10000,
+        interval=9999999,
         n_intervals=0
     )
 ])
 
-radio = html.Div([
-    dbc.Label('Tempo dos Gráficos'),
-    dbc.RadioItems(
-        options = [
-            {'label': '10 Segundos', 'value': 10},
-            {'label': '20 Segundos', 'value': 20},
-            {'label': '30 Segundos', 'value': 30}
-        ],
-        id = 'radioitems-input',
-        value = 10
-    )
-])
+
 
 
 

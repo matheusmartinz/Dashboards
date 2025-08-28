@@ -3,7 +3,7 @@ from api import fetch_Json_data
 import pandas as pd
 import re
 import plotly.graph_objects as go
-from dash import dash_table # type: ignore
+from dash import dash_table, dcc # type: ignore
 
 DF = fetch_Json_data('dados/Vendas.json')
 cores_graficos = ['#00BCD4', '#FF5722', '#4CAF50', '#8E24AA', '#D32F2F', '#1E88E5']
@@ -17,6 +17,7 @@ DF['Valor Final'] = DF['Valor Final'].astype(str).str.replace('R\$', '', regex=T
 DF['Vamor Unitário'] = DF['Valor Unitário'].astype(str).str.replace('R\$', '', regex=True)
 
 DF_filtered_table = DF.loc[:, ["Data", "Produto", "Valor Final"]]
+DF_filtered_table['Data'] = DF_filtered_table['Data'].dt.strftime('%d/%m/%Y')
 
 def soma_valores(text):
     valores = re.findall(r'\d+\.\d+', text)
@@ -97,7 +98,7 @@ data_table = dash_table.DataTable(
         'fontSize': '13px',
     },
     style_header={
-        'backgroundColor': '#00BCD4',
+        'backgroundColor': '#263c2b',
         'color': 'white',
         'fontWeight': 'bold'
     }
