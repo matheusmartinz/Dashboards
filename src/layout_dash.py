@@ -86,6 +86,13 @@ sidebar = html.Div(
             "Exportar CSV"
             ],id = 'button_export', n_clicks = 0),
         dcc.Download(id="download_dataframe_csv"),
+        dbc.DropdownMenu(
+            label = html.Span([html.I(className = 'fa-solid fa-chart-pie', style = {'margin-right': '25px'}), 'Gráficos'], style = {'margin-right': '10px'}),
+            direction = 'down',
+            children = [
+                dbc.DropdownMenuItem(html.Div('Layout', className = 'layout_graphics', id = 'btn-layout')),
+                dbc.DropdownMenuItem(html.Div('Filtros', className = 'filter_graphics', id = 'btn-filter')),
+            ], className = 'dropdown_config_graphics',toggle_class_name="btn_dropdown"),
         dialog,
         dialog_confirm,
     ]

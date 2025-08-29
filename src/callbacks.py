@@ -86,7 +86,7 @@ def reset_radio_value(switch_value):
 
 @app.callback( 
     Output('config-dialog','is_open'),
-    Input('btn-config', 'n_clicks'),
+    Input('btn-layout', 'n_clicks'),
     prevent_initial_call=True
 )
 def open_dialog(click):
@@ -94,33 +94,28 @@ def open_dialog(click):
         return True
     return False
 
-# @app.callback(
-#     Output('download_dataframe_csv', 'data'),
-#     Input('button_export', 'n_clicks'),
-#     prevent_initial_call = True
-# )
-# def export_csv_btn(n_clicks):
-#     return dcc.send_data_frame(DF.to_csv, 'dados_exportados.csv', index = False)
-
 @app.callback(
+    Output('download_dataframe_csv', 'data'),
     Output('confirm-dialog-download', 'is_open'),
     Input('button_export', 'n_clicks'),
     Input('cancel-button', 'n_clicks'),
-    State('confirm-dialog-download', 'is_open'),
-)
-def confirm_export_csv(open_click, cancel_click, is_open):
-    triggered = ctx.triggered_id
-    if (triggered == 'button_export'):
-        return True
-    elif (triggered == 'cancel-button'):
-        return False
-    return is_open
-    
-@app.callback(
-    Output('download_dataframe_csv', 'data'),
     Input('accept-button', 'n_clicks'),
+    State('confirm-dialog-download', 'is_open'),
     prevent_initial_call=True
 )
-def accept_download_csv(click_continue):
-        return dcc.send_data_frame(DF.to_csv, 'dados_exportados.csv', index = False) # COLOCAR QUE ASSIM QUE CLICAR, FECHAR O DIALOG
-    
+def handle_modal_and_download(export_clicks, cancel_clicks, accept_clicks, is_open):
+    triggered_id = ctx.triggered_id
+
+    if triggered_id == 'button_export':
+        return dash.no_update, True  
+
+    elif triggered_id == 'cancel-button':
+        return dash.no_update, False  
+
+    elif triggered_id == 'accept-button':
+        return (
+            dcc.send_data_frame(DF.to_csv, 'dados_exportados.csv', index=False),
+            False  
+        )
+
+    return dash.no_update, is_open
