@@ -1,3 +1,8 @@
+.modebar-container {
+    top: auto !important;
+    margin-right: 25px !important;
+}
+
 .menu-item-config {
     font-size: 14px;
     font-weight: 600;
@@ -16,7 +21,7 @@
     z-index: 1000;
 }
 
-#btn-icon-open {
+#btn-open-sidebar {
     background-color: #162419;
     border-radius: 50px;
     color: white;
@@ -109,6 +114,11 @@
 
 #button_export:focus-visible {
     background-color: #FEFAE0 !important;
+    color: black;
+}
+
+#button_export:focus-visible #icon_button_export {
+    color: black;
 }
 
 #button_export:hover #icon_button_export {
@@ -133,8 +143,11 @@
     transition: 0.4 ease;
 }
 
-.btn_confirm_dialog:hover {
-    background-color: #162419;
+
+.btn_confirm_dialog:hover,
+.btn_confirm_dialog:focus-visible,
+.btn_confirm_dialog:active {
+    background-color: #162419 !important;
 }
 
 .modal-content {

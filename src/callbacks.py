@@ -4,7 +4,7 @@ from dash import dcc
 from app_instance import app
 from graphics_dash import DF
 import graphics_dash
-import layout_dash
+import layout_view
 import dash
 
 figs = [graphics_dash.graph_bar, graphics_dash.graph_line, graphics_dash.graph_pie]
@@ -39,7 +39,7 @@ def toggle_radio_disabled(switch_value):
 
 @app.callback( 
     Output('sidebar', 'style'),
-    Input('btn-icon-open', 'n_clicks'),
+    Input('btn-open-sidebar', 'n_clicks'),
     Input('btn-close-sidebar', 'n_clicks'),
     State('sidebar', 'style')
 )
@@ -47,7 +47,7 @@ def toggle_sidebar(open_clicks, close_clicks, current_style):
     trigger = ctx.triggered_id
     if current_style is None:
         current_style = {'transform': 'translateX(-100%)'}
-    if trigger == 'btn-icon-open':
+    if trigger == 'btn-open-sidebar':
         current_style['transform'] = 'translateX(0%)'
     elif trigger == 'btn-close-sidebar':
         current_style['transform'] = 'translateX(-100%)'

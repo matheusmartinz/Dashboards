@@ -1,7 +1,9 @@
-from dash import html, dcc  # type: ignore
+from dash import html, dcc  
 import graphics_dash
 import pandas as pd
-import dash_bootstrap_components as dbc # type: ignore
+import dash_bootstrap_components as dbc 
+from assets.CustomDialog import CustomDialog 
+from assets.CustomButton import CustomButton
 
 DF = graphics_dash.DF
 DF = DF.rename(columns={'ID Loja' : 'Região Lojas'})
@@ -38,13 +40,17 @@ dialog = html.Div([
 ])
 
 dialog_confirm = html.Div([
-    dbc.Modal([
-        dbc.ModalHeader("Você tem certeza que deseja continuar?"),
-        dbc.ModalFooter([
-            dbc.Button("Cancelar", id="cancel-button", className="btn_confirm_dialog", n_clicks=0),
-            dbc.Button("Continuar", id="accept-button", className = 'btn_confirm_dialog', n_clicks=0),
-        ]),
-    ], id="confirm-dialog-download", is_open=False),
+    CustomDialog(
+        headerText = "Você deseja continuar com o download?",
+        btn_left_text = 'Cancelar',
+        id_btn_left = 'cancel-button',
+        btn_right_text = 'Continuar',
+        id_btn_right = 'accept-button',
+        open = False,
+        clicks = 0,
+        id_modal = 'confirm-dialog-download',
+        className = 'btn_confirm_dialog'        
+    )
 ])
 
 radio = html.Div([
@@ -62,13 +68,15 @@ radio = html.Div([
 sidebar = html.Div(
     id='sidebar',
     children=[
-        html.Button(
-            html.I(className='fa-solid fa-xmark'),
-            id='btn-close-sidebar'
+        CustomButton(
+            nameIcon = 'fa-solid fa-xmark',
+            idIcon = 'icon-close-sidebar',
+            idButton = 'btn-close-sidebar',
         ),
-        html.Button(
-            html.I(className='fa-solid fa-gear'),
-            id='btn-config'
+        CustomButton(
+            nameIcon = 'fa-solid fa-gear',
+            idIcon = 'icon-config-gear',
+            idButton = 'btn-config'
         ),
         dbc.Form([
             dbc.Label('Troca Automática', html_for='switch-automatic-graphics'),
@@ -81,10 +89,13 @@ sidebar = html.Div(
             radio,
             html.Div(id = 'radio-container'),
         ], className = 'form', id = 'form-checklist'),
-        html.Button([
-            html.I(className = 'fas fa-folder-open', id = 'icon_button_export'),
-            "Exportar CSV"
-            ],id = 'button_export', n_clicks = 0),
+        CustomButton(
+            nameIcon = 'fas fa-folder-open',
+            idIcon = 'icon_button_export',
+            textButton = 'Exportar CSV',
+            idButton = 'button_export',
+            clicks = 0
+        ),
         dcc.Download(id="download_dataframe_csv"),
         dbc.DropdownMenu(
             label = html.Span([html.I(className = 'fa-solid fa-chart-pie', style = {'margin-right': '25px'}), 'Gráficos'], style = {'margin-right': '10px'}),
@@ -98,13 +109,14 @@ sidebar = html.Div(
     ]
 )
 
-layout = html.Div([
+layout_config = html.Div([
     html.Div([
         html.Div([
-            html.Button(
-                html.I(className='fa-solid fa-arrow-right'),
-                id='btn-icon-open',
-                n_clicks=0
+            CustomButton(
+                nameIcon = 'fa-solid fa-arrow-right',
+                idIcon = 'icon-open-sidebar',
+                clicks = 0,
+                idButton = 'btn-open-sidebar'
             )
         ], style={'height': '10vh', 'margin-left': '55px', 'margin-top': '25px'}),
 
@@ -114,7 +126,10 @@ layout = html.Div([
             dcc.Graph(
                 id='grafico_bar',
                 figure=fig_bar,
-                style={'height': '45vh', 'width': '100%'}
+                style={'height': '45vh', 'width': '100%'},
+                config = {
+                    'displaylogo': False
+                }
             ),
         ], style={'padding': 0, 'margin': 0, 'display': 'flex'}),
 
@@ -122,7 +137,10 @@ layout = html.Div([
             dcc.Graph(
                 id='grafico_line',
                 figure=fig_line,
-                style={'height': '100%', 'width': '70%'}
+                style={'height': '100%', 'width': '70%'},
+                config = {
+                    'displaylogo': False
+                }
             ),
             html.Div(
             children=[graphics_dash.data_table],
@@ -139,8 +157,3 @@ layout = html.Div([
         n_intervals=0
     )
 ])
-
-
-
-
-

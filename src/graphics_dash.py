@@ -29,6 +29,7 @@ def updateLayout(graph, tipo):
                 legend= dict(orientation = 'h', x=0, y=1.20, xanchor='left', yanchor='top'),
                 font = dict(family = 'Arial', size = 14.5, color = 'black'),
                 paper_bgcolor = '#FEFAE0',
+                margin = dict (l = 75, r = 25, t = 70)
                 )
             
         elif (tipo == 'bar'):
@@ -36,6 +37,7 @@ def updateLayout(graph, tipo):
                 legend= dict(orientation = 'h', x=0, y=1.20, xanchor='left', yanchor='top'),
                 font = dict(family = 'Arial', size = 14.5, color = 'black' ),
                 paper_bgcolor = '#FEFAE0',
+                margin = dict (l = 75, r = 25, t = 0 , b = 0)
                 )
 
         elif (tipo == 'table'):
