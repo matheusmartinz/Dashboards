@@ -26,7 +26,7 @@ def soma_valores(text):
 def updateLayout(graph, tipo):
         if (tipo == 'line'):
             graph.update_layout(xaxis_tickformat = '%d/%m/%Y', 
-                legend= dict(orientation = 'h', x=0, y=1.20, xanchor='left', yanchor='top'),
+                legend= dict(orientation = 'h', x=0, y=1.25, xanchor='left', yanchor='top', traceorder = 'normal', itemwidth = 70, valign = 'middle'),
                 font = dict(family = 'Arial', size = 14.5, color = 'black'),
                 paper_bgcolor = '#FEFAE0',
                 margin = dict (l = 75, r = 25, t = 70)
@@ -34,11 +34,13 @@ def updateLayout(graph, tipo):
             
         elif (tipo == 'bar'):
             graph.update_layout(xaxis_tickformat = '%d/%m/%Y', barmode = 'stack',
-                legend= dict(orientation = 'h', x=0, y=1.20, xanchor='left', yanchor='top'),
+                legend= dict(orientation = 'h', x=0, y=1.13 , xanchor='left', yanchor='top'),
                 font = dict(family = 'Arial', size = 14.5, color = 'black' ),
                 paper_bgcolor = '#FEFAE0',
-                margin = dict (l = 75, r = 25, t = 0 , b = 0)
-                )
+                margin = dict (l = 75, r = 25, t = 0 , b = 0),
+                yaxis = dict (range = [0, 2500]),
+                xaxis_title=None,
+                yaxis_title=None)
 
         elif (tipo == 'table'):
             graph.update_layout(

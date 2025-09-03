@@ -39,6 +39,23 @@ dialog = html.Div([
     )
 ])
 
+checklist_layout = html.Div([
+    dbc.Label('Proporção do Dashboard', style = {'font-weight': '600', 'min-width': '200px', 'margin-bottom': '15px'}),
+    dcc.RadioItems(
+        id='select_layout',
+        options=[
+            {'label': '1:2', 'value': '1:2'},
+            {'label': '2:2', 'value': '2:2'},
+            {'label': '1:3', 'value': '1:3'},
+            {'label': '2:3', 'value': '2:3'},
+        ],
+        value='1:2',
+        className='radio-grid-layout',
+        labelStyle={'display': 'block'}
+    )
+])
+
+
 dialog_confirm = html.Div([
     CustomDialog(
         headerText = "Você deseja continuar com o download?",
@@ -54,7 +71,7 @@ dialog_confirm = html.Div([
 ])
 
 radio = html.Div([
-    dbc.Label('Tempo dos Gráficos'),
+    dbc.Label('Tempo dos Gráficos', style = {'font-weight': '600'}),
     dbc.RadioItems(
         options = [
             {'label': '10s', 'value': 10, "disabled": True},
@@ -79,33 +96,38 @@ sidebar = html.Div(
             idButton = 'btn-config'
         ),
         dbc.Form([
-            dbc.Label('Troca Automática', html_for='switch-automatic-graphics'),
+            dbc.Label('Configurações', style = {'font-weight': '600', 'font-size': '20px', 'color': 'black'}),
+            html.Hr(style = {'margin': '10px 0'}),
+            dbc.Label('Troca Automática', html_for='switch-automatic-graphics', style = {'font-weight': '600'}),
             dbc.Checklist(
                 options=[{"label": "Sim", "value": 1}],
                 value=[],
                 id='switch-automatic-graphics',
                 switch=True
             ),
+            html.Hr(style = {'margin': '10px 0'}),
             radio,
+            html.Hr(style = {'margin': '10px 0'}),
+            checklist_layout,
             html.Div(id = 'radio-container'),
-        ], className = 'form', id = 'form-checklist'),
-        CustomButton(
-            nameIcon = 'fas fa-folder-open',
-            idIcon = 'icon_button_export',
-            textButton = 'Exportar CSV',
-            idButton = 'button_export',
-            clicks = 0
-        ),
-        dcc.Download(id="download_dataframe_csv"),
-        dbc.DropdownMenu(
-            label = html.Span([html.I(className = 'fa-solid fa-chart-pie', style = {'margin-right': '25px'}), 'Gráficos'], style = {'margin-right': '10px'}),
-            direction = 'down',
-            children = [
-                dbc.DropdownMenuItem(html.Div('Layout', className = 'layout_graphics', id = 'btn-layout')),
-                dbc.DropdownMenuItem(html.Div('Filtros', className = 'filter_graphics', id = 'btn-filter')),
-            ], className = 'dropdown_config_graphics',toggle_class_name="btn_dropdown"),
+        ], className = 'form', id = 'form-checklist-timer'),
         dialog,
         dialog_confirm,
+        # CustomButton(
+        #     nameIcon = 'fas fa-folder-open',
+        #     idIcon = 'icon_button_export',
+        #     textButton = 'Exportar CSV',
+        #     idButton = 'button_export',
+        #     clicks = 0
+        # ),
+        # dcc.Download(id="download_dataframe_csv"),
+        # dbc.DropdownMenu(
+        #     label = html.Span([html.I(className = 'fa-solid fa-chart-pie', style = {'margin-right': '25px'}), 'Gráficos'], style = {'margin-right': '10px'}),
+        #     direction = 'down',
+        #     children = [
+        #         dbc.DropdownMenuItem(html.Div('Layout', className = 'layout_graphics', id = 'btn-layout')),
+        #         dbc.DropdownMenuItem(html.Div('Filtros', className = 'filter_graphics', id = 'btn-filter')),
+        #     ], className = 'dropdown_config_graphics',toggle_class_name="btn_dropdown"),
     ]
 )
 
@@ -113,12 +135,12 @@ layout_config = html.Div([
     html.Div([
         html.Div([
             CustomButton(
-                nameIcon = 'fa-solid fa-arrow-right',
-                idIcon = 'icon-open-sidebar',
-                clicks = 0,
-                idButton = 'btn-open-sidebar'
+                nameIcon='fa-solid fa-arrow-right',
+                idIcon='icon-open-sidebar',
+                clicks=0,
+                idButton='btn-open-sidebar'
             )
-        ], style={'height': '10vh', 'margin-left': '55px', 'margin-top': '25px'}),
+        ], style={'height': '3vh', 'margin-left': '30px', 'margin-top': '10px', 'z-index': '10'}),
 
         sidebar,
 
@@ -126,31 +148,34 @@ layout_config = html.Div([
             dcc.Graph(
                 id='grafico_bar',
                 figure=fig_bar,
-                style={'height': '45vh', 'width': '100%'},
-                config = {
-                    'displaylogo': False
-                }
+                config={'displaylogo': False,'displayModeBar': False},
             ),
-        ], style={'padding': 0, 'margin': 0, 'display': 'flex'}),
+        ], style={'padding': 0, 'margin': 0, 'display': 'flex', 'flex-direction': 'column', 'justify-content': 'flex-start'}),
+
 
         html.Div([
             dcc.Graph(
                 id='grafico_line',
                 figure=fig_line,
-                style={'height': '100%', 'width': '70%'},
-                config = {
-                    'displaylogo': False
-                }
+                style={'height': '48vh', 'width': '50%'},
+                config={'displaylogo': False, 'displayModeBar': False}
             ),
-            html.Div(
-            children=[graphics_dash.data_table],
-            style={'height': '70%', 'width': '35%','margin-right': '25px'})
-        ], style={'display': 'flex', 'height': '45vh'}),
-    ], className='main-container'), 
+            # html.Div(
+            #     children=[graphics_dash.data_table],
+            #     style={
+            #         'height': '47vh',
+            #         'width': '30%',
+            #         'overflowY': 'auto',
+            #         'margin-right': '25px',
+            #         'margin-top': '28px'
+            #     }
+            # )
+        ], style={'display': 'flex'})
+    ], className='main-container'),
 
-    dcc.Store(id = 'store-switch-value', data = 0),
+    dcc.Store(id='store-switch-value', data=0),
     dcc.Store(id='store-tempo-definido', data=False),
-    
+
     dcc.Interval(
         id='meu_timer',
         interval=9999999,
