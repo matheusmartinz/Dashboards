@@ -1,20 +1,20 @@
 from dash import html, dcc  
-import graphics_dash
+import previews_dash
 import pandas as pd
 import dash_bootstrap_components as dbc 
-from assets.CustomDialog import CustomDialog 
-from assets.CustomButton import CustomButton
+from components.CustomDialog import CustomDialog 
+from components.CustomButton import CustomButton
 
-DF = graphics_dash.DF
+DF = previews_dash.DF
 DF = DF.rename(columns={'ID Loja' : 'Região Lojas'})
 DF['Data'] = pd.to_datetime(DF['Data'],format = '%Y/%m/%d', errors= 'coerce')
 DF = DF.dropna(subset=['Valor Final', 'Data'])
 
-fig_bar = graphics_dash.graph_bar
-fig_line = graphics_dash.graph_line
-fig_pie = graphics_dash.graph_pie
-fig_area = graphics_dash.graph_area
-fig_table = graphics_dash.graph_table
+fig_bar = previews_dash.graph_bar
+fig_line = previews_dash.graph_line
+fig_pie = previews_dash.graph_pie
+fig_area = previews_dash.graph_area
+# fig_table = previews_dash.graph_table
 
 dialog = html.Div([
     dbc.Modal([
@@ -22,17 +22,27 @@ dialog = html.Div([
             html.I(className = 'fas fa-chart-pie', style = {'margin-right': '10px'}),
             'Configuração'
             ])),
-        dbc.ModalBody(
+        dbc.ModalBody([
             html.Div([
-                html.H6('Gráficos'),
+                html.H6('Gráfico(s) Superior', style = {'font-weight': '600', 'margin-bottom': '12px'}),
                 dbc.Checklist([
                     {'label': 'Gráfico de Barra', 'value': 1},
                     {'label': 'Gráfico de Linha', 'value': 2},
                     {'label': 'Gráfico de Fúnil', 'value': 3},
                     {'label': 'Gráfico de Pizza', 'value': 4}
-                ],[1,2] ,id = 'checklist-config-graphics')
-            ])
-        )
+                ],[1,2] ,id = 'checklist-config-graphics-top', style = {'border-radius': '6px'}),
+            ],  id = 'top-checklist-layout'),
+                html.Hr(style = {'margin': '10px 0'}),
+            html.Div([
+                html.H6('Gráfico(s) Inferior', style = {'font-weight': '600', 'margin-bottom': '12px'}),
+                dbc.Checklist([
+                    {'label': 'Gráfico de Barra', 'value': 1},
+                    {'label': 'Gráfico de Linha', 'value': 2},
+                    {'label': 'Gráfico de Fúnil', 'value': 3},
+                    {'label': 'Gráfico de Pizza', 'value': 4}
+                ],[1,2] ,id = 'checklist-config-graphics-lower'),
+            ],  id = 'lower-checklist-layout')
+        ])
     ],
         id = 'config-dialog',
         is_open = False
@@ -46,7 +56,7 @@ checklist_layout = html.Div([
         options=[
             {'label': '1:2', 'value': '1:2'},
             {'label': '2:2', 'value': '2:2'},
-            {'label': '1:3', 'value': '1:3'},
+            {'label': '2:1', 'value': '2:1'},
             {'label': '2:3', 'value': '2:3'},
         ],
         value='1:2',
@@ -121,64 +131,94 @@ sidebar = html.Div(
         #     clicks = 0
         # ),
         # dcc.Download(id="download_dataframe_csv"),
-        # dbc.DropdownMenu(
-        #     label = html.Span([html.I(className = 'fa-solid fa-chart-pie', style = {'margin-right': '25px'}), 'Gráficos'], style = {'margin-right': '10px'}),
-        #     direction = 'down',
-        #     children = [
-        #         dbc.DropdownMenuItem(html.Div('Layout', className = 'layout_graphics', id = 'btn-layout')),
-        #         dbc.DropdownMenuItem(html.Div('Filtros', className = 'filter_graphics', id = 'btn-filter')),
-        #     ], className = 'dropdown_config_graphics',toggle_class_name="btn_dropdown"),
+        dbc.DropdownMenu(
+            label = html.Span([html.I(className = 'fa-solid fa-chart-pie', style = {'margin-right': '25px'}), 'Gráficos'], style = {'margin-right': '10px'}),
+            direction = 'down',
+            children = [
+                dbc.DropdownMenuItem(html.Div('Layout', className = 'layout_graphics', id = 'btn-layout')),
+                dbc.DropdownMenuItem(html.Div('Filtros', className = 'filter_graphics', id = 'btn-filter')),
+            ], className = 'dropdown_config_graphics',toggle_class_name="btn_dropdown"),
     ]
 )
 
-layout_config = html.Div([
+# layout_config = html.Div([
+#     html.Div([
+#         html.Div([
+#             CustomButton(
+#                 nameIcon='fa-solid fa-arrow-right',
+#                 idIcon='icon-open-sidebar',
+#                 clicks=0,
+#                 idButton='btn-open-sidebar'
+#             )
+#         ], style={'height': '3vh', 'margin-left': '30px', 'margin-top': '10px', 'z-index': '10'}),
+
+#         sidebar,
+
+#         html.Div(id = 'layout_graphics_top', style = {'width': '100%'}),
+
+#         html.Div(id = 'layout_graphics_lower', style = {'width': '100%'})
+#     ], className='main-container'),
+
+#     dcc.Store(id='store-switch-value', data=0),
+#     dcc.Store(id='store-tempo-definido', data=False),
+
+#     dcc.Interval(
+#         id='meu_timer',
+#         interval=9999999,
+#         n_intervals=0
+#     )
+# ])
+
+layoutConfig = html.Div([
     html.Div([
+        # sidebar,
         html.Div([
-            CustomButton(
-                nameIcon='fa-solid fa-arrow-right',
-                idIcon='icon-open-sidebar',
-                clicks=0,
-                idButton='btn-open-sidebar'
-            )
-        ], style={'height': '3vh', 'margin-left': '30px', 'margin-top': '10px', 'z-index': '10'}),
+          html.H1('teste', style = {'display': 'flex', 'justify-content': 'center', 'align-itens': 'center'})  
+        ], style = {'border-right': '1px solid black', 'width': '25%', 'height': '100%'}),  
+    
+    
+     dcc.Store(id='store-switch-value', data=0),
+     dcc.Store(id='store-tempo-definido', data=False),
 
-        sidebar,
-
-        html.Div([
-            dcc.Graph(
-                id='grafico_bar',
-                figure=fig_bar,
-                config={'displaylogo': False,'displayModeBar': False},
-            ),
-        ], style={'padding': 0, 'margin': 0, 'display': 'flex', 'flex-direction': 'column', 'justify-content': 'flex-start'}),
-
-
-        html.Div([
-            dcc.Graph(
-                id='grafico_line',
-                figure=fig_line,
-                style={'height': '48vh', 'width': '50%'},
-                config={'displaylogo': False, 'displayModeBar': False}
-            ),
-            # html.Div(
-            #     children=[graphics_dash.data_table],
-            #     style={
-            #         'height': '47vh',
-            #         'width': '30%',
-            #         'overflowY': 'auto',
-            #         'margin-right': '25px',
-            #         'margin-top': '28px'
-            #     }
-            # )
-        ], style={'display': 'flex'})
-    ], className='main-container'),
-
-    dcc.Store(id='store-switch-value', data=0),
-    dcc.Store(id='store-tempo-definido', data=False),
-
-    dcc.Interval(
+     dcc.Interval(
         id='meu_timer',
         interval=9999999,
         n_intervals=0
     )
-])
+    ], style = {'height': '60vh', 'background-color': 'gray', 'padding-top': '15px'}),
+        
+    html.Div([
+        html.Div([
+                 dcc.Graph(
+                    id = 'grafico_pizza2',
+                    figure = fig_pie,
+                    config = {'displaylogo': False, 'displayModeBar': False, 'autosizable': True, 'responsive': True},
+                    style = {'width': '50%', 'height': '20vh', 'padding-top': '10px', 'box-sizing': 'border-box'}
+            ),
+                dcc.Graph(
+                    id = 'grafico_area2',
+                    figure = fig_area,
+                    config = {'displaylogo': False, 'displayModeBar': False},
+                    style = {'width': '50%', 'height': '20vh','padding-top': '10px', 'box-sizing': 'border-box'}
+                )
+            
+        ], style = {'display': 'flex', 'height': '100%', 'width': '100%'}),
+        
+        html.Div([
+            dcc.Graph(
+                    id = 'grafico_area2',
+                    figure = fig_area,
+                    style = {'height': '20vh', 'width': '50%', 'padding-top': '10px', 'box-sizing': 'border-box', 'padding-bottom': '10px'},
+                    config = {'displaylogo': False, 'displayModeBar': False}
+                ),
+            dcc.Graph(
+                id='grafico_bar2',
+                figure=fig_bar,
+                style = {'height': '20vh', 'width': '50%', 'padding-top': '10px', 'box-sizing': 'border-box', 'padding-bottom': '10px'},
+                config={'displaylogo': False,'displayModeBar': False},
+            )
+        ], style = {'display': 'flex', 'height': '100%', 'width': '100%'})
+        
+    ], style = {'height': '40vh', 'display': 'flex', 'width': '100%', 'flex-direction': 'column', 'background-color': 'white'})
+    
+], style = {'height': '100vh ', 'display': 'flex !important'})

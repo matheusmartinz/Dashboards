@@ -25,20 +25,23 @@ def soma_valores(text):
 
 def updateLayout(graph, tipo):
         if (tipo == 'line'):
-            graph.update_layout(xaxis_tickformat = '%d/%m/%Y', 
-                legend= dict(orientation = 'h', x=0, y=1.25, xanchor='left', yanchor='top', traceorder = 'normal', itemwidth = 70, valign = 'middle'),
+            graph.update_layout(
+                xaxis = dict (showticklabels = False, showgrid = False, zeroline = False),
+                yaxis = dict (showticklabels = False, showgrid = False, zeroline = False),
+                showlegend=False,
                 font = dict(family = 'Arial', size = 14.5, color = 'black'),
                 paper_bgcolor = '#FEFAE0',
                 margin = dict (l = 75, r = 25, t = 70)
                 )
             
         elif (tipo == 'bar'):
-            graph.update_layout(xaxis_tickformat = '%d/%m/%Y', barmode = 'stack',
-                legend= dict(orientation = 'h', x=0, y=1.13 , xanchor='left', yanchor='top'),
+            graph.update_layout(
+                xaxis = dict (showticklabels = False, showgrid = False, zeroline = False),
+                yaxis = dict (showticklabels = False, showgrid = False, zeroline = False),                                
+                showlegend=False,
                 font = dict(family = 'Arial', size = 14.5, color = 'black' ),
                 paper_bgcolor = '#FEFAE0',
                 margin = dict (l = 75, r = 25, t = 0 , b = 0),
-                yaxis = dict (range = [0, 2500]),
                 xaxis_title=None,
                 yaxis_title=None)
             
@@ -47,12 +50,18 @@ def updateLayout(graph, tipo):
             graph.update_layout(
                 margin = dict(l=0, r=40, t=40, b=0),
                 paper_bgcolor = '#FEFAE0',
+                xaxis = dict (showticklabels = False, showgrid = False, zeroline = False),
+                yaxis = dict (showticklabels = False, showgrid = False, zeroline = False),
+                showlegend=False,
             )
         
         elif (tipo == 'pie'):
             graph.update_layout(
                 paper_bgcolor = '#FEFAE0',
-                margin=dict(l=0, r=0, t=10, b=10)
+                margin=dict(l=0, r=0, t=10, b=10),
+                xaxis = dict (showticklabels = False, showgrid = False, zeroline = False),
+                yaxis = dict (showticklabels = False, showgrid = False, zeroline = False),
+                showlegend=False,
             )
             graph.update_traces(
                 pull=[0, 0, 0],    
@@ -85,39 +94,39 @@ updateLayout(graph_area,'bar')
 graph_line = px.line(DF_line, x='Data', y='Valor Unitário', color='Região Lojas', markers=True, color_discrete_sequence= cores_graficos)
 updateLayout(graph_line, 'line')
 
-graph_table = go.Figure(data = [go.Table(
-    columnwidth=[2, 2, 1],
-    header = dict(
-        values = list(DF_filtered_table.columns),
-        fill_color='#00BCD4',
-        align='left',
-        font=dict(color='white', size=13),
-    ),
-    cells = dict(
-        values = [DF_filtered_table[col] for col in DF_filtered_table.columns],
-        fill_color='lavender',
-        align='left',
-        font=dict(color='black', size=12),
-    )
-)])
-updateLayout(graph_table,'table')
+# graph_table = go.Figure(data = [go.Table(
+#     columnwidth=[2, 2, 1],
+#     header = dict(
+#         values = list(DF_filtered_table.columns),
+#         fill_color='#00BCD4',
+#         align='left',
+#         font=dict(color='white', size=13),
+#     ),
+#     cells = dict(
+#         values = [DF_filtered_table[col] for col in DF_filtered_table.columns],
+#         fill_color='lavender',
+#         align='left',
+#         font=dict(color='black', size=12),
+#     )
+# )])
+# updateLayout(graph_table,'table')
 
-data_table = dash_table.DataTable(
-    columns=[{"name": i, "id": i} for i in DF_filtered_table.columns],
-    data=DF_filtered_table.to_dict('records'),
-    style_table={
-        'height': '35vh', 
-        'overflowY': 'auto',
-    },
-    style_cell={
-        'textAlign': 'left',
-        'padding': '5px',
-        'fontFamily': 'Arial',
-        'fontSize': '13px',
-    },
-    style_header={
-        'backgroundColor': '#263c2b',
-        'color': 'white',
-        'fontWeight': 'bold'
-    }
-)
+# data_table = dash_table.DataTable(
+#     columns=[{"name": i, "id": i} for i in DF_filtered_table.columns],
+#     data=DF_filtered_table.to_dict('records'),
+#     style_table={
+#         'height': '35vh', 
+#         'overflowY': 'auto',
+#     },
+#     style_cell={
+#         'textAlign': 'left',
+#         'padding': '5px',
+#         'fontFamily': 'Arial',
+#         'fontSize': '13px',
+#     },
+#     style_header={
+#         'backgroundColor': '#263c2b',
+#         'color': 'white',
+#         'fontWeight': 'bold'
+#     }
+# )

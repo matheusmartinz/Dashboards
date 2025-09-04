@@ -2,8 +2,8 @@ from dash import html, dcc
 import graphics_dash
 import pandas as pd
 import dash_bootstrap_components as dbc 
-from assets.CustomDialog import CustomDialog 
-from assets.CustomButton import CustomButton
+from components.CustomDialog import CustomDialog 
+from components.CustomButton import CustomButton
 
 DF = graphics_dash.DF
 DF = DF.rename(columns={'ID Loja' : 'Região Lojas'})

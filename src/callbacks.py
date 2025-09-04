@@ -3,6 +3,7 @@ from dash import callback_context as ctx
 from dash import dcc
 from app_instance import app
 from graphics_dash import DF
+from proportions.proportions_dashboards import layouts_by_proportion
 import graphics_dash
 import layout_view
 import dash
@@ -119,3 +120,11 @@ def handle_modal_and_download(export_clicks, cancel_clicks, accept_clicks, is_op
         )
 
     return dash.no_update, is_open
+
+@app.callback(
+    Output('layout_graphics_top', 'children'),
+    Output('layout_graphics_lower', 'children'),
+    Input('select_layout', 'value')
+)
+def proporcao_graficos(proporcao):
+    return layouts_by_proportion(proporcao)

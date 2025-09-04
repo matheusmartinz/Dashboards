@@ -140,6 +140,32 @@
     height: 45vh !important;
 }
 
+#checklist-config-graphics-top {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+#checklist-config-graphics-lower {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+#top-checklist-layout {
+    border-radius: 5px;
+    padding-left: 12px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+#lower-checklist-layout {
+    border-radius: 5px;
+    padding-left: 12px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
 .radio-grid-layout {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

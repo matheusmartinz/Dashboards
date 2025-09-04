@@ -18,7 +18,8 @@ def display_page(pathname):
     if pathname == "/view":
         return layout_view.layout_view
     elif pathname == '/config':
-        return layout_config.layout_config
+        # return layout_config.layout_config
+        return layout_config.layoutConfig
     else:
         return html.H1("404 - Página não encontrada")
 
