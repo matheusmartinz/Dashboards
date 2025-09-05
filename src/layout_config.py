@@ -1,3 +1,5 @@
+from collections.abc import Sequence
+from xml.dom.xmlbuilder import Options
 from dash import html, dcc  
 import previews_dash
 import pandas as pd
@@ -50,7 +52,7 @@ dialog = html.Div([
 ])
 
 checklist_layout = html.Div([
-    dbc.Label('Proporção do Dashboard', style = {'font-weight': '600', 'min-width': '200px', 'margin-bottom': '15px'}),
+    dbc.Label('Proporção do Dashboard'),
     dcc.RadioItems(
         id='select_layout',
         options=[
@@ -63,7 +65,7 @@ checklist_layout = html.Div([
         className='radio-grid-layout',
         labelStyle={'display': 'block'}
     )
-])
+], style= {'width': '30%', 'height': '100px', 'justify-content': 'center', 'display': 'flex', 'flex-direction': 'column'})
 
 
 dialog_confirm = html.Div([
@@ -171,11 +173,32 @@ sidebar = html.Div(
 
 layoutConfig = html.Div([
     html.Div([
-        # sidebar,
         html.Div([
-          html.H1('teste', style = {'display': 'flex', 'justify-content': 'center', 'align-itens': 'center'})  
-        ], style = {'border-right': '1px solid black', 'width': '25%', 'height': '100%'}),  
+            html.H1('Configurações', style = {'display': 'flex', 'justify-content': 'center', 'align-itens': 'center', 'width': '100%', }), 
+            
+        html.Div([
+                html.Div([
+                dbc.Label('Troca Automática', html_for='switch-automatic-graphics', style = {'font-weight': '600'}),
+                dbc.Checklist(
+                options=[{"label": "Sim", "value": 1}],
+                value=[],
+                id='switch-automatic-graphics',
+                switch=True
+            ), ], style= {'width': '30%', 'height': '100px'}),
+                
+        html.Div([
+                radio
+                ],  style= {'width': '30%', 'height': '100px',}),
+        
+            ],  style = {'display': 'flex', 'justify-content': 'space-evenly', 'align-itens': 'center', 'width': '100%', 'background-color': 'green',  'flex-direction': 'row'}),
+        
+       html.Div([
+           checklist_layout,
+           checklist_layout
+       ], style = {'background-color': 'yellow', 'display': 'flex', 'justify-content': 'space-evenly'})
+    ], id = 'div-top-timer'),  
     
+
     
      dcc.Store(id='store-switch-value', data=0),
      dcc.Store(id='store-tempo-definido', data=False),
@@ -184,22 +207,22 @@ layoutConfig = html.Div([
         id='meu_timer',
         interval=9999999,
         n_intervals=0
-    )
-    ], style = {'height': '60vh', 'background-color': 'gray', 'padding-top': '15px'}),
+        
+    )], style = {'height': '50vh'}),
         
     html.Div([
         html.Div([
                  dcc.Graph(
                     id = 'grafico_pizza2',
                     figure = fig_pie,
-                    config = {'displaylogo': False, 'displayModeBar': False, 'autosizable': True, 'responsive': True},
-                    style = {'width': '50%', 'height': '20vh', 'padding-top': '10px', 'box-sizing': 'border-box'}
+                    config = {'displaylogo': False, 'displayModeBar': False, 'autosizable': True, 'responsive': True, 'staticPlot': True},
+                    style = {'width': '50%', 'height': '25vh', 'padding-top': '10px', 'box-sizing': 'border-box'}
             ),
                 dcc.Graph(
                     id = 'grafico_area2',
                     figure = fig_area,
-                    config = {'displaylogo': False, 'displayModeBar': False},
-                    style = {'width': '50%', 'height': '20vh','padding-top': '10px', 'box-sizing': 'border-box'}
+                    config = {'displaylogo': False, 'displayModeBar': False, 'staticPlot': True},
+                    style = {'width': '50%', 'height': '25vh','padding-top': '10px', 'box-sizing': 'border-box'}
                 )
             
         ], style = {'display': 'flex', 'height': '100%', 'width': '100%'}),
@@ -208,17 +231,17 @@ layoutConfig = html.Div([
             dcc.Graph(
                     id = 'grafico_area2',
                     figure = fig_area,
-                    style = {'height': '20vh', 'width': '50%', 'padding-top': '10px', 'box-sizing': 'border-box', 'padding-bottom': '10px'},
-                    config = {'displaylogo': False, 'displayModeBar': False}
+                    style = {'height': '25vh', 'width': '50%', 'padding-top': '10px', 'box-sizing': 'border-box', 'padding-bottom': '10px'},
+                    config = {'displaylogo': False, 'displayModeBar': False, 'staticPlot': True}
                 ),
             dcc.Graph(
                 id='grafico_bar2',
                 figure=fig_bar,
-                style = {'height': '20vh', 'width': '50%', 'padding-top': '10px', 'box-sizing': 'border-box', 'padding-bottom': '10px'},
-                config={'displaylogo': False,'displayModeBar': False},
+                style = {'height': '25vh', 'width': '50%', 'padding-top': '10px', 'box-sizing': 'border-box', 'padding-bottom': '10px'},
+                config={'displaylogo': False,'displayModeBar': False, 'staticPlot': True},
             )
         ], style = {'display': 'flex', 'height': '100%', 'width': '100%'})
         
-    ], style = {'height': '40vh', 'display': 'flex', 'width': '100%', 'flex-direction': 'column', 'background-color': 'white'})
+    ], style = {'height': '50vh', 'display': 'flex', 'width': '100%', 'flex-direction': 'column', 'background-color': 'white'})
     
 ], style = {'height': '100vh ', 'display': 'flex !important'})

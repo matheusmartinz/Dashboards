@@ -9,7 +9,7 @@
     font-weight: 600;
 }
 
-#sidebar {
+/* #sidebar {
     width: 225px;
     padding: 20px;
     background-color: #5C7F54;
@@ -55,7 +55,7 @@
 #label-sidebar {
     margin-top: 90%;
     color: white;
-}
+} */
 
 .form {
     margin-top: 60px;
@@ -64,13 +64,18 @@
 }
 
 .radio_timer_sidebar {
-    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    flex-direction: column;
 }
+
 
 #radioitens-input {
     display: flex;
     justify-content: space-around;
-    width: 100%;
+    width: 50%;
     margin-bottom: 10px;
 }
 
@@ -172,7 +177,7 @@
     gap: 10px;
 }
 
-.radio-grid-layout label {
+/* .radio-grid-layout label {
     background-color: #162419;
     border: 2px solid transparent;
     border-radius: 8px;
@@ -195,10 +200,10 @@
     background-color: #e6f0ff;
     color: #007BFF;
     font-weight: 600;
-}
+}  */
 
 
-.btn_confirm_dialog {
+/* .btn_confirm_dialog {
     background-color: #5C7F54;
     border: none;
     border-radius: 20px;
