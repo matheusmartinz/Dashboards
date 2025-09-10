@@ -52,7 +52,7 @@ dialog = html.Div([
 ])
 
 checklist_layout = html.Div([
-    dbc.Label('Proporção do Dashboard'),
+    dbc.Label('Proporção do Dashboard', style = {'justify-content': 'center', 'display': 'flex', 'font-weight': '600'}),
     dcc.RadioItems(
         id='select_layout',
         options=[
@@ -65,7 +65,7 @@ checklist_layout = html.Div([
         className='radio-grid-layout',
         labelStyle={'display': 'block'}
     )
-], style= {'width': '30%', 'height': '100px', 'justify-content': 'center', 'display': 'flex', 'flex-direction': 'column'})
+], style = {'display': 'flex', 'flex-direction': 'column', 'justify-content': 'center', 'align-items': 'center'})
 
 
 dialog_confirm = html.Div([
@@ -177,25 +177,27 @@ layoutConfig = html.Div([
             html.H1('Configurações', style = {'display': 'flex', 'justify-content': 'center', 'align-itens': 'center', 'width': '100%', }), 
             
         html.Div([
-                html.Div([
+            html.Div([
                 dbc.Label('Troca Automática', html_for='switch-automatic-graphics', style = {'font-weight': '600'}),
                 dbc.Checklist(
                 options=[{"label": "Sim", "value": 1}],
                 value=[],
                 id='switch-automatic-graphics',
                 switch=True
-            ), ], style= {'width': '30%', 'height': '100px'}),
+            )], id = 'div-switch-automatic'),
                 
-        html.Div([
+            html.Div([
                 radio
-                ],  style= {'width': '30%', 'height': '100px',}),
+                ],  style= {'width': '30%', 'height': '100px','display': 'flex', 'justify-content': 'center'}),
         
-            ],  style = {'display': 'flex', 'justify-content': 'space-evenly', 'align-itens': 'center', 'width': '100%', 'background-color': 'green',  'flex-direction': 'row'}),
+            ],  id = 'div-timer-options'),
         
        html.Div([
-           checklist_layout,
-           checklist_layout
-       ], style = {'background-color': 'yellow', 'display': 'flex', 'justify-content': 'space-evenly'})
+           html.Div(checklist_layout, id = 'div-checklist-proportion'),
+           
+           html.Div(html.H1('TESTE'), id = 'div-checklist-layout-graphics')
+           
+       ], style = {'display': 'flex', 'justify-content': 'space-evenly', 'height': '100%', 'margin-top': '40px'})
     ], id = 'div-top-timer'),  
     
 
@@ -211,37 +213,40 @@ layoutConfig = html.Div([
     )], style = {'height': '50vh'}),
         
     html.Div([
-        html.Div([
-                 dcc.Graph(
-                    id = 'grafico_pizza2',
-                    figure = fig_pie,
-                    config = {'displaylogo': False, 'displayModeBar': False, 'autosizable': True, 'responsive': True, 'staticPlot': True},
-                    style = {'width': '50%', 'height': '25vh', 'padding-top': '10px', 'box-sizing': 'border-box'}
-            ),
-                dcc.Graph(
-                    id = 'grafico_area2',
-                    figure = fig_area,
-                    config = {'displaylogo': False, 'displayModeBar': False, 'staticPlot': True},
-                    style = {'width': '50%', 'height': '25vh','padding-top': '10px', 'box-sizing': 'border-box'}
-                )
-            
-        ], style = {'display': 'flex', 'height': '100%', 'width': '100%'}),
+        html.Div(
+            id = 'layout_graphics_top',
+            #      dcc.Graph(
+            #         id = 'grafico_pizza2',
+            #         figure = fig_pie,
+            #         config = {'displaylogo': False, 'displayModeBar': False, 'autosizable': True, 'responsive': True, 'staticPlot': True},
+            #         style = {'width': '50%', 'height': '25vh', 'padding-top': '10px', 'box-sizing': 'border-box'}
+            # ),
+            #     dcc.Graph(
+            #         id = 'grafico_area2',
+            #         figure = fig_area,
+            #         config = {'displaylogo': False, 'displayModeBar': False, 'staticPlot': True},
+            #         style = {'width': '50%', 'height': '25vh','padding-top': '10px', 'box-sizing': 'border-box'}
+            #     )
+            #  style = {'display': 'flex', 'height': '100%', 'width': '100%'}    
+        ),
         
-        html.Div([
-            dcc.Graph(
-                    id = 'grafico_area2',
-                    figure = fig_area,
-                    style = {'height': '25vh', 'width': '50%', 'padding-top': '10px', 'box-sizing': 'border-box', 'padding-bottom': '10px'},
-                    config = {'displaylogo': False, 'displayModeBar': False, 'staticPlot': True}
-                ),
-            dcc.Graph(
-                id='grafico_bar2',
-                figure=fig_bar,
-                style = {'height': '25vh', 'width': '50%', 'padding-top': '10px', 'box-sizing': 'border-box', 'padding-bottom': '10px'},
-                config={'displaylogo': False,'displayModeBar': False, 'staticPlot': True},
-            )
-        ], style = {'display': 'flex', 'height': '100%', 'width': '100%'})
+        html.Div(
+            id = 'layout_graphics_lower'
+            # dcc.Graph(
+            #         id = 'grafico_area2',
+            #         figure = fig_area,
+            #         style = {'height': '25vh', 'width': '50%', 'padding-top': '10px', 'box-sizing': 'border-box', 'padding-bottom': '10px'},
+            #         config = {'displaylogo': False, 'displayModeBar': False, 'staticPlot': True}
+            #     ),
+            # dcc.Graph(
+            #     id='grafico_bar2',
+            #     figure=fig_bar,
+            #     style = {'height': '25vh', 'width': '50%', 'padding-top': '10px', 'box-sizing': 'border-box', 'padding-bottom': '10px'},
+            #     config={'displaylogo': False,'displayModeBar': False, 'staticPlot': True},
+            # )
+        # , style = {'display': 'flex', 'height': '100%', 'width': '100%'}
+        )
         
-    ], style = {'height': '50vh', 'display': 'flex', 'width': '100%', 'flex-direction': 'column', 'background-color': 'white'})
+    ], id = 'div-lower-graphics')
     
 ], style = {'height': '100vh ', 'display': 'flex !important'})

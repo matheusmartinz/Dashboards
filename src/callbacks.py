@@ -2,13 +2,11 @@ from dash.dependencies import Input, Output, State
 from dash import callback_context as ctx
 from dash import dcc
 from app_instance import app
-from graphics_dash import DF
 from proportions.proportions_dashboards import layouts_by_proportion
-import graphics_dash
-import layout_view
+import dashboard_vendas.graphic_vendas as graphic_vendas
 import dash
 
-figs = [graphics_dash.graph_bar, graphics_dash.graph_line, graphics_dash.graph_pie]
+figs = [graphic_vendas.graph_bar, graphic_vendas.graph_line, graphic_vendas.graph_pie]
 
 @app.callback(
     Output('grafico_bar', 'figure'),
@@ -19,7 +17,7 @@ def atualizar_grafico(valor_switch, n):
     if valor_switch == 1:
         return updateGraphic(n)
     else:
-        return graphics_dash.graph_bar
+        return graphic_vendas.graph_bar
 
 def updateGraphic(time):
     index = time % len(figs)
