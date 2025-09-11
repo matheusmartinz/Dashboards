@@ -24,4 +24,4 @@ def fetch_Json_data(filePath: str):
     except FileNotFoundError:
         raise RuntimeError("Arquivo JSON não encontrado.")
     except json.JSONDecodeError:
-        raise RuntimeError("Erro ao decodificar o arquivo JSON.")
+        raise RuntimeError("Erro ao decodificar o arquivo JSON.") 

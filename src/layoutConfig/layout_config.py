@@ -1,7 +1,7 @@
 from collections.abc import Sequence
 from xml.dom.xmlbuilder import Options
 from dash import html, dcc  
-import previews_dash
+import layoutConfig.previews_dash as previews_dash
 import pandas as pd
 import dash_bootstrap_components as dbc 
 from components.CustomDialog import CustomDialog 

@@ -1,6 +1,6 @@
 import pandas as pd
 import re
-import api
+import apis.api as api
 
 def soma_valores(text):
     valores = re.findall(r'\d+\.\d+', text)
@@ -48,4 +48,11 @@ def loadDataVendas():
         "DF_filtered_table": DF_filtered_table,
         "DF_grouped": DF_grouped,
         "DF_line": DF_line
+    }
+    
+def loadDataProducao():
+    DF = api.fetch_Json_data('dados/Producao.json')
+    
+    return {
+        'DF': DF
     }

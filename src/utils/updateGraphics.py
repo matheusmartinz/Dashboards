@@ -8,7 +8,8 @@ def updateLayout(graph, tipo):
                 xaxis_title=None,
                 yaxis_title=None,
                 xaxis=dict(autorange=True),
-                yaxis=dict(autorange=True)
+                yaxis=dict(autorange=True),
+                showlegend = False
                 )
             
         elif (tipo == 'bar'):
@@ -48,6 +49,7 @@ def updateLayout(graph, tipo):
                 margin = dict (l = 75, r = 25, t = 0 , b = 0),
                 yaxis = dict (range = [0, 20000]),
             )
+
         elif(tipo == 'area'):
             graph.update_layout(
                 xaxis_tickformat = '%d/%m/%Y', 

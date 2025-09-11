@@ -1,6 +1,6 @@
 from utils.updateGraphics import updateLayout
 import plotly.express as px
-import dataDashboards
+import datas.dataDashboards as dataDashboards
 import plotly.graph_objects as go
 from dash import dcc, dash_table  # type: ignore
 

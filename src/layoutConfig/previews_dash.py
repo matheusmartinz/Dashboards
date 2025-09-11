@@ -1,5 +1,5 @@
 import plotly.express as px
-from api import fetch_Json_data
+from apis.api import fetch_Json_data
 import pandas as pd
 import re
 import plotly.graph_objects as go

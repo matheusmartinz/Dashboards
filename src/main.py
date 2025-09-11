@@ -1,8 +1,9 @@
 from app_instance import app
 from dash import dcc, html, Input, Output
 import dashboard_vendas.layout_vendas as layout_vendas
-import layout_config
+import layoutConfig.layout_config as layout_config
 import dashboard_logistica.layout_logistica as layout_logistica
+import dashboardProducao.layoutProducao as layoutProducao
 import callbacks  
 
 app.layout = html.Div([
@@ -23,6 +24,8 @@ def display_page(pathname):
         return layout_config.layoutConfig
     elif pathname == "/logistica":
         return layout_logistica.layout_logistica
+    elif pathname == "/producao":
+        return layoutProducao.layoutProducao
     else:
         return html.H1("404 - Página não encontrada")
 

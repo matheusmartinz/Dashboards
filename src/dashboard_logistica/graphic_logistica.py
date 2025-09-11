@@ -1,44 +1,57 @@
 from utils.updateGraphics import updateLayout
-from dataDashboards import loadDataLogistica
+from datas.dataDashboards import loadDataLogistica
+from components.CustomGraphics import CustomGraphics
 import plotly.express as px
+import utils.colorsDashboards as colors
 import plotly.graph_objects as go
 from dash import dcc, dash_table  # type: ignore
 
 DF = loadDataLogistica()
-cores_graficos = ['#00BCD4', '#FF5722', '#4CAF50', '#8E24AA', '#D32F2F', '#1E88E5','#FFC107','#009688','#9C27B0','#F44336','#3F51B5', '#795548']
+colors_graficos = colors.cores_graficos
 DF_grouped = DF.groupby(['Data Saída', 'Tipo de Carga'], as_index=False)['Peso'].sum()
 
-# Soma total por dia
 peso_total_por_data = DF_grouped.groupby('Data Saída')['Peso'].transform('sum')
+DF_grouped = DF.groupby(['Data Saída', 'Tipo de Carga'])['Custo Frete'].sum().reset_index()
 
-# Calcula a porcentagem
-DF_grouped['Peso %'] = DF_grouped['Peso'] / peso_total_por_data * 100
 
-graph_bar = px.bar(DF, x='Data Saída', y = 'Custo Frete', color = 'Tipo de Carga', color_discrete_sequence = cores_graficos)
-updateLayout(graph_bar,'bar')
+# graph_bar = px.bar(DF, x='Data Saída', y = 'Custo Frete', color = 'Tipo de Carga', color_discrete_sequence = colors_graficos)
+# updateLayout(graph_bar,'bar')
 
 # graph_pie = px.pie(DF, names = 'Destino', values = 'Custo Frete', color = 'Destino', color_discrete_sequence = cores_graficos)
 # updateLayout(graph_pie, 'pie')
 
-graph_area = px.area(DF, x = 'Data Saída', y = 'Peso', color = 'Código Entrega',line_group = 'Tipo de Carga', color_discrete_sequence = cores_graficos)
-updateLayout(graph_area,'area')
+# graph_area = px.area(DF, x = 'Data Saída', y = 'Peso', color = 'Código Entrega',line_group = 'Tipo de Carga', color_discrete_sequence = colors_graficos)
+# updateLayout(graph_area,'area')
 
-graph_line = px.line(DF, x='Data Saída', y='Custo Frete', color='Tipo de Carga',line_shape='spline' ,markers=True, color_discrete_sequence = cores_graficos)
+# graph_line = px.line(DF_grouped, x='Data Saída', y='Custo Frete', color='Tipo de Carga',line_shape='spline' ,markers=True, color_discrete_sequence = colors_graficos)
+graph_line = CustomGraphics(chart_type='line', data=DF_grouped, horizontal='Data Saída', vertical='Custo Frete', color='Tipo de Carga', line_shape='spline', markers=True, color_discrete_sequence=colors_graficos)
 updateLayout(graph_line,'line')
+# graph_line.update_traces(
+#     customdata = DF_grouped[['Tipo de Carga']],
+#     hovertemplate=('Data: %{x}<br>' +
+#                    'Tipo de Carga: %{customdata[0]}<br>' +
+#                    'Custo Frete: %{y:$,.2f}<br>' +
+#                    '<extra></extra>')
+# )
 
-graph_histogram = px.histogram(DF, x='Tipo de Carga', y='Peso', color='Tipo de Carga', color_discrete_sequence= cores_graficos)
+# graph_histogram = px.histogram(DF, x='Destino', y='Peso', color='Tipo de Carga', color_discrete_sequence= colors_graficos)
+graph_histogram = CustomGraphics(chart_type='histogram', data=DF, horizontal='Destino', vertical='Peso', color='Tipo de Carga', color_discrete_sequence=colors_graficos)
 updateLayout(graph_histogram, 'histogram')
+graph_histogram.update_traces(
+    customdata=DF_grouped[['Tipo de Carga']],
+    hovertemplate=(
+        'Data: %{x}<br>' +
+        'Tipo de Carga: %{customdata[0]}<br>' +
+        'Peso: %{y} kg<extra></extra>'
+    )
+)
 
-graph_donut = px.pie(DF, names='Tipo de Carga', values='Peso', hole=0.4, color_discrete_sequence=cores_graficos)
+# graph_donut = px.pie(DF, names='Tipo de Carga', values='Peso', hole=0.4, color_discrete_sequence=colors_graficos)
+graph_donut = CustomGraphics(chart_type='pie', data=DF, names='Tipo de Carga', values='Peso', hole=0.4, color_discrete_sequence=colors_graficos)
 updateLayout(graph_donut, 'pie')
-
-
-
-# graph_geo = px.scatter_geo(DF, locations="Destino", locationmode='country names', color="Tipo de Carga",
-#                      hover_name="Código Entrega", size="Peso",
-#                      projection="natural earth", color_discrete_sequence=cores_graficos)
-# graph_geo.update_geos(showland=True, landcolor="LightGreen")
-# graph_geo.update_layout(margin={"r":0,"t":0,"l":0,"b":0}, paper_bgcolor = '#FEFAE0')
+graph_donut.update_traces(
+    hovertemplate='%{label}: %{value} kg (<b>%{percent}</b>)<extra></extra>',
+)
 
 # graph_table = go.Figure(data=[go.Table(
 #         columnwidth=[2, 2, 1],
