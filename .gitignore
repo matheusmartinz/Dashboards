@@ -1,0 +1,21 @@
+# Bytecode Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtualenv
+venv/
+.env/
+.venv/
+
+# Configurações locais do VS Code / IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
