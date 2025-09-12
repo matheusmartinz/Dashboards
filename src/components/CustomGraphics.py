@@ -11,7 +11,6 @@ def CustomGraphics(
     color: Optional[str] = None,
     line_group: Optional[str] = None,
     markers: Optional[bool] = False,
-    line_shape: Optional[str] = None,
     **kwargs  # captura argumentos adicionais
 ):
     if (chart_type == 'bar'):

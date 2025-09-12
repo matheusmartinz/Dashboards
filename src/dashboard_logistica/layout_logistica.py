@@ -48,6 +48,6 @@ layout_logistica = html.Div([
                 style={'height': '45vh', 'width': '100%'}),
             style={'height': '50vh', 'width': '50%'})
             
-        ], style={'display': 'flex', 'height': '50vh', 'width': '100%'}),
+        ], style={'display': 'flex', 'height': '50vh', 'width': '100%', 'background-color': '#FEFAE0' }),
     ], className='main-container'), 
 ])

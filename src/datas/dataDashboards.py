@@ -7,24 +7,42 @@ def soma_valores(text):
     return sum(float(v) for v in valores)
 
 def loadDataLogistica():
-    DF_logistica = api.fetch_Json_data('dados/Logistica.json')
+    DF = api.fetch_Json_data('dados/Logistica.json')
 
-    DF_logistica = DF_logistica.rename(columns={'ID Entrega': 'Código Entrega', 'Peso (kg)': 'Peso'})
-    DF_logistica['Data Saída'] = pd.to_datetime(DF_logistica['Data Saída'], errors='coerce')
-    
-    DF_logistica['Custo Frete'] = (
-        DF_logistica['Custo Frete']
-        .str.replace('R\$ ', '', regex=True)
-        .str.replace('.', '', regex=False)
-        .str.replace(',', '.', regex=False)
+    DF['Data Saída'] = pd.to_datetime(DF['Data Saída'], format='%Y-%m-%d', errors='coerce')
+
+    DF = DF.rename(columns={
+        'ID Entrega': 'Código Entrega',
+        'Peso (kg)': 'Peso'
+    })
+
+    DF['Custo Frete'] = DF['Custo Frete'].str.extract(r'(R\$ ?[\d\.,]+)')  # pega só o primeiro valor formatado
+
+    DF['Custo Frete'] = (
+        DF['Custo Frete']
+        .str.replace('R\$ ?', '', regex=True)
+        .str.replace('.', '', regex=False)  
+        .str.replace(',', '.', regex=False) 
         .astype(float)
     )
 
-    DF_logistica = DF_logistica[DF_logistica['Custo Frete'] > 0]
-    
-    DF_logistica = DF_logistica.sort_values(by='Data Saída')
-    
-    return DF_logistica
+    DF = DF.sort_values(by='Data Saída')
+
+    DF_grouped_line = (
+        DF.groupby([pd.Grouper(key='Data Saída', freq='D'), 'Tipo de Carga'], as_index=False)
+          ['Custo Frete'].sum()
+    )
+
+    DF_grouped_CDPeso = DF.groupby(['Centro de Distribuição', 'Tipo de Carga'], as_index=False)['Peso'].sum()
+
+    print(DF_grouped_line)
+    print(DF['Tipo de Carga'].unique())
+    return {
+        "DF": DF,
+        "DF_grouped_line": DF_grouped_line,
+        "DF_grouped_CDPeso": DF_grouped_CDPeso,
+    }
+
 
 def loadDataVendas():
     DF = api.fetch_Json_data('dados/Vendas.json')
@@ -38,10 +56,8 @@ def loadDataVendas():
     DF_filtered_table['Data'] = DF_filtered_table['Data'].dt.strftime('%d/%m/%Y')
 
     DF_grouped = DF.groupby(['Data', 'Produto'], as_index=False)['Valor Final'].sum()
-    max_valor = DF_grouped['Valor Final'].max()
 
     DF_line = DF.groupby(['Data', 'Região Lojas'], as_index=False)['Valor Unitário'].sum()
-    max_valor_line = DF_line['Valor Unitário'].max()
 
     return {
         "DF": DF,

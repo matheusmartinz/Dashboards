@@ -6,47 +6,48 @@ import utils.colorsDashboards as colors
 import plotly.graph_objects as go
 from dash import dcc, dash_table  # type: ignore
 
-DF = loadDataLogistica()
 colors_graficos = colors.cores_graficos
-DF_grouped = DF.groupby(['Data Saída', 'Tipo de Carga'], as_index=False)['Peso'].sum()
 
-peso_total_por_data = DF_grouped.groupby('Data Saída')['Peso'].transform('sum')
-DF_grouped = DF.groupby(['Data Saída', 'Tipo de Carga'])['Custo Frete'].sum().reset_index()
+data = loadDataLogistica()
 
+DF = data["DF"]
+DF_grouped_line = data["DF_grouped_line"]
+DF_grouped_CDPeso = data["DF_grouped_CDPeso"]
 
-# graph_bar = px.bar(DF, x='Data Saída', y = 'Custo Frete', color = 'Tipo de Carga', color_discrete_sequence = colors_graficos)
-# updateLayout(graph_bar,'bar')
+DF_grouped_CDPeso = DF.groupby(['Centro de Distribuição', 'Tipo de Carga'], as_index=False)['Peso'].sum()
 
-# graph_pie = px.pie(DF, names = 'Destino', values = 'Custo Frete', color = 'Destino', color_discrete_sequence = cores_graficos)
-# updateLayout(graph_pie, 'pie')
-
-# graph_area = px.area(DF, x = 'Data Saída', y = 'Peso', color = 'Código Entrega',line_group = 'Tipo de Carga', color_discrete_sequence = colors_graficos)
-# updateLayout(graph_area,'area')
-
-# graph_line = px.line(DF_grouped, x='Data Saída', y='Custo Frete', color='Tipo de Carga',line_shape='spline' ,markers=True, color_discrete_sequence = colors_graficos)
-graph_line = CustomGraphics(chart_type='line', data=DF_grouped, horizontal='Data Saída', vertical='Custo Frete', color='Tipo de Carga', line_shape='spline', markers=True, color_discrete_sequence=colors_graficos)
+# graph_line = CustomGraphics(chart_type='line', data=DF_grouped_line, horizontal='Data Saída', vertical='Custo Frete', color='Tipo de Carga', line_shape='spline', markers=True, color_discrete_sequence=colors_graficos)
+graph_line = px.line(
+    DF_grouped_line,
+    x='Data Saída',                 #VER O PQ A MERDA DO CUSTOM NAO TA PEGANDO OS VALORES E SETANDO CERTINHO AQUI NO GRAPHIC_LOGISTA, NAO FAZ SENTIDO
+    y='Custo Frete',
+    color='Tipo de Carga',
+    line_shape='spline',
+    markers=True,
+    title='Custo de Frete por Tipo de Carga e Data'
+)
 updateLayout(graph_line,'line')
 # graph_line.update_traces(
-#     customdata = DF_grouped[['Tipo de Carga']],
-#     hovertemplate=('Data: %{x}<br>' +
-#                    'Tipo de Carga: %{customdata[0]}<br>' +
-#                    'Custo Frete: %{y:$,.2f}<br>' +
-#                    '<extra></extra>')
+#     customdata= DF_grouped_line[['Tipo de Carga']], #OS VALORES NAO ESTAO BATENDO O TIPO DE CARGA E SEU CUSTO FRETE / OLHAR ISSO
+#     hovertemplate=(
+#         'Data Saída: %{x}<br>' +
+#         'Tipo de Carga: %{customdata[0]}<br>' +     
+#         'Custo Frete: %{y}<br>' +
+#         '<extra></extra>'
+#     )
 # )
 
-# graph_histogram = px.histogram(DF, x='Destino', y='Peso', color='Tipo de Carga', color_discrete_sequence= colors_graficos)
-graph_histogram = CustomGraphics(chart_type='histogram', data=DF, horizontal='Destino', vertical='Peso', color='Tipo de Carga', color_discrete_sequence=colors_graficos)
+graph_histogram = CustomGraphics(chart_type='histogram', data = DF_grouped_CDPeso, horizontal='Centro de Distribuição', vertical='Peso', color='Tipo de Carga', color_discrete_sequence=colors_graficos)
 updateLayout(graph_histogram, 'histogram')
 graph_histogram.update_traces(
-    customdata=DF_grouped[['Tipo de Carga']],
+    customdata=DF_grouped_CDPeso[['Tipo de Carga']],
     hovertemplate=(
-        'Data: %{x}<br>' +
+        'CD: %{x}<br>' +
         'Tipo de Carga: %{customdata[0]}<br>' +
-        'Peso: %{y} kg<extra></extra>'
+        'Peso Total: %{y} kg<extra></extra>'
     )
 )
 
-# graph_donut = px.pie(DF, names='Tipo de Carga', values='Peso', hole=0.4, color_discrete_sequence=colors_graficos)
 graph_donut = CustomGraphics(chart_type='pie', data=DF, names='Tipo de Carga', values='Peso', hole=0.4, color_discrete_sequence=colors_graficos)
 updateLayout(graph_donut, 'pie')
 graph_donut.update_traces(

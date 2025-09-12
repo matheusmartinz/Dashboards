@@ -21,7 +21,6 @@ layout_vendas = html.Div([
                 config = {
                     'displaylogo': False,
                     'displayModeBar': False,
-                    'staticPlot': True
                 }
             ),
         ], style={'padding': 0, 'margin': 0, 'display': 'flex', 'height': '50vh', 'width': '100%'}),
@@ -34,7 +33,6 @@ layout_vendas = html.Div([
                 config = {
                     'displaylogo': False,
                     'displayModeBar': False,
-                    'staticPlot': True
                 }
             ),
             html.Div(
