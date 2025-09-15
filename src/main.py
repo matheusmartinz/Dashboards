@@ -10,6 +10,9 @@ app.layout = html.Div([
     dcc.Location(id="url", refresh=False),  
     html.Div(id="page-content")              
 ])
+
+app.title = 'Dashboard PEON'
+
 # app.sidebar = layout_view.sidebar
 
 @app.callback(

@@ -1,7 +1,7 @@
 def updateLayout(graph, tipo):
         if (tipo == 'line'):
             graph.update_layout(xaxis_tickformat = '%d/%m/%Y', 
-                legend= dict(orientation = 'h', x=0, y=1.20, xanchor='left', yanchor='top', traceorder = 'normal', itemwidth = 70, valign = 'middle'),
+                legend= dict(orientation = 'h', x=0, y=1.25, xanchor='left', yanchor='top', traceorder = 'normal', itemwidth = 70, valign = 'middle'),
                 font = dict(family = 'Arial', size = 13, color = 'black'),
                 paper_bgcolor = '#FEFAE0',
                 margin = dict (l = 75, r = 25, t = 70),
@@ -9,7 +9,6 @@ def updateLayout(graph, tipo):
                 yaxis_title=None,
                 xaxis=dict(autorange=True),
                 yaxis=dict(autorange=True),
-                showlegend = False
                 )
             
         elif (tipo == 'bar'):
@@ -32,6 +31,7 @@ def updateLayout(graph, tipo):
         elif (tipo == 'pie'):
             graph.update_layout(
                 paper_bgcolor = '#FEFAE0',
+                font = dict(family = 'Arial', size = 14.5, color = 'black' ),
                 margin=dict(l=0, r=0, t=10, b=10)
             )
             graph.update_traces(

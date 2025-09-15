@@ -10,13 +10,10 @@ def loadDataLogistica():
     DF = api.fetch_Json_data('dados/Logistica.json')
 
     DF['Data Saída'] = pd.to_datetime(DF['Data Saída'], format='%Y-%m-%d', errors='coerce')
-
     DF = DF.rename(columns={
         'ID Entrega': 'Código Entrega',
         'Peso (kg)': 'Peso'
     })
-
-    DF['Custo Frete'] = DF['Custo Frete'].str.extract(r'(R\$ ?[\d\.,]+)')  # pega só o primeiro valor formatado
 
     DF['Custo Frete'] = (
         DF['Custo Frete']
@@ -25,18 +22,16 @@ def loadDataLogistica():
         .str.replace(',', '.', regex=False) 
         .astype(float)
     )
-
     DF = DF.sort_values(by='Data Saída')
-
+    
     DF_grouped_line = (
-        DF.groupby([pd.Grouper(key='Data Saída', freq='D'), 'Tipo de Carga'], as_index=False)
-          ['Custo Frete'].sum()
+        DF.groupby([pd.Grouper(key='Data Saída', freq='D'), 'Tipo de Carga'], as_index=False)['Custo Frete'].sum()
     )
-
+    DF_grouped_line['Custo Frete Formatado'] = DF_grouped_line['Custo Frete'].apply(
+    lambda x: f'R$ {x:,.2f}'.replace(',', 'X').replace('.', ',').replace('X', '.')
+)
     DF_grouped_CDPeso = DF.groupby(['Centro de Distribuição', 'Tipo de Carga'], as_index=False)['Peso'].sum()
 
-    print(DF_grouped_line)
-    print(DF['Tipo de Carga'].unique())
     return {
         "DF": DF,
         "DF_grouped_line": DF_grouped_line,

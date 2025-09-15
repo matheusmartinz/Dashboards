@@ -14,37 +14,27 @@ DF = data["DF"]
 DF_grouped_line = data["DF_grouped_line"]
 DF_grouped_CDPeso = data["DF_grouped_CDPeso"]
 
-DF_grouped_CDPeso = DF.groupby(['Centro de Distribuição', 'Tipo de Carga'], as_index=False)['Peso'].sum()
+# DF_grouped_CDPeso = DF.groupby(['Data Saída','Centro de Distribuição', 'Tipo de Carga'], as_index=False)['Peso'].sum()
 
-# graph_line = CustomGraphics(chart_type='line', data=DF_grouped_line, horizontal='Data Saída', vertical='Custo Frete', color='Tipo de Carga', line_shape='spline', markers=True, color_discrete_sequence=colors_graficos)
-graph_line = px.line(
-    DF_grouped_line,
-    x='Data Saída',                 #VER O PQ A MERDA DO CUSTOM NAO TA PEGANDO OS VALORES E SETANDO CERTINHO AQUI NO GRAPHIC_LOGISTA, NAO FAZ SENTIDO
-    y='Custo Frete',
-    color='Tipo de Carga',
-    line_shape='spline',
-    markers=True,
-    title='Custo de Frete por Tipo de Carga e Data'
-)
+graph_line = CustomGraphics(chart_type='line', data=DF_grouped_line, horizontal='Data Saída', vertical='Custo Frete', color='Tipo de Carga', line_shape='spline', markers=True
+                            , color_discrete_sequence=colors_graficos, custom_data=['Custo Frete Formatado'])
 updateLayout(graph_line,'line')
-# graph_line.update_traces(
-#     customdata= DF_grouped_line[['Tipo de Carga']], #OS VALORES NAO ESTAO BATENDO O TIPO DE CARGA E SEU CUSTO FRETE / OLHAR ISSO
-#     hovertemplate=(
-#         'Data Saída: %{x}<br>' +
-#         'Tipo de Carga: %{customdata[0]}<br>' +     
-#         'Custo Frete: %{y}<br>' +
-#         '<extra></extra>'
-#     )
-# )
+graph_line.update_traces(
+    hovertemplate=(
+        'Data Saída: %{x}<br>' +\
+        'Tipo de Carga: %{fullData.name}<br>' +     
+        'Custo Frete: R$ %{customdata[0]}<br>' +
+        '<extra></extra>'
+    )
+)
 
 graph_histogram = CustomGraphics(chart_type='histogram', data = DF_grouped_CDPeso, horizontal='Centro de Distribuição', vertical='Peso', color='Tipo de Carga', color_discrete_sequence=colors_graficos)
 updateLayout(graph_histogram, 'histogram')
 graph_histogram.update_traces(
-    customdata=DF_grouped_CDPeso[['Tipo de Carga']],
     hovertemplate=(
-        'CD: %{x}<br>' +
-        'Tipo de Carga: %{customdata[0]}<br>' +
-        'Peso Total: %{y} kg<extra></extra>'
+    'Centro de Distribuição: %{x}<br>' +
+    'Tipo de Carga: %{fullData.name}<br>' +
+    'Peso Total: %{y} Kg<extra></extra>'
     )
 )
 
