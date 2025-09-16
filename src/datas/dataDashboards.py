@@ -1,4 +1,7 @@
 import pandas as pd
+from utils.formaterToNumber import formaterToNumber
+from utils.formaterToReal import formaterToReal
+from utils.formaterDate import formaterDate
 import re
 import apis.api as api
 
@@ -15,21 +18,14 @@ def loadDataLogistica():
         'Peso (kg)': 'Peso'
     })
 
-    DF['Custo Frete'] = (
-        DF['Custo Frete']
-        .str.replace('R\$ ?', '', regex=True)
-        .str.replace('.', '', regex=False)  
-        .str.replace(',', '.', regex=False) 
-        .astype(float)
-    )
+    DF['Custo Frete'] = formaterToNumber(DF['Custo Frete'])
     DF = DF.sort_values(by='Data Saída')
     
     DF_grouped_line = (
         DF.groupby([pd.Grouper(key='Data Saída', freq='D'), 'Tipo de Carga'], as_index=False)['Custo Frete'].sum()
     )
-    DF_grouped_line['Custo Frete Formatado'] = DF_grouped_line['Custo Frete'].apply(
-    lambda x: f'R$ {x:,.2f}'.replace(',', 'X').replace('.', ',').replace('X', '.')
-)
+
+    DF_grouped_line['Custo Frete Formatado'] = formaterToReal(DF_grouped_line['Custo Frete'])
     DF_grouped_CDPeso = DF.groupby(['Centro de Distribuição', 'Tipo de Carga'], as_index=False)['Peso'].sum()
 
     return {
@@ -48,7 +44,7 @@ def loadDataVendas():
     DF = DF.rename(columns={'ID Loja': 'Região Lojas'})
 
     DF_filtered_table = DF.loc[:, ["Data", "Produto", "Valor Final"]]
-    DF_filtered_table['Data'] = DF_filtered_table['Data'].dt.strftime('%d/%m/%Y')
+    DF_filtered_table['Data'] = formaterDate(DF_filtered_table['Data'])
 
     DF_grouped = DF.groupby(['Data', 'Produto'], as_index=False)['Valor Final'].sum()
 

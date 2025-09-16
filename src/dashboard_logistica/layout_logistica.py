@@ -37,7 +37,8 @@ layout_logistica = html.Div([
                     'displayModeBar': False,
                 },
             ),
-            html.Div(
+            html.Div([
+                html.H6('Peso por Tipo de Carga', style={'textAlign': 'center', 'margin-right': '25%'}),
                 dcc.Graph(
                 id='grafico_donut',
                 figure=fig_donut,
@@ -45,7 +46,7 @@ layout_logistica = html.Div([
                     'displaylogo': False,
                     'displayModeBar': False,
                 },
-                style={'height': '45vh', 'width': '100%'}),
+                style={'height': '45vh', 'width': '100%'})],
             style={'height': '50vh', 'width': '50%'})
             
         ], style={'display': 'flex', 'height': '50vh', 'width': '100%', 'background-color': '#FEFAE0' }),
