@@ -718,5 +718,230 @@
         "Tipo de Carga": "Produtos de Higiene",
         "Peso (kg)": 750,
         "Custo Frete": "R$ 1.800,00"
+    },
+        {
+        "ID Entrega": "TRK-3005",
+        "Data Saída": "2025-08-25",
+        "Centro de Distribuição": "CD Belo Horizonte",
+        "Destino": "Vitória - ES",
+        "Tipo de Carga": "Cosméticos",
+        "Peso (kg)": 720,
+        "Custo Frete": "R$ 1.180,00"
+    },
+    {
+        "ID Entrega": "TRK-3006",
+        "Data Saída": "2025-08-26",
+        "Centro de Distribuição": "CD Porto Alegre",
+        "Destino": "Florianópolis - SC",
+        "Tipo de Carga": "Têxteis",
+        "Peso (kg)": 950,
+        "Custo Frete": "R$ 1.620,00"
+    },
+    {
+        "ID Entrega": "TRK-3007",
+        "Data Saída": "2025-08-27",
+        "Centro de Distribuição": "CD Campinas",
+        "Destino": "Campo Grande - MS",
+        "Tipo de Carga": "Móveis",
+        "Peso (kg)": 1800,
+        "Custo Frete": "R$ 3.100,00"
+    },
+    {
+        "ID Entrega": "TRK-3008",
+        "Data Saída": "2025-08-28",
+        "Centro de Distribuição": "CD Manaus",
+        "Destino": "Boa Vista - RR",
+        "Tipo de Carga": "Eletrodomésticos",
+        "Peso (kg)": 1600,
+        "Custo Frete": "R$ 3.450,00"
+    },
+    {
+        "ID Entrega": "TRK-3009",
+        "Data Saída": "2025-08-29",
+        "Centro de Distribuição": "CD João Pessoa",
+        "Destino": "Natal - RN",
+        "Tipo de Carga": "Brinquedos",
+        "Peso (kg)": 430,
+        "Custo Frete": "R$ 870,00"
+    },
+       {
+        "ID Entrega": "TRK-3010",
+        "Data Saída": "2025-08-30",
+        "Centro de Distribuição": "CD São Paulo",
+        "Destino": "Belo Horizonte - MG",
+        "Tipo de Carga": "Roupas",
+        "Peso (kg)": 780,
+        "Custo Frete": "R$ 1.250,00"
+    },
+    {
+        "ID Entrega": "TRK-3011",
+        "Data Saída": "2025-08-30",
+        "Centro de Distribuição": "CD Porto Alegre",
+        "Destino": "Curitiba - PR",
+        "Tipo de Carga": "Autopeças",
+        "Peso (kg)": 1600,
+        "Custo Frete": "R$ 2.900,00"
+    },
+    {
+        "ID Entrega": "TRK-3012",
+        "Data Saída": "2025-08-31",
+        "Centro de Distribuição": "CD Fortaleza",
+        "Destino": "São Luís - MA",
+        "Tipo de Carga": "Medicamentos",
+        "Peso (kg)": 620,
+        "Custo Frete": "R$ 1.350,00"
+    },
+    {
+        "ID Entrega": "TRK-3013",
+        "Data Saída": "2025-08-31",
+        "Centro de Distribuição": "CD Goiânia",
+        "Destino": "Cuiabá - MT",
+        "Tipo de Carga": "Alimentos",
+        "Peso (kg)": 1100,
+        "Custo Frete": "R$ 2.100,00"
+    },
+    {
+        "ID Entrega": "TRK-3014",
+        "Data Saída": "2025-09-01",
+        "Centro de Distribuição": "CD Recife",
+        "Destino": "João Pessoa - PB",
+        "Tipo de Carga": "Livros",
+        "Peso (kg)": 500,
+        "Custo Frete": "R$ 920,00"
+    },
+    {
+        "ID Entrega": "TRK-3015",
+        "Data Saída": "2025-09-01",
+        "Centro de Distribuição": "CD Rio de Janeiro",
+        "Destino": "Vitória - ES",
+        "Tipo de Carga": "Cosméticos",
+        "Peso (kg)": 850,
+        "Custo Frete": "R$ 1.400,00"
+    },
+    {
+        "ID Entrega": "TRK-3016",
+        "Data Saída": "2025-09-02",
+        "Centro de Distribuição": "CD Campinas",
+        "Destino": "Uberlândia - MG",
+        "Tipo de Carga": "Eletrônicos",
+        "Peso (kg)": 920,
+        "Custo Frete": "R$ 1.780,00"
+    },
+    {
+        "ID Entrega": "TRK-3017",
+        "Data Saída": "2025-09-02",
+        "Centro de Distribuição": "CD Salvador",
+        "Destino": "Aracaju - SE",
+        "Tipo de Carga": "Bebidas",
+        "Peso (kg)": 1400,
+        "Custo Frete": "R$ 2.320,00"
+    },
+    {
+        "ID Entrega": "TRK-3018",
+        "Data Saída": "2025-09-03",
+        "Centro de Distribuição": "CD Curitiba",
+        "Destino": "Londrina - PR",
+        "Tipo de Carga": "Brinquedos",
+        "Peso (kg)": 370,
+        "Custo Frete": "R$ 790,00"
+    },
+    {
+        "ID Entrega": "TRK-3019",
+        "Data Saída": "2025-09-03",
+        "Centro de Distribuição": "CD Manaus",
+        "Destino": "Macapá - AP",
+        "Tipo de Carga": "Eletrodomésticos",
+        "Peso (kg)": 1550,
+        "Custo Frete": "R$ 3.600,00"
+    },
+    {
+        "ID Entrega": "TRK-3020",
+        "Data Saída": "2025-09-04",
+        "Centro de Distribuição": "CD Florianópolis",
+        "Destino": "Joinville - SC",
+        "Tipo de Carga": "Material Escolar",
+        "Peso (kg)": 420,
+        "Custo Frete": "R$ 870,00"
+    },
+    {
+        "ID Entrega": "TRK-3021",
+        "Data Saída": "2025-09-04",
+        "Centro de Distribuição": "CD São Luís",
+        "Destino": "Teresina - PI",
+        "Tipo de Carga": "Medicamentos",
+        "Peso (kg)": 610,
+        "Custo Frete": "R$ 1.280,00"
+    },
+    {
+        "ID Entrega": "TRK-3022",
+        "Data Saída": "2025-09-05",
+        "Centro de Distribuição": "CD Belém",
+        "Destino": "Manaus - AM",
+        "Tipo de Carga": "Roupas",
+        "Peso (kg)": 800,
+        "Custo Frete": "R$ 1.960,00"
+    },
+    {
+        "ID Entrega": "TRK-3023",
+        "Data Saída": "2025-09-05",
+        "Centro de Distribuição": "CD Natal",
+        "Destino": "Maceió - AL",
+        "Tipo de Carga": "Produtos de Limpeza",
+        "Peso (kg)": 980,
+        "Custo Frete": "R$ 1.540,00"
+    },
+    {
+        "ID Entrega": "TRK-3024",
+        "Data Saída": "2025-09-06",
+        "Centro de Distribuição": "CD São Paulo",
+        "Destino": "Campinas - SP",
+        "Tipo de Carga": "Livros",
+        "Peso (kg)": 320,
+        "Custo Frete": "R$ 610,00"
+    },
+    {
+        "ID Entrega": "TRK-3025",
+        "Data Saída": "2025-09-06",
+        "Centro de Distribuição": "CD Brasília",
+        "Destino": "Anápolis - GO",
+        "Tipo de Carga": "Eletrônicos",
+        "Peso (kg)": 750,
+        "Custo Frete": "R$ 1.490,00"
+    },
+    {
+        "ID Entrega": "TRK-3026",
+        "Data Saída": "2025-09-07",
+        "Centro de Distribuição": "CD Campo Grande",
+        "Destino": "Dourados - MS",
+        "Tipo de Carga": "Autopeças",
+        "Peso (kg)": 1340,
+        "Custo Frete": "R$ 2.600,00"
+    },
+    {
+        "ID Entrega": "TRK-3027",
+        "Data Saída": "2025-09-07",
+        "Centro de Distribuição": "CD Teresina",
+        "Destino": "São Luís - MA",
+        "Tipo de Carga": "Cosméticos",
+        "Peso (kg)": 560,
+        "Custo Frete": "R$ 1.180,00"
+    },
+    {
+        "ID Entrega": "TRK-3028",
+        "Data Saída": "2025-09-08",
+        "Centro de Distribuição": "CD Vitória",
+        "Destino": "Rio de Janeiro - RJ",
+        "Tipo de Carga": "Papelaria",
+        "Peso (kg)": 630,
+        "Custo Frete": "R$ 1.310,00"
+    },
+    {
+        "ID Entrega": "TRK-3029",
+        "Data Saída": "2025-09-08",
+        "Centro de Distribuição": "CD Palmas",
+        "Destino": "Goiânia - GO",
+        "Tipo de Carga": "Alimentos",
+        "Peso (kg)": 1450,
+        "Custo Frete": "R$ 2.780,00"
     }
 ]

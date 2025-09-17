@@ -1,8 +1,9 @@
 from utils.updateGraphics import updateLayout
-import plotly.express as px
 import datas.dataDashboards as dataDashboards
 import plotly.graph_objects as go
 from dash import dcc, dash_table  # type: ignore
+from utils.colorsDashboards import cores_graficos
+from components.CustomGraphics import CustomGraphics
 
 data = dataDashboards.loadDataVendas()
 
@@ -13,22 +14,23 @@ max_valor = DF_grouped['Valor Final'].max()
 DF_line = data["DF_line"]
 max_valor_line = DF_line['Valor Unitário'].max()
 
-cores_graficos = ['#00BCD4', '#FF5722', '#4CAF50', '#8E24AA', '#D32F2F', '#1E88E5']
+ 
 
-graph_bar = px.bar(DF_grouped, x='Data', y = 'Valor Final', color = 'Produto', color_discrete_sequence = cores_graficos)
+graph_bar = CustomGraphics('bar', DF_grouped, horizontal = 'Data', vertical = 'Valor Final', color = 'Produto', color_discrete_sequence = cores_graficos)
 updateLayout(graph_bar,'bar')
 
-graph_pie = px.pie(DF, names = 'Região Lojas', values = 'Valor Final', color = 'Região Lojas', color_discrete_sequence = cores_graficos)
-updateLayout(graph_pie, 'pie')
+# graph_pie = px.pie(DF, names = 'Região Lojas', values = 'Valor Final', color = 'Região Lojas', color_discrete_sequence = cores_graficos)
+# updateLayout(graph_pie, 'pie')
 
-graph_area = px.area(DF, x = 'Data', y = 'Valor Final', color = 'Produto')
-updateLayout(graph_area,'area')
+# graph_area = px.area(DF, x = 'Data', y = 'Valor Final', color = 'Produto')
+# updateLayout(graph_area,'area')
 
-graph_line = px.line(DF_line, x='Data', y='Valor Unitário', color='Região Lojas', markers=True, line_shape='spline', color_discrete_sequence= cores_graficos)
+# graph_line = px.line(DF_line, x='Data', y='Valor Unitário', color='Região Lojas', markers=True, line_shape='spline', color_discrete_sequence= cores_graficos)
+graph_line = CustomGraphics('line', DF_line, horizontal = 'Data', vertical = 'Valor Unitário', color = 'Região Lojas', color_discrete_sequence = cores_graficos, markers = True, line_shape = 'spline')
 updateLayout(graph_line, 'line')
 
-graph_histogram = px.histogram(DF, x='Produto', y='Valor Final', color='Produto', color_discrete_sequence= cores_graficos)
-updateLayout(graph_histogram, 'histogram')
+# graph_histogram = px.histogram(DF, x='Produto', y='Valor Final', color='Produto', color_discrete_sequence= cores_graficos)
+# updateLayout(graph_histogram, 'histogram')
 
 graph_table = go.Figure(data=[go.Table(
         columnwidth=[2, 2, 1],

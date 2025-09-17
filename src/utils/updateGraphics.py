@@ -1,7 +1,9 @@
 def updateLayout(graph, tipo):
         if (tipo == 'line'):
             graph.update_layout(xaxis_tickformat = '%d/%m/%Y', 
-                legend= dict(orientation = 'h', x=0, y=1.25, xanchor='left', yanchor='top', traceorder = 'normal', itemwidth = 70, valign = 'middle'),
+                legend= dict(orientation = 'h',x=0, y=1.25, xanchor='left', yanchor='top', 
+                             traceorder = 'normal', itemwidth = 70, valign = 'middle'),
+                showlegend = False,
                 font = dict(family = 'Arial', size = 13, color = 'black'),
                 paper_bgcolor = '#FEFAE0',
                 margin = dict (l = 75, r = 25, t = 70),
@@ -9,14 +11,15 @@ def updateLayout(graph, tipo):
                 yaxis_title=None,
                 xaxis=dict(autorange=True),
                 yaxis=dict(autorange=True),
+                title = dict(text='Custo de Frete por Tipo de Carga ao Longo do Tempo', x=0.5, y=0.95, xanchor='center', yanchor='top', font=dict(size=16, color='black', family='Arial')),
                 )
             
         elif (tipo == 'bar'):
             graph.update_layout(xaxis_tickformat = '%d/%m/%Y', barmode = 'stack',
-                legend= dict(orientation = 'h', x=0.20, y=1.13 , xanchor='left', yanchor='top'),
+                legend= dict(orientation = 'h', x=0, y=1.13 , xanchor='left', yanchor='top'),
                 font = dict(family = 'Arial', size = 14.5, color = 'black' ),
                 paper_bgcolor = '#FEFAE0',
-                margin = dict (l = 75, r = 25, t = 0 , b = 0),
+                margin = dict (l = 75, r = 25, t = 0 , b = 10),
                 yaxis = dict (range = [0, 5000]),
                 xaxis_title=None,
                 yaxis_title=None)
@@ -32,7 +35,7 @@ def updateLayout(graph, tipo):
             graph.update_layout(
                 paper_bgcolor = '#FEFAE0',
                 font = dict(family = 'Arial', size = 14.5, color = 'black' ),
-                margin=dict(l=0, r=0, t=10, b=10)
+                margin=dict(l=0, r=0, t=10, b=10),
             )
             graph.update_traces(
                 pull=[0, 0, 0],    
@@ -47,7 +50,9 @@ def updateLayout(graph, tipo):
                 font = dict(family = 'Arial', size = 14.5, color = 'black' ),
                 paper_bgcolor = '#FEFAE0',
                 margin = dict (l = 75, r = 25, t = 0 , b = 0),
-                yaxis = dict (range = [0, 20000]),
+                yaxis = dict (range = [0, 50000]),
+                title = dict(text='Peso Total por Centro de Distribuição e Tipo de Carga', x=0.5, y=0.95, xanchor='center', yanchor='top', font=dict(size=16, color='black', family='Arial')),
+                showlegend = False
             )
 
         elif(tipo == 'area'):

@@ -45,6 +45,7 @@ def loadDataVendas():
 
     DF_filtered_table = DF.loc[:, ["Data", "Produto", "Valor Final"]]
     DF_filtered_table['Data'] = formaterDate(DF_filtered_table['Data'])
+    DF_filtered_table['Valor Final'] = formaterToReal(DF_filtered_table['Valor Final'])
 
     DF_grouped = DF.groupby(['Data', 'Produto'], as_index=False)['Valor Final'].sum()
 

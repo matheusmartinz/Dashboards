@@ -1,27 +1,25 @@
 from dash.dependencies import Input, Output, State
 from dash import callback_context as ctx
-from dash import dcc
 from app_instance import app
-from proportions.proportions_dashboards import layouts_by_proportion
-import dashboard_vendas.graphic_vendas as graphic_vendas
+# from proportions.proportions_dashboards import layouts_by_proportion
 import dash
 
-figs = [graphic_vendas.graph_bar, graphic_vendas.graph_line, graphic_vendas.graph_pie]
+# figs = [graphic_vendas.graph_bar, graphic_vendas.graph_line, graphic_vendas.graph_pie]
 
-@app.callback(
-    Output('grafico_bar', 'figure'),
-    Input('store-switch-value', 'data'),
-    Input('meu_timer', 'n_intervals')
-)
-def atualizar_grafico(valor_switch, n):
-    if valor_switch == 1:
-        return updateGraphic(n)
-    else:
-        return graphic_vendas.graph_bar
+# @app.callback(
+#     Output('grafico_bar', 'figure'),
+#     Input('store-switch-value', 'data'),
+#     Input('meu_timer', 'n_intervals')
+# )
+# def atualizar_grafico(valor_switch, n):
+#     if valor_switch == 1:
+#         return updateGraphic(n)
+#     else:
+#         return graphic_vendas.graph_bar
 
-def updateGraphic(time):
-    index = time % len(figs)
-    return figs[index]
+# def updateGraphic(time):
+#     index = time % len(figs)
+#     return figs[index]
 
 @app.callback(
     Output('radioitens-input', 'options'),
@@ -93,36 +91,37 @@ def open_dialog(click):
         return True
     return False
 
-@app.callback(
-    Output('download_dataframe_csv', 'data'),
-    Output('confirm-dialog-download', 'is_open'),
-    Input('button_export', 'n_clicks'),
-    Input('cancel-button', 'n_clicks'),
-    Input('accept-button', 'n_clicks'),
-    State('confirm-dialog-download', 'is_open'),
-    prevent_initial_call=True
-)
-def handle_modal_and_download(export_clicks, cancel_clicks, accept_clicks, is_open):
-    triggered_id = ctx.triggered_id
 
-    if triggered_id == 'button_export':
-        return dash.no_update, True  
+# @app.callback(
+#     Output('download_dataframe_csv', 'data'),
+#     Output('confirm-dialog-download', 'is_open'),
+#     Input('button_export', 'n_clicks'),
+#     Input('cancel-button', 'n_clicks'),
+#     Input('accept-button', 'n_clicks'),
+#     State('confirm-dialog-download', 'is_open'),
+#     prevent_initial_call=True
+# )
+# def handle_modal_and_download(export_clicks, cancel_clicks, accept_clicks, is_open):
+#     triggered_id = ctx.triggered_id
 
-    elif triggered_id == 'cancel-button':
-        return dash.no_update, False  
+#     if triggered_id == 'button_export':
+#         return dash.no_update, True  
 
-    elif triggered_id == 'accept-button':
-        return (
-            dcc.send_data_frame(DF.to_csv, 'dados_exportados.csv', index=False),
-            False  
-        )
+#     elif triggered_id == 'cancel-button':
+#         return dash.no_update, False  
 
-    return dash.no_update, is_open
+#     elif triggered_id == 'accept-button':
+#         return (
+#             dcc.send_data_frame(DF.to_csv, 'dados_exportados.csv', index=False),
+#             False  
+#         )
 
-@app.callback(
-    Output('layout_graphics_top', 'children'),
-    Output('layout_graphics_lower', 'children'),
-    Input('select_layout', 'value')
-)
-def proporcao_graficos(proporcao):
-    return layouts_by_proportion(proporcao)
+#     return dash.no_update, is_open
+
+# @app.callback(
+#     Output('layout_graphics_top', 'children'),
+#     Output('layout_graphics_lower', 'children'),
+#     Input('select_layout', 'value')
+# )
+# def proporcao_graficos(proporcao):
+#     return layouts_by_proportion(proporcao)

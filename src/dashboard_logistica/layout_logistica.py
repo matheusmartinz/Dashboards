@@ -38,7 +38,6 @@ layout_logistica = html.Div([
                 },
             ),
             html.Div([
-                html.H6('Peso por Tipo de Carga', style={'textAlign': 'center', 'margin-right': '25%'}),
                 dcc.Graph(
                 id='grafico_donut',
                 figure=fig_donut,
