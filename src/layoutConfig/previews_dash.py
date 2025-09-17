@@ -14,7 +14,7 @@ if not isinstance(DF, pd.DataFrame):
     
 DF['Data'] = pd.to_datetime(DF['Data'], errors = 'coerce')
 DF['Valor Final'] = DF['Valor Final'].astype(str).str.replace('R\$', '', regex=True)
-DF['Vamor Unitário'] = DF['Valor Unitário'].astype(str).str.replace('R\$', '', regex=True)
+DF['Custo Frete'] = DF['Custo Frete'].astype(str).str.replace('R\$', '', regex=True)
 
 DF_filtered_table = DF.loc[:, ["Data", "Produto", "Valor Final"]]
 DF_filtered_table['Data'] = DF_filtered_table['Data'].dt.strftime('%d/%m/%Y')
@@ -72,14 +72,14 @@ def updateLayout(graph, tipo):
         return graph
     
 DF['Valor Final'] = DF['Valor Final'].apply(soma_valores)
-DF['Valor Unitário'] = DF['Valor Unitário'].apply(soma_valores)
+DF['Custo Frete'] = DF['Custo Frete'].apply(soma_valores)
 
 
 DF_grouped = DF.groupby(['Data', 'Produto'], as_index=False)['Valor Final'].sum()
 max_valor = DF_grouped['Valor Final'].max()
 
-DF_line = DF.groupby(['Data', 'Região Lojas'], as_index=False)['Valor Unitário'].sum()
-max_valor_line = DF_line['Valor Unitário'].max()
+DF_line = DF.groupby(['Data', 'Região Lojas'], as_index=False)['Custo Frete'].sum()
+max_valor_line = DF_line['Custo Frete'].max()
 
 graph_bar = px.bar(DF_grouped, x='Data', y = 'Valor Final', color = 'Produto', color_discrete_sequence = cores_graficos)
 graph_bar.update_yaxes(range=[0, max_valor * 1.1], autorange = False)
@@ -91,7 +91,7 @@ updateLayout(graph_pie, 'pie')
 graph_area = px.area(DF_grouped, x = 'Data', y = 'Valor Final', color = 'Produto')
 updateLayout(graph_area,'bar')
 
-graph_line = px.line(DF_line, x='Data', y='Valor Unitário', color='Região Lojas', markers=True, color_discrete_sequence= cores_graficos)
+graph_line = px.line(DF_line, x='Data', y='Custo Frete', color='Região Lojas', markers=True, color_discrete_sequence= cores_graficos)
 updateLayout(graph_line, 'line')
 
 # graph_table = go.Figure(data = [go.Table(

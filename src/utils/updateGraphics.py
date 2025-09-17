@@ -11,7 +11,7 @@ def updateLayout(graph, tipo):
                 yaxis_title=None,
                 xaxis=dict(autorange=True),
                 yaxis=dict(autorange=True),
-                title = dict(text='Custo de Frete por Tipo de Carga ao Longo do Tempo', x=0.5, y=0.95, xanchor='center', yanchor='top', font=dict(size=16, color='black', family='Arial')),
+                title = dict(text='Custo de frete por tipo de carga ao longo do tempo', x=0.5, y=0.95, xanchor='center', yanchor='top', font=dict(size=16, color='black', family='Arial')),
                 )
             
         elif (tipo == 'bar'):
@@ -20,7 +20,7 @@ def updateLayout(graph, tipo):
                 font = dict(family = 'Arial', size = 14.5, color = 'black' ),
                 paper_bgcolor = '#FEFAE0',
                 margin = dict (l = 75, r = 25, t = 0 , b = 10),
-                yaxis = dict (range = [0, 5000]),
+                yaxis = dict (range = [0, 10000]),
                 xaxis_title=None,
                 yaxis_title=None)
             

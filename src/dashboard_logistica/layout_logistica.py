@@ -17,7 +17,7 @@ layout_logistica = html.Div([
     html.Div([
         html.Div([
             dcc.Graph(
-                id='grafico_line',
+                id='grafico_line_logistica',
                 figure=fig_line,
                 style={'height': '50vh', 'width': '100%'},
                 config = {
@@ -29,7 +29,7 @@ layout_logistica = html.Div([
 
         html.Div([
             dcc.Graph(
-                id='grafico_histogram',
+                id='grafico_histogram_logistica',
                 figure=fig_histogram,
                 style={'height': '50vh', 'width': '70%'},
                 config = {
@@ -39,7 +39,7 @@ layout_logistica = html.Div([
             ),
             html.Div([
                 dcc.Graph(
-                id='grafico_donut',
+                id='grafico_donut_logistica',
                 figure=fig_donut,
                 config = {
                     'displaylogo': False,
@@ -50,4 +50,7 @@ layout_logistica = html.Div([
             
         ], style={'display': 'flex', 'height': '50vh', 'width': '100%', 'background-color': '#FEFAE0' }),
     ], className='main-container'), 
+    
+    dcc.Interval(id = 'interval-atualizacao-logistica', interval = 10 * 1000, n_intervals = 0),
+    dcc.Store(id = 'store-dados-logistica')
 ])

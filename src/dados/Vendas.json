@@ -5,8 +5,8 @@
         "ID Loja": "Iguatemi Campinas",
         "Produto": "Calça",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 170.00",
-        "Valor Final": "R$ 340.00"
+        "Custo Frete": "R$ 170,00",
+        "Valor Final": "R$ 340,00"
     },
     {
         "Código Venda": "65501",
@@ -14,8 +14,8 @@
         "ID Loja": "Iguatemi Campinas",
         "Produto": "Camisa",
         "Quantidade": "3",
-        "Valor Unitário": "R$ 100.00",
-        "Valor Final": "R$ 300.00"
+        "Custo Frete": "R$ 100,00",
+        "Valor Final": "R$ 300,00"
     },
     {
         "Código Venda": "65707",
@@ -23,8 +23,8 @@
         "ID Loja": "Iguatemi Esplanada",
         "Produto": "Bermuda",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 150.00",
-        "Valor Final": "R$ 150.00"
+        "Custo Frete": "R$ 150,00",
+        "Valor Final": "R$ 150,00"
     },
     {
         "Código Venda": "65750",
@@ -32,8 +32,8 @@
         "ID Loja": "Iguatemi Campinas",
         "Produto": "Bermuda",
         "Quantidade": "4",
-        "Valor Unitário": "R$ 150.00",
-        "Valor Final": "R$ 600.00"
+        "Custo Frete": "R$ 150,00",
+        "Valor Final": "R$ 600,00"
     },
     {
         "Código Venda": "65810",
@@ -41,8 +41,8 @@
         "ID Loja": "Center Shopping Uberlândia",
         "Produto": "Chinelo",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 60.00",
-        "Valor Final": "R$ 60.00"
+        "Custo Frete": "R$ 60,00",
+        "Valor Final": "R$ 60,00"
     },
     {
         "Código Venda": "65830",
@@ -50,8 +50,8 @@
         "ID Loja": "Iguatemi Campinas",
         "Produto": "Gorro",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 80.00",
-        "Valor Final": "R$ 160.00"
+        "Custo Frete": "R$ 80,00",
+        "Valor Final": "R$ 160,00"
     },
     {
         "Código Venda": "65859",
@@ -59,8 +59,8 @@
         "ID Loja": "Iguatemi Campinas",
         "Produto": "Bermuda",
         "Quantidade": "4",
-        "Valor Unitário": "R$ 150.00",
-        "Valor Final": "R$ 600.00"
+        "Custo Frete": "R$ 150,00",
+        "Valor Final": "R$ 600,00"
     },
     {
         "Código Venda": "65893",
@@ -68,8 +68,8 @@
         "ID Loja": "Bourbon Shopping SP",
         "Produto": "Gorro",
         "Quantidade": "3",
-        "Valor Unitário": "R$ 80.00",
-        "Valor Final": "R$ 240.00"
+        "Custo Frete": "R$ 80,00",
+        "Valor Final": "R$ 240,00"
     },
     {
         "Código Venda": "66029",
@@ -77,8 +77,8 @@
         "ID Loja": "Iguatemi Campinas",
         "Produto": "Cinto",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 200.00",
-        "Valor Final": "R$ 400.00"
+        "Custo Frete": "R$ 200,00",
+        "Valor Final": "R$ 400,00"
     },
     {
         "Código Venda": "66040",
@@ -86,8 +86,8 @@
         "ID Loja": "Bourbon Shopping SP",
         "Produto": "Chinelo",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 60.00",
-        "Valor Final": "R$ 60.00"
+        "Custo Frete": "R$ 60,00",
+        "Valor Final": "R$ 60,00"
     },
     {
         "Código Venda": "66240",
@@ -95,8 +95,8 @@
         "ID Loja": "Bourbon Shopping SP",
         "Produto": "Bermuda",
         "Quantidade": "3",
-        "Valor Unitário": "R$ 150.00",
-        "Valor Final": "R$ 450.00"
+        "Custo Frete": "R$ 150,00",
+        "Valor Final": "R$ 450,00"
     },
     {
         "Código Venda": "66304",
@@ -104,8 +104,8 @@
         "ID Loja": "Iguatemi Campinas",
         "Produto": "Gorro",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 80.00",
-        "Valor Final": "R$ 80.00"
+        "Custo Frete": "R$ 80,00",
+        "Valor Final": "R$ 80,00"
     },
     {
         "Código Venda": "66321",
@@ -113,8 +113,8 @@
         "ID Loja": "Iguatemi Esplanada",
         "Produto": "Camisa",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 100.00",
-        "Valor Final": "R$ 100.00"
+        "Custo Frete": "R$ 100,00",
+        "Valor Final": "R$ 100,00"
     },
     {
         "Código Venda": "66404",
@@ -122,8 +122,8 @@
         "ID Loja": "Center Shopping Uberlândia",
         "Produto": "Calça",
         "Quantidade": "5",
-        "Valor Unitário": "R$ 170.00",
-        "Valor Final": "R$ 850.00"
+        "Custo Frete": "R$ 170,00",
+        "Valor Final": "R$ 850,00"
     },
     {
         "Código Venda": "66637",
@@ -131,8 +131,8 @@
         "ID Loja": "Iguatemi Esplanada",
         "Produto": "Calça",
         "Quantidade": "3",
-        "Valor Unitário": "R$ 170.00",
-        "Valor Final": "R$ 510.00"
+        "Custo Frete": "R$ 170,00",
+        "Valor Final": "R$ 510,00"
     },
     {
         "Código Venda": "66672",
@@ -140,8 +140,8 @@
         "ID Loja": "Iguatemi Esplanada",
         "Produto": "Cinto",
         "Quantidade": "3",
-        "Valor Unitário": "R$ 200.00",
-        "Valor Final": "R$ 600.00"
+        "Custo Frete": "R$ 200,00",
+        "Valor Final": "R$ 600,00"
     },
     {
         "Código Venda": "66713",
@@ -149,8 +149,8 @@
         "ID Loja": "Iguatemi Esplanada",
         "Produto": "Camisa",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 100.00",
-        "Valor Final": "R$ 200.00"
+        "Custo Frete": "R$ 100,00",
+        "Valor Final": "R$ 200,00"
     },
     {
         "Código Venda": "66724",
@@ -158,8 +158,8 @@
         "ID Loja": "Bourbon Shopping SP",
         "Produto": "Cinto",
         "Quantidade": "3",
-        "Valor Unitário": "R$ 200.00",
-        "Valor Final": "R$ 600.00"
+        "Custo Frete": "R$ 200,00",
+        "Valor Final": "R$ 600,00"
     },
     {
         "Código Venda": "66945",
@@ -167,8 +167,8 @@
         "ID Loja": "Iguatemi Campinas",
         "Produto": "Calça",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 170.00",
-        "Valor Final": "R$ 170.00"
+        "Custo Frete": "R$ 170,00",
+        "Valor Final": "R$ 170,00"
     },
     {
         "Código Venda": "67063",
@@ -176,8 +176,8 @@
         "ID Loja": "Iguatemi Esplanada",
         "Produto": "Gorro",
         "Quantidade": "3",
-        "Valor Unitário": "R$ 80.00",
-        "Valor Final": "R$ 240.00"
+        "Custo Frete": "R$ 80,00",
+        "Valor Final": "R$ 240,00"
     },
     {
         "Código Venda": "67469",
@@ -185,8 +185,8 @@
         "ID Loja": "Bourbon Shopping SP",
         "Produto": "Chinelo",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 60.00",
-        "Valor Final": "R$ 60.00"
+        "Custo Frete": "R$ 60,00",
+        "Valor Final": "R$ 60,00"
     },
     {
         "Código Venda": "67571",
@@ -194,8 +194,8 @@
         "ID Loja": "Center Shopping Uberlândia",
         "Produto": "Camisa",
         "Quantidade": "3",
-        "Valor Unitário": "R$ 100.00",
-        "Valor Final": "R$ 300.00"
+        "Custo Frete": "R$ 100,00",
+        "Valor Final": "R$ 300,00"
     },
     {
         "Código Venda": "67907",
@@ -203,8 +203,8 @@
         "ID Loja": "Iguatemi Esplanada",
         "Produto": "Camisa",
         "Quantidade": "5",
-        "Valor Unitário": "R$ 100.00",
-        "Valor Final": "R$ 500.00"
+        "Custo Frete": "R$ 100,00",
+        "Valor Final": "R$ 500,00"
     },
     {
         "Código Venda": "68113",
@@ -212,8 +212,8 @@
         "ID Loja": "Center Shopping Uberlândia",
         "Produto": "Calça",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 170.00",
-        "Valor Final": "R$ 170.00"
+        "Custo Frete": "R$ 170,00",
+        "Valor Final": "R$ 170,00"
     },
     {
         "Código Venda": "68217",
@@ -221,8 +221,8 @@
         "ID Loja": "Center Shopping Uberlândia",
         "Produto": "Camisa",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 100.00",
-        "Valor Final": "R$ 100.00"
+        "Custo Frete": "R$ 100,00",
+        "Valor Final": "R$ 100,00"
     },
     {
         "Código Venda": "68226",
@@ -230,8 +230,8 @@
         "ID Loja": "Bourbon Shopping SP",
         "Produto": "Camisa",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 100.00",
-        "Valor Final": "R$ 200.00"
+        "Custo Frete": "R$ 100,00",
+        "Valor Final": "R$ 200,00"
     },
     {
         "Código Venda": "68275",
@@ -239,8 +239,8 @@
         "ID Loja": "Bourbon Shopping SP",
         "Produto": "Bermuda",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 150.00",
-        "Valor Final": "R$ 300.00"
+        "Custo Frete": "R$ 150,00",
+        "Valor Final": "R$ 300,00"
     },
     {
         "Código Venda": "68409",
@@ -248,8 +248,8 @@
         "ID Loja": "Iguatemi Campinas",
         "Produto": "Calça",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 170.00",
-        "Valor Final": "R$ 170.00"
+        "Custo Frete": "R$ 170,00",
+        "Valor Final": "R$ 170,00"
     },
     {
         "Código Venda": "68480",
@@ -257,8 +257,8 @@
         "ID Loja": "Iguatemi Campinas",
         "Produto": "Gorro",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 80.00",
-        "Valor Final": "R$ 80.00"
+        "Custo Frete": "R$ 80,00",
+        "Valor Final": "R$ 80,00"
     },
     {
         "Código Venda": "68753",
@@ -266,8 +266,8 @@
         "ID Loja": "Center Shopping Uberlândia",
         "Produto": "Camisa",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 100.00",
-        "Valor Final": "R$ 200.00"
+        "Custo Frete": "R$ 100,00",
+        "Valor Final": "R$ 200,00"
     },
     {
         "Código Venda": "68989",
@@ -275,8 +275,8 @@
         "ID Loja": "Center Shopping Uberlândia",
         "Produto": "Gorro",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 80.00",
-        "Valor Final": "R$ 80.00"
+        "Custo Frete": "R$ 80,00",
+        "Valor Final": "R$ 80,00"
     },
     {
         "Código Venda": "69104",
@@ -284,8 +284,8 @@
         "ID Loja": "Iguatemi Esplanada",
         "Produto": "Camisa",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 100.00",
-        "Valor Final": "R$ 100.00"
+        "Custo Frete": "R$ 100,00",
+        "Valor Final": "R$ 100,00"
     },
     {
         "Código Venda": "69104",
@@ -293,8 +293,8 @@
         "ID Loja": "Iguatemi Esplanada",
         "Produto": "Camisa",
         "Quantidade": "3",
-        "Valor Unitário": "R$ 100.00",
-        "Valor Final": "R$ 300.00"
+        "Custo Frete": "R$ 100,00",
+        "Valor Final": "R$ 300,00"
     },
     {
         "Código Venda": "69115",
@@ -302,8 +302,8 @@
         "ID Loja": "Iguatemi Esplanada",
         "Produto": "Camisa",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 100.00",
-        "Valor Final": "R$ 100.00"
+        "Custo Frete": "R$ 100,00",
+        "Valor Final": "R$ 100,00"
     },
     {
         "Código Venda": "69145",
@@ -311,8 +311,8 @@
         "ID Loja": "Bourbon Shopping SP",
         "Produto": "Cinto",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 200.00",
-        "Valor Final": "R$ 400.00"
+        "Custo Frete": "R$ 200,00",
+        "Valor Final": "R$ 400,00"
     },
     {
         "Código Venda": "69184",
@@ -320,8 +320,8 @@
         "ID Loja": "Bourbon Shopping SP",
         "Produto": "Camisa",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 100.00",
-        "Valor Final": "R$ 200.00"
+        "Custo Frete": "R$ 100,00",
+        "Valor Final": "R$ 200,00"
     },
     {
         "Código Venda": "69220",
@@ -329,8 +329,8 @@
         "ID Loja": "Iguatemi Esplanada",
         "Produto": "Cinto",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 200.00",
-        "Valor Final": "R$ 200.00"
+        "Custo Frete": "R$ 200,00",
+        "Valor Final": "R$ 200,00"
     },
     {
         "Código Venda": "69286",
@@ -338,8 +338,8 @@
         "ID Loja": "Iguatemi Campinas",
         "Produto": "Gorro",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 80.00",
-        "Valor Final": "R$ 160.00"
+        "Custo Frete": "R$ 80,00",
+        "Valor Final": "R$ 160,00"
     },
     {
         "Código Venda": "69676",
@@ -347,8 +347,8 @@
         "ID Loja": "Bourbon Shopping SP",
         "Produto": "Gorro",
         "Quantidade": "4",
-        "Valor Unitário": "R$ 80.00",
-        "Valor Final": "R$ 320.00"
+        "Custo Frete": "R$ 80,00",
+        "Valor Final": "R$ 320,00"
     },
     {
         "Código Venda": "69714",
@@ -356,8 +356,8 @@
         "ID Loja": "Center Shopping Uberlândia",
         "Produto": "Cinto",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 200.00",
-        "Valor Final": "R$ 400.00"
+        "Custo Frete": "R$ 200,00",
+        "Valor Final": "R$ 400,00"
     },
     {
         "Código Venda": "69730",
@@ -365,8 +365,8 @@
         "ID Loja": "Bourbon Shopping SP",
         "Produto": "Gorro",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 80.00",
-        "Valor Final": "R$ 160.00"
+        "Custo Frete": "R$ 80,00",
+        "Valor Final": "R$ 160,00"
     },
     {
         "Código Venda": "69917",
@@ -374,17 +374,17 @@
         "ID Loja": "Iguatemi Campinas",
         "Produto": "Calça",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 170.00",
-        "Valor Final": "R$ 340.00"
+        "Custo Frete": "R$ 170,00",
+        "Valor Final": "R$ 340,00"
     },
-     {
+    {
         "Código Venda": "69286",
         "Data": "12/22/19",
         "ID Loja": "Iguatemi Campinas",
         "Produto": "Gorro",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 80.00",
-        "Valor Final": "R$ 160.00"
+        "Custo Frete": "R$ 80,00",
+        "Valor Final": "R$ 160,00"
     },
     {
         "Código Venda": "69676",
@@ -392,8 +392,8 @@
         "ID Loja": "Bourbon Shopping SP",
         "Produto": "Gorro",
         "Quantidade": "4",
-        "Valor Unitário": "R$ 80.00",
-        "Valor Final": "R$ 320.00"
+        "Custo Frete": "R$ 80,00",
+        "Valor Final": "R$ 320,00"
     },
     {
         "Código Venda": "69714",
@@ -401,8 +401,8 @@
         "ID Loja": "Center Shopping Uberlândia",
         "Produto": "Cinto",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 200.00",
-        "Valor Final": "R$ 400.00"
+        "Custo Frete": "R$ 200,00",
+        "Valor Final": "R$ 400,00"
     },
     {
         "Código Venda": "69730",
@@ -410,8 +410,8 @@
         "ID Loja": "Bourbon Shopping SP",
         "Produto": "Gorro",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 80.00",
-        "Valor Final": "R$ 160.00"
+        "Custo Frete": "R$ 80,00",
+        "Valor Final": "R$ 160,00"
     },
     {
         "Código Venda": "69917",
@@ -419,8 +419,8 @@
         "ID Loja": "Iguatemi Campinas",
         "Produto": "Calça",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 170.00",
-        "Valor Final": "R$ 340.00"
+        "Custo Frete": "R$ 170,00",
+        "Valor Final": "R$ 340,00"
     },
     {
         "Código Venda": "69999",
@@ -428,8 +428,8 @@
         "ID Loja": "Shopping Eldorado",
         "Produto": "Camisa",
         "Quantidade": "3",
-        "Valor Unitário": "R$ 120.00",
-        "Valor Final": "R$ 360.00"
+        "Custo Frete": "R$ 120,00",
+        "Valor Final": "R$ 360,00"
     },
     {
         "Código Venda": "70012",
@@ -437,8 +437,8 @@
         "ID Loja": "Shopping Recife",
         "Produto": "Tênis",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 250.00",
-        "Valor Final": "R$ 250.00"
+        "Custo Frete": "R$ 250,00",
+        "Valor Final": "R$ 250,00"
     },
     {
         "Código Venda": "70045",
@@ -446,8 +446,8 @@
         "ID Loja": "BH Shopping",
         "Produto": "Jaqueta",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 350.00",
-        "Valor Final": "R$ 350.00"
+        "Custo Frete": "R$ 350,00",
+        "Valor Final": "R$ 350,00"
     },
     {
         "Código Venda": "70070",
@@ -455,8 +455,8 @@
         "ID Loja": "Iguatemi Porto Alegre",
         "Produto": "Vestido",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 180.00",
-        "Valor Final": "R$ 360.00"
+        "Custo Frete": "R$ 180,00",
+        "Valor Final": "R$ 360,00"
     },
     {
         "Código Venda": "70101",
@@ -464,8 +464,8 @@
         "ID Loja": "Shopping Recife",
         "Produto": "Tênis",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 250.00",
-        "Valor Final": "R$ 500.00"
+        "Custo Frete": "R$ 250,00",
+        "Valor Final": "R$ 500,00"
     },
     {
         "Código Venda": "70130",
@@ -473,8 +473,8 @@
         "ID Loja": "Shopping Eldorado",
         "Produto": "Cinto",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 200.00",
-        "Valor Final": "R$ 200.00"
+        "Custo Frete": "R$ 200,00",
+        "Valor Final": "R$ 200,00"
     },
     {
         "Código Venda": "70165",
@@ -482,8 +482,8 @@
         "ID Loja": "Shopping Recife",
         "Produto": "Gorro",
         "Quantidade": "3",
-        "Valor Unitário": "R$ 75.00",
-        "Valor Final": "R$ 225.00"
+        "Custo Frete": "R$ 75,00",
+        "Valor Final": "R$ 225,00"
     },
     {
         "Código Venda": "70192",
@@ -491,8 +491,8 @@
         "ID Loja": "BH Shopping",
         "Produto": "Camisa",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 120.00",
-        "Valor Final": "R$ 240.00"
+        "Custo Frete": "R$ 120,00",
+        "Valor Final": "R$ 240,00"
     },
     {
         "Código Venda": "70220",
@@ -500,8 +500,8 @@
         "ID Loja": "Iguatemi Porto Alegre",
         "Produto": "Jaqueta",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 380.00",
-        "Valor Final": "R$ 380.00"
+        "Custo Frete": "R$ 380,00",
+        "Valor Final": "R$ 380,00"
     },
     {
         "Código Venda": "70250",
@@ -509,17 +509,17 @@
         "ID Loja": "Center Shopping Uberlândia",
         "Produto": "Vestido",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 190.00",
-        "Valor Final": "R$ 190.00"
+        "Custo Frete": "R$ 190,00",
+        "Valor Final": "R$ 190,00"
     },
-        {
+    {
         "Código Venda": "70300",
         "Data": "12/24/19",
         "ID Loja": "Shopping Eldorado",
         "Produto": "Jaqueta",
         "Quantidade": "5",
-        "Valor Unitário": "R$ 350.00",
-        "Valor Final": "R$ 1750.00"
+        "Custo Frete": "R$ 350,00",
+        "Valor Final": "R$ 1750,00"
     },
     {
         "Código Venda": "70301",
@@ -527,8 +527,8 @@
         "ID Loja": "Shopping Eldorado",
         "Produto": "Meia",
         "Quantidade": "3",
-        "Valor Unitário": "R$ 40.00",
-        "Valor Final": "R$ 120.00"
+        "Custo Frete": "R$ 40,00",
+        "Valor Final": "R$ 120,00"
     },
     {
         "Código Venda": "70302",
@@ -536,8 +536,8 @@
         "ID Loja": "BH Shopping",
         "Produto": "Cinto",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 200.00",
-        "Valor Final": "R$ 400.00"
+        "Custo Frete": "R$ 200,00",
+        "Valor Final": "R$ 400,00"
     },
     {
         "Código Venda": "70303",
@@ -545,8 +545,8 @@
         "ID Loja": "Shopping Recife",
         "Produto": "Jaqueta",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 350.00",
-        "Valor Final": "R$ 350.00"
+        "Custo Frete": "R$ 350,00",
+        "Valor Final": "R$ 350,00"
     },
     {
         "Código Venda": "70304",
@@ -554,8 +554,8 @@
         "ID Loja": "BH Shopping",
         "Produto": "Tênis",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 250.00",
-        "Valor Final": "R$ 500.00"
+        "Custo Frete": "R$ 250,00",
+        "Valor Final": "R$ 500,00"
     },
     {
         "Código Venda": "70305",
@@ -563,8 +563,8 @@
         "ID Loja": "Iguatemi Porto Alegre",
         "Produto": "Calça",
         "Quantidade": "4",
-        "Valor Unitário": "R$ 180.00",
-        "Valor Final": "R$ 720.00"
+        "Custo Frete": "R$ 180,00",
+        "Valor Final": "R$ 720,00"
     },
     {
         "Código Venda": "70306",
@@ -572,8 +572,8 @@
         "ID Loja": "Shopping Eldorado",
         "Produto": "Camisa",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 120.00",
-        "Valor Final": "R$ 120.00"
+        "Custo Frete": "R$ 120,00",
+        "Valor Final": "R$ 120,00"
     },
     {
         "Código Venda": "70307",
@@ -581,8 +581,8 @@
         "ID Loja": "Iguatemi Porto Alegre",
         "Produto": "Jaqueta",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 350.00",
-        "Valor Final": "R$ 700.00"
+        "Custo Frete": "R$ 350,00",
+        "Valor Final": "R$ 700,00"
     },
     {
         "Código Venda": "70308",
@@ -590,8 +590,8 @@
         "ID Loja": "Shopping Recife",
         "Produto": "Vestido",
         "Quantidade": "3",
-        "Valor Unitário": "R$ 190.00",
-        "Valor Final": "R$ 570.00"
+        "Custo Frete": "R$ 190,00",
+        "Valor Final": "R$ 570,00"
     },
     {
         "Código Venda": "70309",
@@ -599,8 +599,8 @@
         "ID Loja": "Center Shopping Uberlândia",
         "Produto": "Tênis",
         "Quantidade": "3",
-        "Valor Unitário": "R$ 250.00",
-        "Valor Final": "R$ 750.00"
+        "Custo Frete": "R$ 250,00",
+        "Valor Final": "R$ 750,00"
     },
     {
         "Código Venda": "70310",
@@ -608,8 +608,8 @@
         "ID Loja": "BH Shopping",
         "Produto": "Camisa",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 120.00",
-        "Valor Final": "R$ 240.00"
+        "Custo Frete": "R$ 120,00",
+        "Valor Final": "R$ 240,00"
     },
     {
         "Código Venda": "70311",
@@ -617,8 +617,8 @@
         "ID Loja": "Shopping Recife",
         "Produto": "Cinto",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 200.00",
-        "Valor Final": "R$ 200.00"
+        "Custo Frete": "R$ 200,00",
+        "Valor Final": "R$ 200,00"
     },
     {
         "Código Venda": "70312",
@@ -626,8 +626,8 @@
         "ID Loja": "Shopping Recife",
         "Produto": "Sapato",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 300.00",
-        "Valor Final": "R$ 600.00"
+        "Custo Frete": "R$ 300,00",
+        "Valor Final": "R$ 600,00"
     },
     {
         "Código Venda": "70313",
@@ -635,8 +635,8 @@
         "ID Loja": "Iguatemi Porto Alegre",
         "Produto": "Blusa",
         "Quantidade": "4",
-        "Valor Unitário": "R$ 150.00",
-        "Valor Final": "R$ 600.00"
+        "Custo Frete": "R$ 150,00",
+        "Valor Final": "R$ 600,00"
     },
     {
         "Código Venda": "70314",
@@ -644,8 +644,8 @@
         "ID Loja": "Center Shopping Uberlândia",
         "Produto": "Meia",
         "Quantidade": "5",
-        "Valor Unitário": "R$ 40.00",
-        "Valor Final": "R$ 200.00"
+        "Custo Frete": "R$ 40,00",
+        "Valor Final": "R$ 200,00"
     },
     {
         "Código Venda": "70315",
@@ -653,8 +653,8 @@
         "ID Loja": "Bourbon Shopping SP",
         "Produto": "Gorro",
         "Quantidade": "2",
-        "Valor Unitário": "R$ 70.00",
-        "Valor Final": "R$ 140.00"
+        "Custo Frete": "R$ 70,00",
+        "Valor Final": "R$ 140,00"
     },
     {
         "Código Venda": "70316",
@@ -662,8 +662,8 @@
         "ID Loja": "Shopping Eldorado",
         "Produto": "Vestido",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 190.00",
-        "Valor Final": "R$ 190.00"
+        "Custo Frete": "R$ 190,00",
+        "Valor Final": "R$ 190,00"
     },
     {
         "Código Venda": "70317",
@@ -671,8 +671,8 @@
         "ID Loja": "Center Shopping Uberlândia",
         "Produto": "Tênis",
         "Quantidade": "1",
-        "Valor Unitário": "R$ 250.00",
-        "Valor Final": "R$ 250.00"
+        "Custo Frete": "R$ 250,00",
+        "Valor Final": "R$ 250,00"
     },
     {
         "Código Venda": "70318",
@@ -680,8 +680,8 @@
         "ID Loja": "Iguatemi Campinas",
         "Produto": "Sapato",
         "Quantidade": "3",
-        "Valor Unitário": "R$ 300.00",
-        "Valor Final": "R$ 900.00"
+        "Custo Frete": "R$ 300,00",
+        "Valor Final": "R$ 900,00"
     },
     {
         "Código Venda": "70319",
@@ -689,7 +689,7 @@
         "ID Loja": "BH Shopping",
         "Produto": "Camisa",
         "Quantidade": "4",
-        "Valor Unitário": "R$ 120.00",
-        "Valor Final": "R$ 480.00"
+        "Custo Frete": "R$ 120,00",
+        "Valor Final": "R$ 480,00"
     }
 ]

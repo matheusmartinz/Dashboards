@@ -719,7 +719,7 @@
         "Peso (kg)": 750,
         "Custo Frete": "R$ 1.800,00"
     },
-        {
+    {
         "ID Entrega": "TRK-3005",
         "Data Saída": "2025-08-25",
         "Centro de Distribuição": "CD Belo Horizonte",
@@ -764,7 +764,7 @@
         "Peso (kg)": 430,
         "Custo Frete": "R$ 870,00"
     },
-       {
+    {
         "ID Entrega": "TRK-3010",
         "Data Saída": "2025-08-30",
         "Centro de Distribuição": "CD São Paulo",

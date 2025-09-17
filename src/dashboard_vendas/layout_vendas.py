@@ -41,6 +41,6 @@ layout_vendas = html.Div([
         ], style={'display': 'flex', 'height': '50vh'}),
     ], className='main-container'), 
     
-    dcc.Interval(id = 'interval-atualizacao', interval = 10*1000, n_intervals = 0),
-    dcc.Store(id = 'store-dados-graficos')
+    dcc.Interval(id = 'interval-atualizacao-vendas', interval = 10*1000, n_intervals = 0),
+    dcc.Store(id = 'store-dados-graficos-vendas')
 ])

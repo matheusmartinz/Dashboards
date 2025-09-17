@@ -5,10 +5,6 @@ from utils.formaterDate import formaterDate
 import re
 import apis.api as api
 
-def soma_valores(text):
-    valores = re.findall(r'\d+\.\d+', text)
-    return sum(float(v) for v in valores)
-
 def loadDataLogistica():
     DF = api.fetch_Json_data('dados/Logistica.json')
 
@@ -37,19 +33,22 @@ def loadDataLogistica():
 
 def loadDataVendas():
     DF = api.fetch_Json_data('dados/Vendas.json')
-
-    DF['Valor Final'] = DF['Valor Final'].apply(soma_valores)
-    DF['Valor Unitário'] = DF['Valor Unitário'].apply(soma_valores)
+    
     DF['Data'] = pd.to_datetime(DF['Data'], errors='coerce')
+    DF['Valor Final'] = formaterToNumber(DF['Valor Final'])
+    DF['Valor Final View'] = formaterToReal(DF['Valor Final'])
+    DF['Custo Frete'] = formaterToNumber(DF['Custo Frete'])
     DF = DF.rename(columns={'ID Loja': 'Região Lojas'})
 
     DF_filtered_table = DF.loc[:, ["Data", "Produto", "Valor Final"]]
     DF_filtered_table['Data'] = formaterDate(DF_filtered_table['Data'])
-    DF_filtered_table['Valor Final'] = formaterToReal(DF_filtered_table['Valor Final'])
+    DF_filtered_table['Valor Final Formatado'] = formaterToReal(DF_filtered_table['Valor Final'])
 
     DF_grouped = DF.groupby(['Data', 'Produto'], as_index=False)['Valor Final'].sum()
-
-    DF_line = DF.groupby(['Data', 'Região Lojas'], as_index=False)['Valor Unitário'].sum()
+    DF_grouped['Valor Final Formatado'] = formaterToReal(DF_grouped['Valor Final'])
+    
+    DF_line = (DF.groupby([pd.Grouper(key = 'Data', freq= 'D'), 'Região Lojas'], as_index=False)['Custo Frete'].sum())
+    DF_line['Custo Frete Formatado'] = formaterToReal(DF_line['Custo Frete'])
 
     return {
         "DF": DF,

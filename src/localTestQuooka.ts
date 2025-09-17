@@ -721,6 +721,702 @@ const data = [
     }
 ]
 
+const dataVendas = [
+    {
+        "Código Venda": "65056",
+        "Data": "12/1/19",
+        "ID Loja": "Iguatemi Campinas",
+        "Produto": "Calça",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 170.00",
+        "Valor Final": "R$ 340.00"
+    },
+    {
+        "Código Venda": "65501",
+        "Data": "12/3/19",
+        "ID Loja": "Iguatemi Campinas",
+        "Produto": "Camisa",
+        "Quantidade": "3",
+        "Valor Unitário": "R$ 100.00",
+        "Valor Final": "R$ 300.00"
+    },
+    {
+        "Código Venda": "65707",
+        "Data": "12/4/19",
+        "ID Loja": "Iguatemi Esplanada",
+        "Produto": "Bermuda",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 150.00",
+        "Valor Final": "R$ 150.00"
+    },
+    {
+        "Código Venda": "65750",
+        "Data": "12/4/19",
+        "ID Loja": "Iguatemi Campinas",
+        "Produto": "Bermuda",
+        "Quantidade": "4",
+        "Valor Unitário": "R$ 150.00",
+        "Valor Final": "R$ 600.00"
+    },
+    {
+        "Código Venda": "65810",
+        "Data": "12/5/19",
+        "ID Loja": "Center Shopping Uberlândia",
+        "Produto": "Chinelo",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 60.00",
+        "Valor Final": "R$ 60.00"
+    },
+    {
+        "Código Venda": "65830",
+        "Data": "12/5/19",
+        "ID Loja": "Iguatemi Campinas",
+        "Produto": "Gorro",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 80.00",
+        "Valor Final": "R$ 160.00"
+    },
+    {
+        "Código Venda": "65859",
+        "Data": "12/5/19",
+        "ID Loja": "Iguatemi Campinas",
+        "Produto": "Bermuda",
+        "Quantidade": "4",
+        "Valor Unitário": "R$ 150.00",
+        "Valor Final": "R$ 600.00"
+    },
+    {
+        "Código Venda": "65893",
+        "Data": "12/5/19",
+        "ID Loja": "Bourbon Shopping SP",
+        "Produto": "Gorro",
+        "Quantidade": "3",
+        "Valor Unitário": "R$ 80.00",
+        "Valor Final": "R$ 240.00"
+    },
+    {
+        "Código Venda": "66029",
+        "Data": "12/6/19",
+        "ID Loja": "Iguatemi Campinas",
+        "Produto": "Cinto",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 200.00",
+        "Valor Final": "R$ 400.00"
+    },
+    {
+        "Código Venda": "66040",
+        "Data": "12/6/19",
+        "ID Loja": "Bourbon Shopping SP",
+        "Produto": "Chinelo",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 60.00",
+        "Valor Final": "R$ 60.00"
+    },
+    {
+        "Código Venda": "66240",
+        "Data": "12/7/19",
+        "ID Loja": "Bourbon Shopping SP",
+        "Produto": "Bermuda",
+        "Quantidade": "3",
+        "Valor Unitário": "R$ 150.00",
+        "Valor Final": "R$ 450.00"
+    },
+    {
+        "Código Venda": "66304",
+        "Data": "12/7/19",
+        "ID Loja": "Iguatemi Campinas",
+        "Produto": "Gorro",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 80.00",
+        "Valor Final": "R$ 80.00"
+    },
+    {
+        "Código Venda": "66321",
+        "Data": "12/7/19",
+        "ID Loja": "Iguatemi Esplanada",
+        "Produto": "Camisa",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 100.00",
+        "Valor Final": "R$ 100.00"
+    },
+    {
+        "Código Venda": "66404",
+        "Data": "12/8/19",
+        "ID Loja": "Center Shopping Uberlândia",
+        "Produto": "Calça",
+        "Quantidade": "5",
+        "Valor Unitário": "R$ 170.00",
+        "Valor Final": "R$ 850.00"
+    },
+    {
+        "Código Venda": "66637",
+        "Data": "12/9/19",
+        "ID Loja": "Iguatemi Esplanada",
+        "Produto": "Calça",
+        "Quantidade": "3",
+        "Valor Unitário": "R$ 170.00",
+        "Valor Final": "R$ 510.00"
+    },
+    {
+        "Código Venda": "66672",
+        "Data": "12/9/19",
+        "ID Loja": "Iguatemi Esplanada",
+        "Produto": "Cinto",
+        "Quantidade": "3",
+        "Valor Unitário": "R$ 200.00",
+        "Valor Final": "R$ 600.00"
+    },
+    {
+        "Código Venda": "66713",
+        "Data": "12/9/19",
+        "ID Loja": "Iguatemi Esplanada",
+        "Produto": "Camisa",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 100.00",
+        "Valor Final": "R$ 200.00"
+    },
+    {
+        "Código Venda": "66724",
+        "Data": "12/10/19",
+        "ID Loja": "Bourbon Shopping SP",
+        "Produto": "Cinto",
+        "Quantidade": "3",
+        "Valor Unitário": "R$ 200.00",
+        "Valor Final": "R$ 600.00"
+    },
+    {
+        "Código Venda": "66945",
+        "Data": "12/11/19",
+        "ID Loja": "Iguatemi Campinas",
+        "Produto": "Calça",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 170.00",
+        "Valor Final": "R$ 170.00"
+    },
+    {
+        "Código Venda": "67063",
+        "Data": "12/11/19",
+        "ID Loja": "Iguatemi Esplanada",
+        "Produto": "Gorro",
+        "Quantidade": "3",
+        "Valor Unitário": "R$ 80.00",
+        "Valor Final": "R$ 240.00"
+    },
+    {
+        "Código Venda": "67469",
+        "Data": "12/13/19",
+        "ID Loja": "Bourbon Shopping SP",
+        "Produto": "Chinelo",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 60.00",
+        "Valor Final": "R$ 60.00"
+    },
+    {
+        "Código Venda": "67571",
+        "Data": "12/14/19",
+        "ID Loja": "Center Shopping Uberlândia",
+        "Produto": "Camisa",
+        "Quantidade": "3",
+        "Valor Unitário": "R$ 100.00",
+        "Valor Final": "R$ 300.00"
+    },
+    {
+        "Código Venda": "67907",
+        "Data": "12/15/19",
+        "ID Loja": "Iguatemi Esplanada",
+        "Produto": "Camisa",
+        "Quantidade": "5",
+        "Valor Unitário": "R$ 100.00",
+        "Valor Final": "R$ 500.00"
+    },
+    {
+        "Código Venda": "68113",
+        "Data": "12/16/19",
+        "ID Loja": "Center Shopping Uberlândia",
+        "Produto": "Calça",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 170.00",
+        "Valor Final": "R$ 170.00"
+    },
+    {
+        "Código Venda": "68217",
+        "Data": "12/17/19",
+        "ID Loja": "Center Shopping Uberlândia",
+        "Produto": "Camisa",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 100.00",
+        "Valor Final": "R$ 100.00"
+    },
+    {
+        "Código Venda": "68226",
+        "Data": "12/17/19",
+        "ID Loja": "Bourbon Shopping SP",
+        "Produto": "Camisa",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 100.00",
+        "Valor Final": "R$ 200.00"
+    },
+    {
+        "Código Venda": "68275",
+        "Data": "12/17/19",
+        "ID Loja": "Bourbon Shopping SP",
+        "Produto": "Bermuda",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 150.00",
+        "Valor Final": "R$ 300.00"
+    },
+    {
+        "Código Venda": "68409",
+        "Data": "12/17/19",
+        "ID Loja": "Iguatemi Campinas",
+        "Produto": "Calça",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 170.00",
+        "Valor Final": "R$ 170.00"
+    },
+    {
+        "Código Venda": "68480",
+        "Data": "12/18/19",
+        "ID Loja": "Iguatemi Campinas",
+        "Produto": "Gorro",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 80.00",
+        "Valor Final": "R$ 80.00"
+    },
+    {
+        "Código Venda": "68753",
+        "Data": "12/19/19",
+        "ID Loja": "Center Shopping Uberlândia",
+        "Produto": "Camisa",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 100.00",
+        "Valor Final": "R$ 200.00"
+    },
+    {
+        "Código Venda": "68989",
+        "Data": "12/20/19",
+        "ID Loja": "Center Shopping Uberlândia",
+        "Produto": "Gorro",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 80.00",
+        "Valor Final": "R$ 80.00"
+    },
+    {
+        "Código Venda": "69104",
+        "Data": "12/21/19",
+        "ID Loja": "Iguatemi Esplanada",
+        "Produto": "Camisa",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 100.00",
+        "Valor Final": "R$ 100.00"
+    },
+    {
+        "Código Venda": "69104",
+        "Data": "12/21/19",
+        "ID Loja": "Iguatemi Esplanada",
+        "Produto": "Camisa",
+        "Quantidade": "3",
+        "Valor Unitário": "R$ 100.00",
+        "Valor Final": "R$ 300.00"
+    },
+    {
+        "Código Venda": "69115",
+        "Data": "12/21/19",
+        "ID Loja": "Iguatemi Esplanada",
+        "Produto": "Camisa",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 100.00",
+        "Valor Final": "R$ 100.00"
+    },
+    {
+        "Código Venda": "69145",
+        "Data": "12/21/19",
+        "ID Loja": "Bourbon Shopping SP",
+        "Produto": "Cinto",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 200.00",
+        "Valor Final": "R$ 400.00"
+    },
+    {
+        "Código Venda": "69184",
+        "Data": "12/21/19",
+        "ID Loja": "Bourbon Shopping SP",
+        "Produto": "Camisa",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 100.00",
+        "Valor Final": "R$ 200.00"
+    },
+    {
+        "Código Venda": "69220",
+        "Data": "12/22/19",
+        "ID Loja": "Iguatemi Esplanada",
+        "Produto": "Cinto",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 200.00",
+        "Valor Final": "R$ 200.00"
+    },
+    {
+        "Código Venda": "69286",
+        "Data": "12/22/19",
+        "ID Loja": "Iguatemi Campinas",
+        "Produto": "Gorro",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 80.00",
+        "Valor Final": "R$ 160.00"
+    },
+    {
+        "Código Venda": "69676",
+        "Data": "12/24/19",
+        "ID Loja": "Bourbon Shopping SP",
+        "Produto": "Gorro",
+        "Quantidade": "4",
+        "Valor Unitário": "R$ 80.00",
+        "Valor Final": "R$ 320.00"
+    },
+    {
+        "Código Venda": "69714",
+        "Data": "12/24/19",
+        "ID Loja": "Center Shopping Uberlândia",
+        "Produto": "Cinto",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 200.00",
+        "Valor Final": "R$ 400.00"
+    },
+    {
+        "Código Venda": "69730",
+        "Data": "12/24/19",
+        "ID Loja": "Bourbon Shopping SP",
+        "Produto": "Gorro",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 80.00",
+        "Valor Final": "R$ 160.00"
+    },
+    {
+        "Código Venda": "69917",
+        "Data": "12/25/19",
+        "ID Loja": "Iguatemi Campinas",
+        "Produto": "Calça",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 170.00",
+        "Valor Final": "R$ 340.00"
+    },
+    {
+        "Código Venda": "69286",
+        "Data": "12/22/19",
+        "ID Loja": "Iguatemi Campinas",
+        "Produto": "Gorro",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 80.00",
+        "Valor Final": "R$ 160.00"
+    },
+    {
+        "Código Venda": "69676",
+        "Data": "12/24/19",
+        "ID Loja": "Bourbon Shopping SP",
+        "Produto": "Gorro",
+        "Quantidade": "4",
+        "Valor Unitário": "R$ 80.00",
+        "Valor Final": "R$ 320.00"
+    },
+    {
+        "Código Venda": "69714",
+        "Data": "12/24/19",
+        "ID Loja": "Center Shopping Uberlândia",
+        "Produto": "Cinto",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 200.00",
+        "Valor Final": "R$ 400.00"
+    },
+    {
+        "Código Venda": "69730",
+        "Data": "12/24/19",
+        "ID Loja": "Bourbon Shopping SP",
+        "Produto": "Gorro",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 80.00",
+        "Valor Final": "R$ 160.00"
+    },
+    {
+        "Código Venda": "69917",
+        "Data": "12/25/19",
+        "ID Loja": "Iguatemi Campinas",
+        "Produto": "Calça",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 170.00",
+        "Valor Final": "R$ 340.00"
+    },
+    {
+        "Código Venda": "69999",
+        "Data": "12/26/19",
+        "ID Loja": "Shopping Eldorado",
+        "Produto": "Camisa",
+        "Quantidade": "3",
+        "Valor Unitário": "R$ 120.00",
+        "Valor Final": "R$ 360.00"
+    },
+    {
+        "Código Venda": "70012",
+        "Data": "12/27/19",
+        "ID Loja": "Shopping Recife",
+        "Produto": "Tênis",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 250.00",
+        "Valor Final": "R$ 250.00"
+    },
+    {
+        "Código Venda": "70045",
+        "Data": "12/28/19",
+        "ID Loja": "BH Shopping",
+        "Produto": "Jaqueta",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 350.00",
+        "Valor Final": "R$ 350.00"
+    },
+    {
+        "Código Venda": "70070",
+        "Data": "12/28/19",
+        "ID Loja": "Iguatemi Porto Alegre",
+        "Produto": "Vestido",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 180.00",
+        "Valor Final": "R$ 360.00"
+    },
+    {
+        "Código Venda": "70101",
+        "Data": "12/29/19",
+        "ID Loja": "Shopping Recife",
+        "Produto": "Tênis",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 250.00",
+        "Valor Final": "R$ 500.00"
+    },
+    {
+        "Código Venda": "70130",
+        "Data": "12/29/19",
+        "ID Loja": "Shopping Eldorado",
+        "Produto": "Cinto",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 200.00",
+        "Valor Final": "R$ 200.00"
+    },
+    {
+        "Código Venda": "70165",
+        "Data": "12/30/19",
+        "ID Loja": "Shopping Recife",
+        "Produto": "Gorro",
+        "Quantidade": "3",
+        "Valor Unitário": "R$ 75.00",
+        "Valor Final": "R$ 225.00"
+    },
+    {
+        "Código Venda": "70192",
+        "Data": "12/30/19",
+        "ID Loja": "BH Shopping",
+        "Produto": "Camisa",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 120.00",
+        "Valor Final": "R$ 240.00"
+    },
+    {
+        "Código Venda": "70220",
+        "Data": "12/31/19",
+        "ID Loja": "Iguatemi Porto Alegre",
+        "Produto": "Jaqueta",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 380.00",
+        "Valor Final": "R$ 380.00"
+    },
+    {
+        "Código Venda": "70250",
+        "Data": "12/31/19",
+        "ID Loja": "Center Shopping Uberlândia",
+        "Produto": "Vestido",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 190.00",
+        "Valor Final": "R$ 190.00"
+    },
+    {
+        "Código Venda": "70300",
+        "Data": "12/24/19",
+        "ID Loja": "Shopping Eldorado",
+        "Produto": "Jaqueta",
+        "Quantidade": "5",
+        "Valor Unitário": "R$ 350.00",
+        "Valor Final": "R$ 1750.00"
+    },
+    {
+        "Código Venda": "70301",
+        "Data": "12/29/19",
+        "ID Loja": "Shopping Eldorado",
+        "Produto": "Meia",
+        "Quantidade": "3",
+        "Valor Unitário": "R$ 40.00",
+        "Valor Final": "R$ 120.00"
+    },
+    {
+        "Código Venda": "70302",
+        "Data": "12/29/19",
+        "ID Loja": "BH Shopping",
+        "Produto": "Cinto",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 200.00",
+        "Valor Final": "R$ 400.00"
+    },
+    {
+        "Código Venda": "70303",
+        "Data": "12/28/19",
+        "ID Loja": "Shopping Recife",
+        "Produto": "Jaqueta",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 350.00",
+        "Valor Final": "R$ 350.00"
+    },
+    {
+        "Código Venda": "70304",
+        "Data": "12/27/19",
+        "ID Loja": "BH Shopping",
+        "Produto": "Tênis",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 250.00",
+        "Valor Final": "R$ 500.00"
+    },
+    {
+        "Código Venda": "70305",
+        "Data": "12/31/19",
+        "ID Loja": "Iguatemi Porto Alegre",
+        "Produto": "Calça",
+        "Quantidade": "4",
+        "Valor Unitário": "R$ 180.00",
+        "Valor Final": "R$ 720.00"
+    },
+    {
+        "Código Venda": "70306",
+        "Data": "12/27/19",
+        "ID Loja": "Shopping Eldorado",
+        "Produto": "Camisa",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 120.00",
+        "Valor Final": "R$ 120.00"
+    },
+    {
+        "Código Venda": "70307",
+        "Data": "12/25/19",
+        "ID Loja": "Iguatemi Porto Alegre",
+        "Produto": "Jaqueta",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 350.00",
+        "Valor Final": "R$ 700.00"
+    },
+    {
+        "Código Venda": "70308",
+        "Data": "12/24/19",
+        "ID Loja": "Shopping Recife",
+        "Produto": "Vestido",
+        "Quantidade": "3",
+        "Valor Unitário": "R$ 190.00",
+        "Valor Final": "R$ 570.00"
+    },
+    {
+        "Código Venda": "70309",
+        "Data": "12/31/19",
+        "ID Loja": "Center Shopping Uberlândia",
+        "Produto": "Tênis",
+        "Quantidade": "3",
+        "Valor Unitário": "R$ 250.00",
+        "Valor Final": "R$ 750.00"
+    },
+    {
+        "Código Venda": "70310",
+        "Data": "12/23/19",
+        "ID Loja": "BH Shopping",
+        "Produto": "Camisa",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 120.00",
+        "Valor Final": "R$ 240.00"
+    },
+    {
+        "Código Venda": "70311",
+        "Data": "12/25/19",
+        "ID Loja": "Shopping Recife",
+        "Produto": "Cinto",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 200.00",
+        "Valor Final": "R$ 200.00"
+    },
+    {
+        "Código Venda": "70312",
+        "Data": "12/24/19",
+        "ID Loja": "Shopping Recife",
+        "Produto": "Sapato",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 300.00",
+        "Valor Final": "R$ 600.00"
+    },
+    {
+        "Código Venda": "70313",
+        "Data": "12/26/19",
+        "ID Loja": "Iguatemi Porto Alegre",
+        "Produto": "Blusa",
+        "Quantidade": "4",
+        "Valor Unitário": "R$ 150.00",
+        "Valor Final": "R$ 600.00"
+    },
+    {
+        "Código Venda": "70314",
+        "Data": "12/27/19",
+        "ID Loja": "Center Shopping Uberlândia",
+        "Produto": "Meia",
+        "Quantidade": "5",
+        "Valor Unitário": "R$ 40.00",
+        "Valor Final": "R$ 200.00"
+    },
+    {
+        "Código Venda": "70315",
+        "Data": "12/27/19",
+        "ID Loja": "Bourbon Shopping SP",
+        "Produto": "Gorro",
+        "Quantidade": "2",
+        "Valor Unitário": "R$ 70.00",
+        "Valor Final": "R$ 140.00"
+    },
+    {
+        "Código Venda": "70316",
+        "Data": "12/26/19",
+        "ID Loja": "Shopping Eldorado",
+        "Produto": "Vestido",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 190.00",
+        "Valor Final": "R$ 190.00"
+    },
+    {
+        "Código Venda": "70317",
+        "Data": "12/30/19",
+        "ID Loja": "Center Shopping Uberlândia",
+        "Produto": "Tênis",
+        "Quantidade": "1",
+        "Valor Unitário": "R$ 250.00",
+        "Valor Final": "R$ 250.00"
+    },
+    {
+        "Código Venda": "70318",
+        "Data": "12/30/19",
+        "ID Loja": "Iguatemi Campinas",
+        "Produto": "Sapato",
+        "Quantidade": "3",
+        "Valor Unitário": "R$ 300.00",
+        "Valor Final": "R$ 900.00"
+    },
+    {
+        "Código Venda": "70319",
+        "Data": "12/24/19",
+        "ID Loja": "BH Shopping",
+        "Produto": "Camisa",
+        "Quantidade": "4",
+        "Valor Unitário": "R$ 120.00",
+        "Valor Final": "R$ 480.00"
+    }
+]
+
 console.log(
     data.filter(e => e["Centro de Distribuição"] === "CD Porto Alegre" && e["Tipo de Carga"] === "Materiais de Construção").reduce((acc, curr) => acc + curr["Peso (kg)"], 0)
 )
@@ -731,4 +1427,13 @@ console.log(
 
 console.log(
     data.filter(e => e['Tipo de Carga'] === 'Alimentos').reduce((acc, curr) => acc + curr['Peso (kg)'], 0)
+)
+
+console.log(
+    dataVendas.filter(e => e['Produto'] === 'Calça').reduce((acc, curr) => {
+        const valorNumerico = parseFloat(
+            curr['Valor Final'].replace('R$', '').replace(',', '.')
+        );
+        return acc + valorNumerico;
+    }, 0)
 )
