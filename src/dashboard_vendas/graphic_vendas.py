@@ -8,6 +8,7 @@ from components.CustomGraphics import CustomGraphics
 from dash.dash_table.Format import Format, Group, Scheme, Symbol
 
 data = dataDashboards.loadDataVendas()
+dataTable = dataDashboards.loadDataElite()
 
 DF = data["DF"]
 DF_filtered_table = data["DF_filtered_table"]
@@ -41,19 +42,18 @@ graph_line.update_traces(
         '<extra></extra>'
     )
 )
-
 data_table = dash_table.DataTable(
     columns=[
         {"name": ["Elite Board", "Coleção"], "id": "Coleção"},
         {"name": ["Elite Board", "Previsto"], "id": "Previsto", "type": "numeric"},
         {"name": ["Elite Board", "Criados"], "id": "Criados", "type": "numeric"},
         {"name": ["Andamento das coleções", "Não iniciado"], "id": "Não iniciado", "type": "numeric"},
-        {"name": ["Andamento das coleções", "Em desenvolvimento"], "id": "Em desenvolvimento", "type": "numeric"},
+        {"name": ["Andamento das coleções", "Desenvolvimento"], "id": "Desenvolvimento", "type": "numeric"},
         {"name": ["Andamento das coleções", "Aprovado"], "id": "Aprovado", "type": "numeric"},
         {"name": ["Andamento das coleções", "Reprovado"], "id": "Reprovado", "type": "numeric"},
         {"name": ["Andamento das coleções", "Cancelado"], "id": "Cancelado", "type": "numeric"},
     ],
-    data=DF_filtered_table.to_dict('records'),
+    data=dataTable.to_dict('records'),
     merge_duplicate_headers=True, 
     fixed_rows={'headers': True},
     style_table={
@@ -66,6 +66,9 @@ data_table = dash_table.DataTable(
         'padding': '5px',
         'fontFamily': 'Arial',
     },
+    style_cell_conditional= [
+     {'if': {'column_id': 'Desenvolvimento'}, 'width': '15%'},
+    ],
     style_header={
         'backgroundColor': '#263c2b',
         'color': 'white',

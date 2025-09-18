@@ -63,3 +63,7 @@ def loadDataProducao():
     return {
         'DF': DF
     }
+    
+def loadDataElite():
+    DF = api.fetch_Json_data('dados/Elite.json')
+    return DF

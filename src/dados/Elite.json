@@ -1,0 +1,70 @@
+{
+   "colecao":"KL054",
+   "numero_modelos":100,
+   "modelos":[
+      {
+         "modelo":1,
+         "status":"EM DESENVOLVIMENTO"
+      },
+      {
+         "modelo":2,
+         "status":"EM DESENVOLVIMENTO"
+      },
+      {
+         "modelo":3,
+         "status":"EM DESENVOLVIMENTO"
+      },
+      {
+         "modelo":4,
+         "status":"EM DESENVOLVIMENTO"
+      },
+      {
+         "modelo":5,
+         "status":"EM DESENVOLVIMENTO"
+      },
+      {
+         "modelo":6,
+         "status":"APROVADO"
+      },
+      {
+         "modelo":7,
+         "status":"APROVADO"
+      },
+      {
+         "modelo":8,
+         "status":"REPROVADO"
+      },
+      {
+         "modelo":9,
+         "status":"CANCELADO"
+      },
+      {
+         "modelo":10,
+         "status":"EM DESENVOLVIMENTO"
+      },
+      {
+         "modelo":11,
+         "status":"EM DESENVOLVIMENTO"
+      },
+      {
+         "modelo":12,
+         "status":"REPROVADO"
+      },
+      {
+         "modelo":13,
+         "status":"EM DESENVOLVIMENTO"
+      },
+      {
+         "modelo":14,
+         "status":"APROVADO"
+      },
+      {
+         "modelo":15,
+         "status":"EM DESENVOLVIMENTO"
+      },
+      {
+         "modelo":16,
+         "status":"NÃO INICIADO"
+      }
+   ]
+}
