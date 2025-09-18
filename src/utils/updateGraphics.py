@@ -20,17 +20,10 @@ def updateLayout(graph, tipo):
                 font = dict(family = 'Arial', size = 14.5, color = 'black' ),
                 paper_bgcolor = '#FEFAE0',
                 margin = dict (l = 75, r = 25, t = 0 , b = 10),
-                yaxis = dict (range = [0, 10000]),
+                yaxis = dict (autorange=True),
                 xaxis_title=None,
                 yaxis_title=None)
             
-
-        elif (tipo == 'table'):
-            graph.update_layout(
-                margin = dict(l=0, r=40, t=40, b=0),
-                paper_bgcolor = '#FEFAE0',
-            )
-        
         elif (tipo == 'pie'):
             graph.update_layout(
                 paper_bgcolor = '#FEFAE0',

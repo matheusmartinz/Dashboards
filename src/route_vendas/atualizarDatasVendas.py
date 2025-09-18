@@ -10,7 +10,8 @@ from dashboard_vendas.graphic_vendas import CustomGraphics, updateLayout
 
 @app.callback(
     Output('store-dados-graficos-vendas', 'data'),
-    Input('interval-atualizacao-vendas', 'n_intervals')
+    Input('interval-atualizacao-vendas', 'n_intervals'),
+    prevent_initial_call = True
 )
 def atualizarDadosGraficos(n_vendas):
     dadosVendas = loadDataVendas()
@@ -23,9 +24,10 @@ def atualizarDadosGraficos(n_vendas):
     return dadosVendas
 
 @app.callback(
-    Output('grafico_line', 'figure'),
+    # Output('grafico_line', 'figure'),
     Output('grafico_bar', 'figure'),
     Input('store-dados-graficos-vendas', 'data'),
+    prevent_initial_call = True
 )
 def atualizar_graficos_fulltime_vendas(data):
     if (not data):
@@ -36,8 +38,24 @@ def atualizar_graficos_fulltime_vendas(data):
     
     fig_line = CustomGraphics('line', df_line, horizontal='Data', vertical='Custo Frete', color='Região Lojas', color_discrete_sequence= cores_graficos, markers=True, line_shape='spline')
     updateLayout(fig_line, 'line')
+    fig_line.update_traces(
+        hovertemplate=(
+        'Data: %{x}<br>' +\
+        'Região Lojas: %{fullData.name}<br>' +     
+        'Custo Frete: R$ %{y:.2f}<br>' +
+        '<extra></extra>'
+    )
+    )
 
     fig_bar = CustomGraphics('bar', df_bar, horizontal='Data', vertical='Valor Final', color='Produto', color_discrete_sequence=cores_graficos)
     updateLayout(fig_bar, 'bar')
+    fig_bar.update_traces(
+        hovertemplate = (
+        'Data: %{x}<br>' +\
+        'Produto: %{fullData.name}<br>' +     
+        'Valor Final: R$ %{y:.2f}<br>' +
+        '<extra></extra>'
+        )
+    )
 
     return fig_line, fig_bar

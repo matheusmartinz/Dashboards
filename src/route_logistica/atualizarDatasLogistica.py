@@ -41,11 +41,32 @@ def atualizar_graficos_fulltime_logistica(data):
     fig_line = CustomGraphics(chart_type='line', data= df_line, horizontal='Data Saída', vertical='Custo Frete', color='Tipo de Carga', line_shape='spline',
                                 markers=True, color_discrete_sequence=cores_graficos, custom_data=['Custo Frete Formatado'])
     updateLayout(fig_line, 'line')
+    fig_line.update_traces(
+        hovertemplate=(
+            'Data Saída: %{x}<br>' +
+            'Tipo de Carga: %{fullData.name}<br>' +
+            'Custo Frete: R$ %{customdata[0]}<br>' +
+            '<extra></extra>'
+        )
+    )
+        
     fig_donut = CustomGraphics(chart_type='pie', data= df_donut, names='Tipo de Carga', values='Peso', hole=0.4, color_discrete_sequence=cores_graficos)
     updateLayout(fig_donut, 'pie')
+    fig_donut.update_traces(
+        hovertemplate=('%{label}: %{value} kg (<b>%{percent}</b>)<extra></extra>')
+    )
+
     
     fig_histogram = CustomGraphics(chart_type='histogram', data = df_histogram, horizontal='Centro de Distribuição', vertical='Peso', 
                                    color='Tipo de Carga', color_discrete_sequence=cores_graficos)
     updateLayout(fig_histogram, 'histogram')
+    fig_histogram.update_traces(
+        hovertemplate=(
+            'CD: %{x}<br>' +
+            'Tipo de Carga: %{fullData.name}<br>' +
+            'Peso: %{y} kg<br>' +
+            '<extra></extra>'
+        )
+    )
     
     return fig_line, fig_histogram, fig_donut

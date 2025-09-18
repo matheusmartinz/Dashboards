@@ -29,9 +29,6 @@ graph_bar.update_traces(
 # graph_pie = px.pie(DF, names = 'Região Lojas', values = 'Valor Final', color = 'Região Lojas', color_discrete_sequence = cores_graficos)
 # updateLayout(graph_pie, 'pie')
 
-# graph_area = px.area(DF, x = 'Data', y = 'Valor Final', color = 'Produto')
-# updateLayout(graph_area,'area')
-
 # graph_line = px.line(DF_line, x='Data', y='Valor Unitário', color='Região Lojas', markers=True, line_shape='spline', color_discrete_sequence= cores_graficos)
 graph_line = CustomGraphics('line', DF_line, horizontal = 'Data', vertical = 'Custo Frete', color = 'Região Lojas', color_discrete_sequence = cores_graficos,
                             markers = True, line_shape = 'spline', custom_data = 'Custo Frete Formatado')
@@ -45,61 +42,33 @@ graph_line.update_traces(
     )
 )
 
-# graph_histogram = px.histogram(DF, x='Produto', y='Valor Final', color='Produto', color_discrete_sequence= cores_graficos)
-# updateLayout(graph_histogram, 'histogram')
-
-graph_table = go.Figure(data=[go.Table(
-        columnwidth=[2, 2, 1],
-        header=dict(
-            values=list(DF_filtered_table.columns),
-            fill_color='#00BCD4',
-            align='left',
-            font=dict(color='white', size=13),
-        ),
-        cells=dict(
-            values=[
-                DF_filtered_table["Data"],
-                DF_filtered_table["Produto"],
-                DF_filtered_table["Valor Final Formatado"]  
-            ],
-            fill_color='lavender',
-            align='left',
-            font=dict(color='black', size=12),
-        )
-    )])
-updateLayout(graph_table, 'table')
-
 data_table = dash_table.DataTable(
     columns=[
-        {"name": "Data", "id": "Data"},
-        {"name": "Produto", "id": "Produto"},
-        {
-            "name": "Valor Final",
-            "id": "Valor Final",
-            "type": "numeric",
-            "format": Format(
-                scheme=Scheme.fixed,
-                precision=2,
-                group=Group.yes,
-                symbol=Symbol.yes,
-                symbol_prefix="R$ "
-            )
-        }
+        {"name": ["Elite Board", "Coleção"], "id": "Coleção"},
+        {"name": ["Elite Board", "Previsto"], "id": "Previsto", "type": "numeric"},
+        {"name": ["Elite Board", "Criados"], "id": "Criados", "type": "numeric"},
+        {"name": ["Andamento das coleções", "Não iniciado"], "id": "Não iniciado", "type": "numeric"},
+        {"name": ["Andamento das coleções", "Em desenvolvimento"], "id": "Em desenvolvimento", "type": "numeric"},
+        {"name": ["Andamento das coleções", "Aprovado"], "id": "Aprovado", "type": "numeric"},
+        {"name": ["Andamento das coleções", "Reprovado"], "id": "Reprovado", "type": "numeric"},
+        {"name": ["Andamento das coleções", "Cancelado"], "id": "Cancelado", "type": "numeric"},
     ],
     data=DF_filtered_table.to_dict('records'),
+    merge_duplicate_headers=True, 
+    fixed_rows={'headers': True},
     style_table={
-        'height': '35vh',
+        'height': '45vh',
         'overflowY': 'auto',
+        'border-top-left-radius' : '10px'
     },
     style_cell={
-        'textAlign': 'left',
+        'textAlign': 'center',
         'padding': '5px',
         'fontFamily': 'Arial',
-        'fontSize': '13px',
     },
     style_header={
         'backgroundColor': '#263c2b',
         'color': 'white',
-        'fontWeight': 'bold'
+        'fontWeight': 'bold',
     }
 )

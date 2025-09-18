@@ -10,7 +10,7 @@ app.layout = html.Div([
     html.Div(id="page-content")              
 ])
 
-app.title = 'Peōn Dash'
+app.title = 'Elite Board'
 # app.sidebar = layout_view.sidebar
 
 @app.callback(
