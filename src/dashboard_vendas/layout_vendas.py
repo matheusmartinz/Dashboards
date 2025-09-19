@@ -12,13 +12,14 @@ layout_vendas = html.Div([
     html.Div([
         html.Div([
             html.Div(
+                id  = 'table-elite',
                 children=[data_table],
                 style={
                     'height': '49vh',
                     'width': '100%',
                     'overflow': 'auto',
-                    'padding-right': '15px',
-                    'padding-left': '15px',
+                    'padding-right': '10px',
+                    'padding-left': '10px',
                     'padding-top': '20px'
                 }
             )

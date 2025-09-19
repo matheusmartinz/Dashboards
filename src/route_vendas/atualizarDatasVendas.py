@@ -3,6 +3,7 @@ from dash.dependencies import Input, Output, State
 import plotly.express as px
 import pandas as pd
 import dash
+from dash import dash_table
 from utils.colorsDashboards import cores_graficos
 from datas.dataDashboards import loadDataVendas, loadDataLogistica
 from dashboard_vendas.graphic_vendas import CustomGraphics, updateLayout
@@ -47,7 +48,7 @@ def atualizar_graficos_fulltime_vendas(data):
     )
     )
 
-    fig_bar = CustomGraphics('bar', df_bar, horizontal='Data', vertical='Valor Final', color='Produto', color_discrete_sequence=cores_graficos)
+    fig_bar = CustomGraphics('bar', df_bar, horizontal='Data', vertical='Valor Final', color='Produto', color_discrete_sequence=cores_graficos, barmode = 'group')
     updateLayout(fig_bar, 'bar')
     fig_bar.update_traces(
         hovertemplate = (

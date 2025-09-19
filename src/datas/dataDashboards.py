@@ -2,6 +2,7 @@ import pandas as pd
 from utils.formaterToNumber import formaterToNumber
 from utils.formaterToReal import formaterToReal
 from utils.formaterDate import formaterDate
+from collections import Counter
 import re
 import apis.api as api
 
@@ -60,10 +61,66 @@ def loadDataVendas():
 def loadDataProducao():
     DF = api.fetch_Json_data('dados/Producao.json')
     
+    
+
+    
     return {
         'DF': DF
     }
     
 def loadDataElite():
-    DF = api.fetch_Json_data('dados/Elite.json')
-    return DF
+    DF = api.fetch_Json_data('dados/Elite.json')  
+
+    if DF.empty:
+        return {'detalhes': [], 'resumo': {}}
+
+    detalhes = []
+    resumo = {}
+
+    for colecao, grupo in DF.groupby('colecao'):
+        total = int(grupo['numero_modelos'].iloc[0])
+        
+        tabela_modelos = []
+        
+        for _, row in grupo.iterrows():
+            modelos = row['modelos']
+
+            if not isinstance(modelos, list):
+                modelos = [modelos]
+
+            for modelo_info in modelos:
+                status = modelo_info.get("status", "").strip().upper()
+                linha = {
+                    "colecao": colecao,
+                    "numero_modelos": total,
+                    "modelo": modelo_info.get("modelo"),
+                    "status": status
+                }
+                tabela_modelos.append(linha)
+
+        detalhes.extend(tabela_modelos)
+
+        status_list = [item['status'] for item in tabela_modelos]
+        contagem = Counter(status_list)
+        
+        resumo[colecao] = {
+            "Coleção": colecao,
+            "Previsto": total,
+            "Criados": len(tabela_modelos),
+            "Não iniciado": contagem.get("NÃO INICIADO", 0),
+            "Desenvolvimento": contagem.get("EM DESENVOLVIMENTO", 0),
+            "Aprovado": contagem.get("APROVADO", 0),
+            "Reprovado": contagem.get("REPROVADO", 0),
+            "Cancelado": contagem.get("CANCELADO", 0),
+        }
+        
+        for key in ["Criados", "Não iniciado", "Desenvolvimento", "Aprovado", "Reprovado", "Cancelado"]:
+            resumo[colecao][f"{key} %"] = f"{(resumo[colecao][key] / total * 100):.2f}%" if total > 0 else "0.00%"
+        
+        for key in ["Criados", "Não iniciado", "Desenvolvimento", "Aprovado", "Reprovado", "Cancelado"]:
+            resumo[colecao][key] = f"{resumo[colecao][key]} ({resumo[colecao][f'{key} %']})"
+
+    return {
+        'detalhes': detalhes,
+        'resumo': list(resumo.values())
+    }

@@ -33,7 +33,6 @@ def display_page(pathname):
         return html.H1("404 - Página não encontrada")
 
 if __name__ == '__main__':
-    app.run(debug=True)
     app.index_string = '''
     <!DOCTYPE html>
     <html>
@@ -54,3 +53,5 @@ if __name__ == '__main__':
     </body>
     </html>
     '''
+    app.run(debug=True)
+    
