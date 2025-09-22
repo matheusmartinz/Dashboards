@@ -50,6 +50,7 @@ def loadDataVendas():
     
     DF_line = (DF.groupby([pd.Grouper(key = 'Data', freq= 'D'), 'Região Lojas'], as_index=False)['Custo Frete'].sum())
     DF_line['Custo Frete Formatado'] = formaterToReal(DF_line['Custo Frete'])
+    DF_line['Data'] = DF_line['Data'].dt.strftime('%Y-%m-%d')
 
     return {
         "DF": DF,
@@ -61,16 +62,13 @@ def loadDataVendas():
 def loadDataProducao():
     DF = api.fetch_Json_data('dados/Producao.json')
     
-    
-
-    
     return {
         'DF': DF
     }
     
 def loadDataElite():
     DF = api.fetch_Json_data('dados/Elite.json')  
-
+    
     if DF.empty:
         return {'detalhes': [], 'resumo': {}}
 
@@ -119,7 +117,11 @@ def loadDataElite():
         
         for key in ["Criados", "Não iniciado", "Desenvolvimento", "Aprovado", "Reprovado", "Cancelado"]:
             resumo[colecao][key] = f"{resumo[colecao][key]} ({resumo[colecao][f'{key} %']})"
-
+            
+        for colecao in resumo:
+            for key in ["Criados %", "Não iniciado %", "Desenvolvimento %", "Aprovado %", "Reprovado %", "Cancelado %"]:
+                if key in resumo[colecao]:
+                 del resumo[colecao][key]
     return {
         'detalhes': detalhes,
         'resumo': list(resumo.values())

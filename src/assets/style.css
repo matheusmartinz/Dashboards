@@ -23,6 +23,20 @@
     flex-direction: column;
 }
 
+.dash-table-container * {
+    direction: ltr !important;
+    text-align: center !important;
+}
+
+.dash-filter--case--insensitive {
+    display: none !important
+}
+
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner .dash-header>div input[type="text"],
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner .dash-filter>div input[type="text"] {
+    direction: ltr !important;
+    text-align: left !important;
+}
 
 #radioitens-input {
     display: flex;

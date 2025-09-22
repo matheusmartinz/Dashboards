@@ -5,6 +5,8 @@ from dash import dcc, dash_table  # type: ignore
 from utils.colorsDashboards import cores_graficos
 from utils.formaterToReal import formaterToReal
 from components.CustomGraphics import CustomGraphics
+from layoutTable.generatorTable import generatorTable
+from layoutTable.columnsTable import columnsTables
 from dash.dash_table.Format import Format, Group, Scheme, Symbol
 
 data = dataDashboards.loadDataVendas()
@@ -44,112 +46,6 @@ graph_line.update_traces(
     )
 )
 
-def generationTable(data):
- data_table = dash_table.DataTable(
-    data = data['resumo'],
-    columns=[
-    {"name": ["Elite Board", "Coleção"], "id": "Coleção"},
-    {"name": ["Elite Board", "Previsto"], "id": "Previsto", "type": "numeric"},
-    {"name": ["Elite Board", "Criados"], "id": "Criados", "type": "text"},
-    {"name": ["Andamento das coleções", "Não iniciado"], "id": "Não iniciado", "type": "text"},
-    {"name": ["Andamento das coleções", "Desenvolvimento"], "id": "Desenvolvimento", "type": "text"},
-    {"name": ["Andamento das coleções", "Aprovado"], "id": "Aprovado", "type": "text"},
-    {"name": ["Andamento das coleções", "Reprovado"], "id": "Reprovado", "type": "text"},
-    {"name": ["Andamento das coleções", "Cancelado"], "id": "Cancelado", "type": "text"},
-],
-    merge_duplicate_headers=True,
-    fixed_rows={'headers': True},
-    
-    style_table={
-        'height': '45vh',
-        'overflowX': 'auto',       
-        'overflowY': 'auto',
-        'width': '100%',
-    },
-    
-    style_cell_conditional= [
-        {
-        'if': {'column_id': 'Desenvolvimento'},
-        'width': '12%',
-        },
-        {
-        'if': {'column_id': 'Desenvolvimento %'},
-        'width': '12%',
-        }
-    ],
-    
-    style_cell={
-        'textAlign': 'center',
-        'padding': '5px',
-        'fontFamily': 'Arial',
-        'whiteSpace': 'normal',
-        'minWidth': '100px',       
-        'width': '100px',
-        'maxWidth': '200px',
-        'overflow': 'hidden',
-        'textOverflow': 'ellipsis',
-    },
+dataTeste = dataTable['resumo']
 
-    style_header={
-        'backgroundColor': '#263c2b',
-        'color': 'white',
-        'fontWeight': 'bold',
-        'whiteSpace': 'normal',
-    },
-)
- return data_table
-
-
-data_table = dash_table.DataTable(
-    data = dataTable['resumo'],
-    columns=[
-    {"name": ["Elite Board", "Coleção"], "id": "Coleção"},
-    {"name": ["Elite Board", "Previsto"], "id": "Previsto", "type": "numeric"},
-    {"name": ["Elite Board", "Criados"], "id": "Criados", "type": "text"},
-    {"name": ["Andamento das coleções", "Não iniciado"], "id": "Não iniciado", "type": "text"},
-    {"name": ["Andamento das coleções", "Desenvolvimento"], "id": "Desenvolvimento", "type": "text"},
-    {"name": ["Andamento das coleções", "Aprovado"], "id": "Aprovado", "type": "text"},
-    {"name": ["Andamento das coleções", "Reprovado"], "id": "Reprovado", "type": "text"},
-    {"name": ["Andamento das coleções", "Cancelado"], "id": "Cancelado", "type": "text"},
-],
-    merge_duplicate_headers=True,
-    fixed_rows={'headers': True},
-    
-    style_table={
-        'height': '45vh',
-        'overflowX': 'auto',       
-        'overflowY': 'auto',
-        'width': '100%',
-    },
-    
-    style_cell_conditional= [
-        {
-        'if': {'column_id': 'Desenvolvimento'},
-        'width': '12%',
-        },
-        {
-        'if': {'column_id': 'Desenvolvimento %'},
-        'width': '12%',
-        }
-    ],
-    
-    style_cell={
-        'textAlign': 'center',
-        'padding': '5px',
-        'fontFamily': 'Arial',
-        'whiteSpace': 'normal',
-        'minWidth': '100px',       
-        'width': '100px',
-        'maxWidth': '200px',
-        'overflow': 'hidden',
-        'textOverflow': 'ellipsis',
-    },
-
-    style_header={
-        'backgroundColor': '#263c2b',
-        'color': 'white',
-        'fontWeight': 'bold',
-        'whiteSpace': 'normal',
-    },
-)
-
+data_table = generatorTable(dataTable['resumo'], columnsTables)
