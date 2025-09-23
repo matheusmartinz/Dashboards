@@ -9,8 +9,6 @@ def generatorTable(dataTable, columnsTable: Union[List[Dict], None]):
     columns = columnsTable,
     merge_duplicate_headers = True,
     fixed_rows={'headers': True},
-    filter_action= 'native',
-    filter_options = {'case': 'insensitive'},
     
     style_table = stylesTable.styleTable,
     
@@ -19,5 +17,4 @@ def generatorTable(dataTable, columnsTable: Union[List[Dict], None]):
     style_cell = stylesTable.styleCelula,
 
     style_header = stylesTable.styleHeader,
-    
 )

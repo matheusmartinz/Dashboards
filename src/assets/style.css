@@ -25,18 +25,25 @@
 
 .dash-table-container * {
     direction: ltr !important;
-    text-align: center !important;
 }
 
 .dash-filter--case--insensitive {
     display: none !important
 }
 
-.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner .dash-header>div input[type="text"],
-.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner .dash-filter>div input[type="text"] {
-    direction: ltr !important;
+.dash-table-container .dash-filter input[type="text"],
+.dash-table-container .dash-header input[type="text"] {
+    width: 100% !important;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     text-align: left !important;
+    box-sizing: border-box !important;
+    padding: 0 4px !important;
+    margin: 0 !important;
 }
+
 
 #radioitens-input {
     display: flex;

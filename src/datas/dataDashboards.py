@@ -60,11 +60,8 @@ def loadDataVendas():
     }
     
 def loadDataProducao():
-    DF = api.fetch_Json_data('dados/Producao.json')
-    
-    return {
-        'DF': DF
-    }
+    teste = api.fetch_data('https://jsonplaceholder.typicode.com/todos/1')
+    return teste
     
 def loadDataElite():
     DF = api.fetch_Json_data('dados/Elite.json')  

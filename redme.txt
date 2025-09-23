@@ -3,7 +3,7 @@ source venv/bin/activate -- MAC
 .\venv\Scripts\Activate.ps1 -- WINDOWNS
 
 
-Métodos de Dicionários - dict :
+Métodos de Dicionários - to_dict :
 
 - keys(): retorna uma visualização de todas as chaves do dicionário.
 - values(): retorna uma visualização de todos os valores do dicionário.
@@ -21,3 +21,10 @@ print(pessoa.items())   # Imprime dict_items([("nome", "João"), ("idade", 25), 
 
 pessoa.update({"profissao": "Engenheiro"})
 print(pessoa)  # Imprime {"nome": "João", "idade": 25, "cidade": "Madri", "profissao": "Engenheiro"}
+
+
+--------- TO DO LIST -------
+
+- Separar o Header da tabela (Elite Board / Andamento das Coleções - Não fazem parte da Tabela)
+- Deixar a tabela na screen inteira
+- Scroll auto

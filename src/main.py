@@ -4,6 +4,7 @@ import dashboard_vendas.layout_vendas as layout_vendas
 import layoutConfig.layout_config as layout_config
 import dashboard_logistica.layout_logistica as layout_logistica
 import dashboardProducao.layoutProducao as layoutProducao
+from datas import dataDashboards
 
 app.layout = html.Div([
     dcc.Location(id="url", refresh=False),  
@@ -53,5 +54,6 @@ if __name__ == '__main__':
     </body>
     </html>
     '''
+
     app.run(debug=True)
     

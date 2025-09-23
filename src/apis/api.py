@@ -7,8 +7,7 @@ def fetch_data(url):
             response = requests.get(url)
             if response.status_code == 200:
                 data = response.json()
-                DF = pd.DataFrame(data)
-                return DF
+                return data
             else:
                 print(f"Erro na requisição: {response.status_code}")
                 return None
