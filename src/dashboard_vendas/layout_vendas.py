@@ -3,6 +3,7 @@ import dash_bootstrap_components as dbc
 import dashboard_vendas.graphic_vendas as graphic_vendas
 from layoutTable.generatorTable import generatorTable
 from layoutTable.columnsTable import columnsTables
+from layoutTable.generatorTable import create_table
 
 
 fig_bar = graphic_vendas.graph_bar
@@ -15,17 +16,27 @@ data_table2 = graphic_vendas.dataTeste
 layout_vendas = html.Div([
     html.Div([
         html.Div([
-            html.Div(
-                children= [generatorTable(data_table2, columnsTables)],
-                style={
-                    'height': '100%',
-                    'width': '100%',
-                    'padding': '20px 10px 0 10px',
-                    'direction': 'ltr',
-                    'minWidth': '1000px'
-                }
-        )
-        ], style={'display': 'flex', 'height': '100%', 'background-color': '#FEFAE0', 'minWidth': '1000px'}),
+            html.Img(src = 'assets/peon_logo-removebg-preview.png', style = {'height': '100%', 'width': 'auto'}),
+            html.H4("Andamento das coleções", style = {'flexGrow': 1, 'textAlign': 'center', 'margin': 0, 'color': 'white'})
+        ], id = 'header-board'),
+        
+        html.Div([
+            # html.Div(
+            #     children= [generatorTable(data_table2, columnsTables)],
+            #     style={
+            #         'width': '100%',
+            #         'padding': '20px 10px 0 10px',
+            #     })
+            
+        html.Div(
+            create_table(data_table2, columnsTables),
+        style = {
+            'height': '82vh',           
+            'overflowY': 'auto',      
+            'width': '100%',
+            'padding': '0px 20px 10px 20px',
+        }
+        )], style={'display': 'flex', 'background-color': '#FEFAE0'}),
 
         # html.Div([
         #     dcc.Graph(

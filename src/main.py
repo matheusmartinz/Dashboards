@@ -3,7 +3,6 @@ from dash import dcc, html, Input, Output
 import dashboard_vendas.layout_vendas as layout_vendas
 import layoutConfig.layout_config as layout_config
 import dashboard_logistica.layout_logistica as layout_logistica
-import dashboardProducao.layoutProducao as layoutProducao
 from datas import dataDashboards
 
 app.layout = html.Div([
@@ -19,7 +18,7 @@ app.title = 'Elite Board'
     Input("url", "pathname")
 )
 def display_page(pathname):
-    if pathname == "/vendas":
+    if pathname == "/board":
         import route_vendas.atualizarDatasVendas
         return layout_vendas.layout_vendas
     elif pathname == '/config':
@@ -28,8 +27,6 @@ def display_page(pathname):
     elif pathname == "/logistica":
         import route_logistica.atualizarDatasLogistica
         return layout_logistica.layout_logistica
-    elif pathname == "/producao":
-        return layoutProducao.layoutProducao
     else:
         return html.H1("404 - Página não encontrada")
 

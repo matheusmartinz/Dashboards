@@ -23,28 +23,6 @@
     flex-direction: column;
 }
 
-.dash-table-container * {
-    direction: ltr !important;
-}
-
-.dash-filter--case--insensitive {
-    display: none !important
-}
-
-.dash-table-container .dash-filter input[type="text"],
-.dash-table-container .dash-header input[type="text"] {
-    width: 100% !important;
-    font-size: 12px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    text-align: left !important;
-    box-sizing: border-box !important;
-    padding: 0 4px !important;
-    margin: 0 !important;
-}
-
-
 #radioitens-input {
     display: flex;
     justify-content: space-between;
@@ -52,9 +30,17 @@
     margin-bottom: 10px;
 }
 
+#header-board {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    height: 10vh;
+    margin-bottom: 5vh;
+    background-color: #406a4a;
+}
+
 .main-container {
     height: 100vh;
-    width: 100%;
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -64,6 +50,36 @@
 
 .menu-item-config {
     border-radius: 50px;
+}
+
+.custom-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.custom-table th {
+    position: sticky;
+    top: 0;
+    background-color: #162419;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+    z-index: 10;
+}
+
+.custom-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.custom-table tr {
+    background-color: #f9f9f9;
 }
 
 #checklist-config-graphics {
@@ -187,4 +203,31 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.scroll-container::-webkit-scrollbar {
+    width: 8px;
+    /* Largura da barra de rolagem vertical */
+    height: 8px;
+    /* Altura da barra de rolagem horizontal */
+}
+
+/* 2. Estiliza o 'Trilho' (o fundo da barra) */
+.scroll-container::-webkit-scrollbar-track {
+    background: red !important;
+    /* Cinza claro */
+    border-radius: 10px !important;
+}
+
+/* 3. Estiliza o 'Polegar' (o elemento que você arrasta) */
+.scroll-container::-webkit-scrollbar-thumb {
+    background: red !important;
+    /* Cinza escuro */
+    border-radius: 10px !important;
+}
+
+/* 4. Estiliza o 'Polegar' ao passar o mouse (opcional) */
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #555 !important;
+    /* Cinza mais escuro */
 }

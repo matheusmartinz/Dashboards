@@ -3,7 +3,7 @@ from dash.dependencies import Input, Output, State
 import plotly.express as px
 import pandas as pd
 import dash
-from dash import dash_table
+from dash import dash_table, html
 from layoutTable.generatorTable import generatorTable
 from layoutTable.columnsTable import columnsTables
 from utils.colorsDashboards import cores_graficos
@@ -13,7 +13,7 @@ from dashboard_vendas.graphic_vendas import CustomGraphics, updateLayout
 
 @app.callback(
     [Output('store-dados-graficos-vendas', 'data'),
-     Output('table-elite', 'data')],
+     Output('table-elite', 'children')],
     Input('interval-atualizacao-vendas', 'n_intervals'),
     prevent_initial_call = True
 )
@@ -26,7 +26,25 @@ def atualizarDadosGraficos(n_vendas):
         'DF_grouped': dadosVendas['DF_grouped'].to_dict('records'),
     }
     
-    return dadosVendas, dadosTable['resumo']
+    columns = columnsTables
+    data = dadosTable['resumo']
+    
+    header = html.Thead(
+        html.Tr([
+            html.Th(col['name'])
+            for col in columns
+        ])
+    )
+    
+    celulas = html.Tbody([
+        html.Tr([
+            html.Td(row.get(col['id'], ''))
+            for col in columns
+        ])
+            for row in data
+    ])
+    
+    return dadosVendas, [header,celulas]
 
 # @app.callback(
 #     # Output('grafico_line', 'figure'),
