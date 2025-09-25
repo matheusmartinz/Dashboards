@@ -1,6 +1,6 @@
 from dash import html, dcc
 import dash_bootstrap_components as dbc 
-import dashboard_vendas.graphic_vendas as graphic_vendas
+import eliteBoardTable.graphicsTableBoard as graphic_vendas
 from layoutTable.generatorTable import generatorTable
 from layoutTable.columnsTable import columnsTables
 from layoutTable.generatorTable import create_table
@@ -13,7 +13,7 @@ data_table = graphic_vendas.data_table
 
 data_table2 = graphic_vendas.dataTeste
 
-layout_vendas = html.Div([
+layout_board = html.Div([
     html.Div([
         html.Div([
             html.Img(src = 'assets/peon_logo-removebg-preview.png', style = {'height': '100%', 'width': 'auto'}),

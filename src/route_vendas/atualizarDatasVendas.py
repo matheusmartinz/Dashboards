@@ -8,7 +8,7 @@ from layoutTable.generatorTable import generatorTable
 from layoutTable.columnsTable import columnsTables
 from utils.colorsDashboards import cores_graficos
 from datas.dataDashboards import loadDataVendas, loadDataElite, loadDataProducao
-from dashboard_vendas.graphic_vendas import CustomGraphics, updateLayout
+from eliteBoardTable.graphicsTableBoard import CustomGraphics, updateLayout
 
 
 @app.callback(

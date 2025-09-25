@@ -1,6 +1,6 @@
 from app_instance import app
 from dash import dcc, html, Input, Output
-import dashboard_vendas.layout_vendas as layout_vendas
+import eliteBoardTable.layoutTable as table
 import layoutConfig.layout_config as layout_config
 import dashboard_logistica.layout_logistica as layout_logistica
 from datas import dataDashboards
@@ -20,7 +20,7 @@ app.title = 'Elite Board'
 def display_page(pathname):
     if pathname == "/board":
         import route_vendas.atualizarDatasVendas
-        return layout_vendas.layout_vendas
+        return table.layout_board
     elif pathname == '/config':
         # return layout_config.layout_config
         return layout_config.layoutConfig
